@@ -1,0 +1,3 @@
+Fri, 01 Feb 2013 20:29:14 log.py[line:24] DEBUG This is debug message
+Fri, 01 Feb 2013 20:29:14 log.py[line:25] INFO This is info message
+Fri, 01 Feb 2013 20:29:14 log.py[line:26] WARNING This is warning message
