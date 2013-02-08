@@ -6,7 +6,8 @@ Created on Feb 2, 2013
 
 This is a thread pool
 """
-from queue import deque
+#from queue import deque #python 3.3
+from collections import deque #python 2.7
 from threading import Thread
 from threading import Condition
 from threading import Lock
@@ -51,7 +52,6 @@ class ThreadPool():
     """ Consuming tasks using threads in poll"""
     def __init__(self, threads_num, task_queue_max=None):
         self._threads_num   = threads_num
-        """this queue store the function to be run by the threads"""
         self._tasks         = deque()
         self._threads       = []
         self._task_num      = 0
@@ -105,7 +105,7 @@ class ThreadPool():
                 return ( None, None, None )
             else:
                 self._task_num -= 1
-                """pop out the new task(function, parameter, and callback) and return"""
+                """pop out the new task and return"""
                 return self._tasks.popleft()
         finally:
             self._task_lock.release()

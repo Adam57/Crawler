@@ -12,5 +12,5 @@ class Command(Thread):
 		Thread.__init__(self) 
 
 	def run( self ):
-		print ("in command, hah") 
+		print "in command, hah" 
 	

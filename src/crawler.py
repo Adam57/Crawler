@@ -3,8 +3,7 @@ from include.setting import Setting
 #from include.commond import Commond
 from time import sleep
 
-#this a test
-#this is test 2
+
 def main():
 	#load setting
 	setting = Setting()
@@ -47,5 +46,5 @@ def main():
 	crawler_engine.stop()
 	
 if __name__ == "__main__":
-    #main(sys.argv[1:])
-    main()
+	#main(sys.argv[1:])
+	main()
