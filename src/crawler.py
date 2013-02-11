@@ -2,56 +2,30 @@ from core.engine import Engine
 from include.setting import Setting
 #from include.commond import Commond
 from time import sleep
-from core.searchgoogle import SearchGoogle
 
+from include.log import Log
 
 def main():
 	#load setting
 	setting = Setting()
 	setting.load("config.ini")
 
-	#start commond view
-	"""
-	try:
-		opts, args = getopt.getopt(argv,"hi:o:",["ifile=","ofile="])
-	except getopt.GetoptError:
-		print 'test.py -i <inputfile> -o <outputfile>'
-		sys.exit(2)
-	for opt, arg in opts:
-		if opt == '-h':
-			print 'test.py -i <inputfile> -o <outputfile>'
-			sys.exit()
-      	elif opt in ("-i", "--ifile"):
-			inputfile = arg
-		elif opt in ("-o", "--ofile"):
-			outputfile = arg
-	print 'Input file is "', inputfile
-	print 'Output file is "', outputfile
-"""
-	#create crawler engin
-	crawler_engine = Engine(setting)
-
-	
-	#start engine 
-	crawler_engine.start( )
-	
-	keywords = "NBA HOUSTON"
-	contacter = SearchGoogle(keywords)
-	links = contacter.getURLs()
-
-	#load seed info from config file
-	
-	for i in range(10):
-		#crawler_engine.add_seed(setting.get_param('seed','first') )
-		crawler_engine.add_seed(links[i])
+	try:	
+		#create crawler engin
+		crawler_engine = Engine(setting)
 
 
-	input('')
-	
-	
-	#stop engin 
-	crawler_engine.stop()
-	
+		#start engine 
+		crawler_engine.start( )
+
+
+		raw_input("")
+		#stop engin 
+		crawler_engine.stop()
+
+	except (Exception) as e:  
+		Log().debug(e)
+		crawler_engine.stop()
 if __name__ == "__main__":
 	#main(sys.argv[1:])
 	main()
