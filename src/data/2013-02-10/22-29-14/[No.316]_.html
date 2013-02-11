@@ -1,0 +1,625 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en" xml:lang="en"  xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>
+
+Bern Dibner Library
+    Catalog &rsaquo; Advanced Search
+</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Koha 3.0100039" /> <!-- leave this for stats -->
+<link rel="shortcut icon" href="/opac-tmpl/prog/en/includes/favicon.ico" type="image/x-icon" />
+
+<link rel="stylesheet" type="text/css" href="/opac-tmpl/prog/en/css/opac.css" />
+
+
+    <link rel="stylesheet" type="text/css" href="http://cdn.kohalibrary.com/c/poly/opac-polytech.css" />
+
+
+<link rel="stylesheet" type="text/css" media="print" href="/opac-tmpl/prog/en/css/print.css" />
+
+<link rel="stylesheet" type="text/css" href="/opac-tmpl/prog/en/lib/jquery/plugins/ui.tabs.css" />
+
+
+<!-- yui js --> 
+<script type="text/javascript" src="http://yui.yahooapis.com/2.5.1/build/utilities/utilities.js"></script> 
+<script type="text/javascript" src="http://yui.yahooapis.com/2.5.1/build/container/container-min.js"></script> 
+<script type="text/javascript" src="http://yui.yahooapis.com/2.5.1/build/menu/menu-min.js"></script> 
+<script type="text/javascript" src="/opac-tmpl/prog/en/lib/jquery/jquery.js"></script>
+<script type="text/javascript" src="/opac-tmpl/prog/en/lib/jquery/plugins/ui.tabs.js"></script>
+
+<script type="text/javascript" src="/opac-tmpl/prog/en/lib/jquery/plugins/jquery.hoverIntent.minified.js"></script>
+<script type="text/javascript" src="/opac-tmpl/prog/en/lib/jquery/plugins/jquery.dropshadow-min.js"></script>
+<script type="text/javascript" language="javascript" src="/opac-tmpl/prog/en/js/script.js"></script>
+
+<script type="text/javascript" language="javascript">//<![CDATA[
+		var NO_AMAZON_IMAGE = _("No cover image available");
+	//]]>
+</script>
+<script type="text/javascript" language="javascript" src="/opac-tmpl/prog/en/js/amazonimages.js"></script>
+
+
+
+<script type="text/javascript" language="javascript"
+src="/opac-tmpl/prog/en/js/basket.js"></script>
+<script type="text/javascript" language="javascript" src="/opac-tmpl/prog/en/js/tags.js"></script>
+<script type="text/javascript" language="javascript">
+	//<![CDATA[
+    var MSG_BASKET_EMPTY = _("Your cart is currently empty");
+    var MSG_RECORD_IN_BASKET = _("This item is already in your cart");
+    var MSG_RECORD_ADDED = _("This item has been added to your cart");
+    var MSG_NRECORDS_ADDED = _(" item(s) added to your cart");
+    var MSG_NRECORDS_IN_BASKET = _("already in your cart");
+    var MSG_NO_RECORD_SELECTED = _("No item was selected");
+    var MSG_NO_RECORD_ADDED = _("No item was added to your cart");
+    var MSG_CONFIRM_DEL_BASKET = _("Are you sure you want to empty your cart?");
+    var MSG_CONFIRM_DEL_RECORDS = _("Are you sure you want to remove the selected items?");
+	$("#cartDetails").ready(function(){ $("#cmspan").html("<a href=\"#\" id=\"cartmenulink\" class=\"\"><i><\/i><span><i><\/i><span><\/span><img src=\"/opac-tmpl/prog/images/cart.gif\" width=\"14\" height=\"14\" alt=\"\" border=\"0\" /> "+_("Cart")+"<span id=\"basketcount\"><\/span><\/span><\/a>"); }); 
+	$(window).load(function() {
+		 	verify_images();
+		 });
+	
+	$(document).ready(function(){
+
+$("#advsearch-itemtype #itype-6").parent().remove();
+$("label[for='userid']").html("Your Login ID:"); 
+$("#auth div").html("<div class=\"alert\"><p class=\"alert\">Your login is the first part of your Poly email address (before the @ sign) and your password is your NYU-Poly ID number.  You may change the password after initial login.</p></div>");
+});
+	//]]>
+</script><script type="text/javascript" language="javascript"
+src="/opac-tmpl/prog/en/js/basket.js"></script>
+<script type="text/javascript" language="javascript" src="/opac-tmpl/prog/en/js/tags.js"></script>
+
+<link rel="unapi-server" type="application/xml" title="unAPI" href="https://10.194.157.155:5004/cgi-bin/koha/unapi" />
+
+
+
+</head>
+<body id="advsearch"><div id="doc3" class="yui-t7">
+   <div id="bd">
+<div id="header-wrapper"><div id="members">
+  
+	<ul><li><a href="/cgi-bin/koha/opac-user.pl">Log in to Your Account</a></li>
+	</ul>	
+  
+</div>
+  
+	<style type="text/css">
+#doc3 { width: 975px; margin: 0 auto; }
+
+#header{}
+#header h1.logo{margin:0 0 27px 18px;padding:24px 0 0 0;float:left;}#header h1.logo a,#header h1.logo img{display:block;}#header h1.logo a:hover{opacity:0.8;}
+#header h1.logo a{float:left;}#header h1.logo a#nyu-poly-logo{margin-top:8px;margin-left:20px;padding-left:20px;width:90px;height:35px;border-left:1px solid #aaa;text-indent:-9999em;background:url(http://library.poly.edu/sites/all/themes/bd_library/img/main_sprite.png) no-repeat -760px -92px;}
+div#header-links-right{position:relative;float:right;}
+
+ul#admin-links,ul#header-links{font-size:1.1em;}
+ul#admin-links{padding:3px;position:absolute;top:0;right:0;background:#fff;border:1px solid #ddd;border-top:none;-webkit-border-bottom-left-radius:4px;-webkit-border-bottom-right-radius:4px;-moz-border-radius-bottomleft:4px;-moz-border-radius-bottomright:4px;border-bottom-left-radius:4px;border-bottom-right-radius:4px;}
+ul#admin-links li a{padding:8px 15px;color:#333;font-weight:bold;text-decoration:none;}
+ul#admin-links li a:hover{color:#0a6f87;}
+ul#header-links{padding-top:39px;padding-right:15px;}
+ul#admin-links li,ul#header-links li{display:inline;}
+ul#header-links li a{margin-left:20px;color:#444;font-weight:bold;text-decoration:none;}
+ul#header-links li a:hover{text-decoration:underline;}
+ul#header-links a.ask-librarian{padding-right:22px;padding-bottom:1px;color:#0a6f87;font-size:1.2em;background:url(http://library.poly.edu/sites/all/themes/bd_library/img/main_sprite.png) no-repeat right -61px;}
+
+
+#spotlight-links{margin-bottom:5px;padding:0;height:185px;overflow:hidden;background:#ebebeb;border:1px solid #dfdfdf;}
+#spotlight-links li{margin:0;padding:2px;border:none;}
+#spotlight-links li,#spotlight-links li a,#spotlight-links li a img{display:block;}
+#spotlight-nav{font-size:1.2em;}
+#spotlight-nav a{background:url(http://library.poly.edu/sites/all/themes/bd_library/img/main_sprite.png) no-repeat right -323px;text-decoration:none;}
+#spotlight-nav a:hover{text-decoration:underline;}
+#spotlight-nav a#spotlight-prev{padding-left:20px;float:left;background-position:left -323px;}
+#spotlight-nav a#spotlight-prev:hover{background-position:left -349px;}
+#spotlight-nav a#spotlight-next{padding-right:20px;float:right;}
+#spotlight-nav a#spotlight-next:hover{background-position:right -349px;}
+#comments-header{padding:5px;background:#f9f9f9;border-top:2px solid #e64d13;font-size:1.6em;}
+#comments 
+#comment-form{margin-bottom:1.5em;}
+#comments .comment{margin:-1px 0 0 0;padding:0 0 5px 0;border-top:1px solid #e8e8e8;border-bottom:1px solid #e8e8e8;}
+#comments .submitted{margin-top:10px;color:#777;font-size:1.1em;}
+#comments .comment .content{margin-right:125px;padding-left:10px;}
+#comments h3{margin:5px 0 0 0;font-size:1.4em;}#comments p{margin-bottom:5px;font-size:1.2em;line-height:140%;}
+#comments .sideinfo{padding:10px 10px 0 0;float:right;width:85px;}
+#comments ul.links{text-align:right;font-size:1.1em;}
+#comments ul.links li{display:inline;}
+#comments .box h2{font-size:1.6em;}
+
+
+#block-menu_block-1{margin-top:10px;}
+#block-menu_block-1 ul.menu{padding:5px 0 0 0;border-top:3px double #e8e8e8;}
+#block-menu_block-1 ul.menu ul.menu{margin:5px 0 8px 0px;padding:0 0 0 12px;border-top:0;border-left:3px solid #e8e8e8;}
+#block-menu_block-1 ul.menu li{margin-bottom:3px;}
+#block-menu_block-1 ul.menu a{color:#333;}#block-menu_block-1 ul.menu a.active{font-weight:bold;color:#e64d13;text-decoration:underline;}
+#block-menu_block-1 ul.menu a.active-trail{color:#e64d13;}
+
+
+.item-list ul.pager{padding:2px 0;position:relative;}
+.item-list ul.pager{font-size:1.2em;}
+.item-list ul.pager li{margin:0;padding:2px;display:block;float:left;}
+ul.pager li.pager-current{margin:2px;padding:0px 7px;background:#e8e8e8;border:1px solid #e8e8e8;-webkit-border-radius:3px;-moz-border-radius:3px;border-radius:3px;}
+ul.pager li a{padding:0px 8px;display:block;border:1px solid #e8e8e8;text-decoration:none;-webkit-border-radius:3px;-moz-border-radius:3px;border-radius:3px;}
+ul.pager li a:hover{border-color:#3c7aaf;}
+ul.pager li.pager-first a,ul.pager li.pager-previous a,ul.pager li.pager-next a,ul.pager li.pager-last a{text-indent:-999em;background:url(http://library.poly.edu/sites/all/themes/bd_library/img/main_sprite.png) no-repeat 4px -374px;}
+ul.pager li.pager-first a,ul.pager li.pager-last a{width:10px;}
+ul.pager li.pager-previous a,ul.pager li.pager-next a{width:5px;}
+ul.pager li.pager-first a{background-position:4px -409px;}
+ul.pager li.pager-previous a{}
+ul.pager li.pager-next a{background-position:-960px -374px;}
+ul.pager li.pager-last a{background-position:-955px -409px;}
+ul.pager li.pager-first a:hover{background-position:4px -428px;}
+ul.pager li.pager-previous a:hover{background-position:4px -391px;}
+ul.pager li.pager-next a:hover{background-position:-960px -391px;}
+ul.pager li.pager-last a:hover{background-position:-955px -428px;}
+
+
+
+ul.item-list,.item-list ul{font-size:1em;}
+a.read-more{padding-right:20px;background:url(http://library.poly.edu/sites/all/themes/bd_library/img/main_sprite.png) no-repeat right -325px;}a.read-more:hover{background-position:right -351px;}#content a.read-more{padding:3px 20px 3px 8px;border:1px solid #e8e8e8;text-decoration:none;-webkit-border-radius:3px;-moz-border-radius:3px;border-radius:3px;background-position:right -323px;}#content a.read-more:hover{border-color:#29879f;color:#00354b;background-position:right -349px;}
+
+
+
+a.link-btn{margin:0 22px 0 0;padding:5px 0 3px 10px;background:url(http://library.poly.edu/sites/all/themes/bd_library/img/main_sprite.png) no-repeat -638px -270px;}a.link-btn span{margin:0 -22px 0 0;padding:5px 22px 3px 0;background:url(http://library.poly.edu/sites/all/themes/bd_library/img/main_sprite.png) no-repeat right -270px;}a.link-btn:hover{background:url(http://library.poly.edu/sites/all/themes/bd_library/img/main_sprite.png) no-repeat -638px -295px;}a.link-btn:hover span{background:url(http://library.poly.edu/sites/all/themes/bd_library/img/main_sprite.png) no-repeat right -295px;}
+a.feed-link{padding:0 6px;background:url(http://library.poly.edu/sites/all/themes/bd_library/img/main_sprite.png) no-repeat -780px -62px;}a.feed-link:hover{background-position:-808px -62px;}
+p.back-to-top{margin-bottom:0;}a.back-to-top{padding-left:20px;background:url(http://library.poly.edu/sites/all/themes/bd_library/img/main_sprite.png) no-repeat left -246px;font-size:0.9em;color:#666;text-decoration:none;}a.back-to-top:hover{background-position:left -270px;text-decoration:underline;color:#222;}
+#sidebar-right p.post-info,p.post-info{margin-bottom:5px;font-size:1em;text-transform:uppercase;color:#999;}p.post-info span{color:#444;}p.post-info a{
+	color:#29879f;text-decoration:none;}p.post-info a:hover{text-decoration:underline;}
+body.node-news p.post-info{margin:20px 0 0 0;}
+span.tweet-link{text-transform:uppercase;font-size:0.8em;color:#aaa;}
+body#ckeditor{padding:20px;background:#fff;}.error{color:#e55;}div.error{border:1px solid #d77;}div.error,tr.error{background:#fcc;color:#200;padding:2px;}.warning{color:#e09010;}div.warning{border:1px solid #f0c020;}div.warning,tr.warning{background:#ffd;color:#220;padding:2px;}.ok{color:#008000;}div.ok{border:1px solid #00aa00;}div.ok,tr.ok{background:#dfd;color:#020;padding:2px;}
+#messages{margin-bottom:20px;}.messages{padding:5px;background-color:#fff;border:1px solid #b8d3e5;}.preview{background-color:#fcfce8;border:1px solid #e5e58f;}div.status{color:#33a333;border-color:#c7f2c8;}div.error,tr.error{color:#a30000;background-color:#FFCCCC;}.form-item input.error,.form-item textarea.error{border:1px solid #c52020;color:#363636;}
+html.js fieldset.collapsed{border-bottom-width:0;border-left-width:0;border-right-width:0;margin-bottom:0;height:1em;}html.js fieldset.collapsed *{display:none;}html.js fieldset.collapsed legend{display:block;}html.js fieldset.collapsible legend a{padding-left:15px;
+  background:url(/misc/menu-expanded.png) 5px 75% no-repeat;}html.js fieldset.collapsed legend a{background-image:url(/misc/menu-collapsed.png);
+  background-position:5px 50%;}
+* html.js fieldset.collapsed legend,* html.js fieldset.collapsed legend *,* html.js fieldset.collapsed table *{display:inline;}
+html.js fieldset.collapsible{position:relative;}html.js fieldset.collapsible legend a{display:block;}
+html.js fieldset.collapsible .fieldset-wrapper{overflow:auto;}
+
+
+</style>
+
+<div id="header" class="clearfix">
+		<h1 class="logo">
+			<a href="http://library.poly.edu/" title="Bern Dibner Library | Home" id="library-logo">
+				<img src="http://library.poly.edu/sites/all/themes/bd_library/logo.png" alt="Bern Dibner Library" width="247" height="46"/>
+			</a>
+			<a href="http://www.poly.edu" id="nyu-poly-logo" title="Go to NYU-Poly website">poly.edu</a>
+		</h1>
+		<div id="header-links-right">
+
+		<ul id="header-links"><li><a href="http://poly.kohalibrary.com/cgi-bin/koha/opac-user.pl" rel="nofollow" class="btn1"><span>My Library Account</span></a></li><li><a href="http://library.poly.edu/about/contact" class="btn1"><span>Contact Us</span></a></li><li><a href="http://library.poly.edu/research/ask" title="" class="ask-librarian">Ask a librarian</a></li></ul>		</div>
+	</div><!-- / #header -->
+
+<ul class="primary">
+	<li><a href="http://library.poly.edu/find">Find IT</a></li>
+	<li><a href="http://library.poly.edu/research">Research Help</a></li>
+	<li><a href="http://library.poly.edu/services">Services</a></li>
+	<li><a href="http://library.poly.edu/about">About the Library</a></li>
+	</ul>
+  
+<div id="opac-main-search" class="yui-g">
+   
+   <h1 id="libraryname" style="background-image: url('/opac-tmpl/prog/images/NoImage.png');">
+   <a href="/cgi-bin/koha/opac-main.pl">Bern Dibner Library</a></h1>
+
+<div id="fluid">
+<div id="fluid-offset">
+
+<div style="width:80%;*margin-bottom:-30px;">
+<span id="cmspan"></span>
+</div>
+
+
+<div id="moresearches">
+<a href="/cgi-bin/koha/opac-search.pl">Advanced Search</a>
+
+
+<span class="pipe"> | </span><a href="/cgi-bin/koha/opac-tags.pl">Tag Cloud</a>
+
+<span class="pipe"> | </span><a href="/cgi-bin/koha/opac-topissues.pl">Most Popular</a>
+<span class="pipe"> | </span><a href="/cgi-bin/koha/opac-coursereserves.pl">Course Reserves</a>
+
+  
+
+</div>
+ </div>
+</div>
+
+<div id="cartDetails">Your cart is empty.</div>
+
+
+<div id="listsDetails"></div>
+</div>
+</div>
+<div id="breadcrumbs" class="yui-g">
+</div>
+
+
+<form action="/cgi-bin/koha/opac-search.pl" method="get">
+	<div class="yui-g">
+
+
+    <!-- BOOLEAN SEARCH OPTIONS -->
+    <div id="booleansearch" class="container"><fieldset>
+        <legend>Search for:</legend>
+    
+        <p class="search_query_row">
+        
+         
+        <select name="idx" class="opac-advsearch">
+            <option value="kw">Keyword</option>
+            <option value="au,wrdl">Author</option>
+		
+		
+            <option value="au,browse">&nbsp;&nbsp;&nbsp;&nbsp; Author Browse</option>
+        
+		
+            <option value="ln">Language</option>
+
+            <option value="pb,wrdl">Publisher</option>
+            <option value="pl,wrdl">Publisher Location</option>
+
+            <option value="nb">ISBN</option>
+
+            <option value="su,wrdl">Subject</option>
+
+            <option value="su,browse">&nbsp;&nbsp;&nbsp;&nbsp; Subject Browse</option>
+
+            <option value="ti">Title</option>
+      
+            <option value="ti,browse">&nbsp;&nbsp;&nbsp;&nbsp; Title Browse</option>
+      
+      
+        </select>
+        <input type="text" size="30" name="q" title="Enter search terms" value="" />
+
+        </p>
+    
+        <p class="search_query_row">
+        
+         
+        <select name="idx" class="opac-advsearch">
+            <option value="kw">Keyword</option>
+            <option value="au,wrdl">Author</option>
+		
+		
+            <option value="au,browse">&nbsp;&nbsp;&nbsp;&nbsp; Author Browse</option>
+        
+		
+            <option value="ln">Language</option>
+
+            <option value="pb,wrdl">Publisher</option>
+            <option value="pl,wrdl">Publisher Location</option>
+
+            <option value="nb">ISBN</option>
+
+            <option value="su,wrdl">Subject</option>
+
+            <option value="su,browse">&nbsp;&nbsp;&nbsp;&nbsp; Subject Browse</option>
+
+            <option value="ti">Title</option>
+      
+            <option value="ti,browse">&nbsp;&nbsp;&nbsp;&nbsp; Title Browse</option>
+      
+      
+        </select>
+        <input type="text" size="30" name="q" title="Enter search terms" value="" />
+
+        </p>
+    
+        <p class="search_query_row">
+        
+         
+        <select name="idx" class="opac-advsearch">
+            <option value="kw">Keyword</option>
+            <option value="au,wrdl">Author</option>
+		
+		
+            <option value="au,browse">&nbsp;&nbsp;&nbsp;&nbsp; Author Browse</option>
+        
+		
+            <option value="ln">Language</option>
+
+            <option value="pb,wrdl">Publisher</option>
+            <option value="pl,wrdl">Publisher Location</option>
+
+            <option value="nb">ISBN</option>
+
+            <option value="su,wrdl">Subject</option>
+
+            <option value="su,browse">&nbsp;&nbsp;&nbsp;&nbsp; Subject Browse</option>
+
+            <option value="ti">Title</option>
+      
+            <option value="ti,browse">&nbsp;&nbsp;&nbsp;&nbsp; Title Browse</option>
+      
+      
+        </select>
+        <input type="text" size="30" name="q" title="Enter search terms" value="" />
+
+        </p>
+    
+
+    </fieldset></div>
+        
+	</div>
+<div id="pubrange" class="container">
+<fieldset>
+<!-- PUB RANGE OPTION -->
+<legend>Publication Date Range:</legend>
+<span>For example:  1999-2001.  You could also use "-1987" for everything published before 1987 or "2008-" for everything published after 2008.</span>
+<input type="text" size="30" name="limit-yr" title="Enter search terms" value="" />
+</fieldset>
+<!-- /PUB RANGE OPTION -->
+</div>
+	<div class="yui-g">
+<!-- /BOOLEAN SEARCH OPTIONS -->
+    
+    <div id="advsearch-itemtype" class="container">
+	<fieldset>
+    <legend>Limit to any of the following:</legend>
+    <table>
+        <tr>
+      
+        <td><input type="checkbox" id="itype-0" name="limit" value="mc-itype:1 Week"/><label for="itype-0"><img border="0" src="http://coursematerials.poly.edu/InstructionalMaterials/Koha/ItemTypes/oneweek.gif" alt="1 Week" />&nbsp;
+        1 Week</label></td>
+        
+      
+        <td><input type="checkbox" id="itype-1" name="limit" value="mc-itype:Accompanyi"/><label for="itype-1"><img border="0" src="http://coursematerials.poly.edu/InstructionalMaterials/Koha/ItemTypes/software.gif" alt="Accompanying Software" />&nbsp;
+        Accompanying Software</label></td>
+        
+      
+        <td><input type="checkbox" id="itype-2" name="limit" value="mc-itype:Cassette"/><label for="itype-2"><img border="0" src="http://coursematerials.poly.edu/InstructionalMaterials/Koha/ItemTypes/cassette.gif" alt="Audio Cassette" />&nbsp;
+        Audio Cassette</label></td>
+        
+      
+        <td><input type="checkbox" id="itype-3" name="limit" value="mc-itype:Monograph"/><label for="itype-3"><img border="0" src="http://coursematerials.poly.edu/InstructionalMaterials/Koha/ItemTypes/books.gif" alt="Books" />&nbsp;
+        Books</label></td>
+        </tr><tr>
+      
+        <td><input type="checkbox" id="itype-4" name="limit" value="mc-itype:CD ROM"/><label for="itype-4"><img border="0" src="http://coursematerials.poly.edu/InstructionalMaterials/Koha/ItemTypes/cd.gif" alt="CD ROM" />&nbsp;
+        CD ROM</label></td>
+        
+      
+        <td><input type="checkbox" id="itype-5" name="limit" value="mc-itype:CR 3 Hours"/><label for="itype-5"><img border="0" src="http://coursematerials.poly.edu/InstructionalMaterials/Koha/ItemTypes/course.gif" alt="Course reserve- 3 Hrs." />&nbsp;
+        Course reserve- 3 Hrs.</label></td>
+        
+      
+        <td><input type="checkbox" id="itype-6" name="limit" value="mc-itype:REFERENCE"/><label for="itype-6">&nbsp;
+        DON'T USE</label></td>
+        
+      
+        <td><input type="checkbox" id="itype-7" name="limit" value="mc-itype:DVD"/><label for="itype-7"><img border="0" src="http://coursematerials.poly.edu/InstructionalMaterials/Koha/ItemTypes/dvd.gif" alt="DVD" />&nbsp;
+        DVD</label></td>
+        </tr><tr>
+      
+        <td><input type="checkbox" id="itype-8" name="limit" value="mc-itype:DIGITAL"/><label for="itype-8"><img border="0" src="/opac-tmpl/prog/itemtypeimg/bridge/web.gif" alt="Digital" />&nbsp;
+        Digital</label></td>
+        
+      
+        <td><input type="checkbox" id="itype-9" name="limit" value="mc-itype:Hardware"/><label for="itype-9"><img border="0" src="http://coursematerials.poly.edu/InstructionalMaterials/Koha/ItemTypes/hardware.gif" alt="Hardware" />&nbsp;
+        Hardware</label></td>
+        
+      
+        <td><input type="checkbox" id="itype-10" name="limit" value="mc-itype:ILL"/><label for="itype-10">&nbsp;
+        ILL-Lending</label></td>
+        
+      
+        <td><input type="checkbox" id="itype-11" name="limit" value="mc-itype:Journal"/><label for="itype-11"><img border="0" src="http://coursematerials.poly.edu/InstructionalMaterials/Koha/ItemTypes/journal.gif" alt="Journal" />&nbsp;
+        Journal</label></td>
+        </tr><tr>
+      
+        <td><input type="checkbox" id="itype-12" name="limit" value="mc-itype:LAPTOPS"/><label for="itype-12">&nbsp;
+        Laptops</label></td>
+        
+      
+        <td><input type="checkbox" id="itype-13" name="limit" value="mc-itype:Overnight"/><label for="itype-13"><img border="0" src="http://coursematerials.poly.edu/InstructionalMaterials/Koha/ItemTypes/overnight.gif" alt="Overnight" />&nbsp;
+        Overnight</label></td>
+        
+      
+        <td><input type="checkbox" id="itype-14" name="limit" value="mc-itype:RARE BOOKS"/><label for="itype-14">&nbsp;
+        Rare Books</label></td>
+        
+      
+        <td><input type="checkbox" id="itype-15" name="limit" value="mc-itype:REF"/><label for="itype-15"><img border="0" src="http://coursematerials.poly.edu/InstructionalMaterials/Koha/ItemTypes/reference.gif" alt="Reference" />&nbsp;
+        Reference</label></td>
+        </tr><tr>
+      
+        <td><input type="checkbox" id="itype-16" name="limit" value="mc-itype:SPEC COLL"/><label for="itype-16">&nbsp;
+        Special Collections</label></td>
+        
+      
+        <td><input type="checkbox" id="itype-17" name="limit" value="mc-itype:Technical "/><label for="itype-17"><img border="0" src="http://coursematerials.poly.edu/InstructionalMaterials/Koha/ItemTypes/technical.gif" alt="Technical Report" />&nbsp;
+        Technical Report</label></td>
+        
+      
+        <td><input type="checkbox" id="itype-18" name="limit" value="mc-itype:Thesis"/><label for="itype-18"><img border="0" src="http://coursematerials.poly.edu/InstructionalMaterials/Koha/ItemTypes/thesis.gif" alt="Thesis" />&nbsp;
+        Thesis</label></td>
+        
+      
+        <td><input type="checkbox" id="itype-19" name="limit" value="mc-itype:Video"/><label for="itype-19"><img border="0" src="http://coursematerials.poly.edu/InstructionalMaterials/Koha/ItemTypes/video.gif" alt="Video Cassette" />&nbsp;
+        Video Cassette</label></td>
+        
+      
+		</tr>
+    </table>
+	</fieldset>
+    </div>
+    
+
+        
+</div>
+<div class="yui-g">
+
+<div class="yui-u first">
+<!-- AVAILABILITY LIMITS -->
+	
+<!-- /AVAILABILITY LIMITS -->
+</div>
+<div class="yui-u">
+<!-- RANK LIMITS -->
+    <div id="sortby" class="container"><fieldset><legend>Sort by: </legend>
+        <select id="sort_by" name="sort_by">
+<option value="relevance">Relevance</option>
+<optgroup label="Popularity">
+<option value="popularity_dsc">Popularity (Most to Least)</option>
+<option value="popularity_asc">Popularity (Least to Most)</option>
+</optgroup>
+<optgroup label="Author">
+<option value="author_az">Author (A-Z)</option>
+<option value="author_za">Author (Z-A)</option>
+</optgroup>
+<optgroup label="Call Number">
+<option value="call_number_asc">Call Number (Non-fiction 0-9 to Fiction A-Z)</option>
+<option value="call_number_dsc">Call Number (Fiction Z-A to Non-fiction 9-0)</option>
+</optgroup>
+<optgroup label="Dates">
+<option value="pubdate_dsc">Publication/Copyright Date: Newest to Oldest</option>
+<option value="pubdate_asc">Publication/Copyright Date: Oldest to Newest</option>
+<option value="acqdate_dsc">Acquisition Date: Newest to Oldest</option>
+<option value="acqdate_asc">Acquisition Date: Oldest to Newest</option>
+</optgroup>
+<optgroup label="Title">
+<option value="title_az">Title (A-Z)</option>
+<option value="title_za">Title (Z-A)</option>
+</optgroup>
+
+
+</select></fieldset></div>
+<!-- RANK LIMITS -->
+</div>
+</div>
+
+<div class="yui-g"><div class="container" style="text-align: center;"><!-- SEARCH BUTTONS -->
+
+    <input class="submit" type="submit" accesskey="s" name="do" title="Search" value="Search" />
+    
+        <a href="/cgi-bin/koha/opac-search.pl?expanded_options=1">[More options]</a>
+    
+    <a href="/cgi-bin/koha/opac-search.pl?do=Clear">[New Search]</a>
+
+<!-- /SEARCH BUTTONS --></div></div>
+</form>
+
+<script type="text/javascript" language="javascript">
+$(document).ready(function(){
+    var $search_query_row = $("p.search_query_row").eq(1); // store for cloning.
+    var $music_query_row = $("div.music_query_row").eq(1); // store for cloning.
+    $("p.search_query_row a.buttonPlus").click(function(){
+        var $newrow = $search_query_row.clone().appendTo($search_query_row.parent());
+        $(this).appendTo($newrow);//i.e. move this [+] link to the new row.
+        return false;
+    });
+    $("div.music_query_row a.buttonPlus").click(function(){
+        var $newrow = $music_query_row.clone().appendTo($music_query_row.parent());
+        $(this).appendTo($newrow);
+        return false;
+    });
+});
+    $("select.opac-advsearch").live('change',function(){
+        /* TODO: this should be .on('change'...) once jquery is upgraded */
+        if($(this).val()=='ln'){
+            var $input = $(this).parents('p.search_query_row').find("input[name='q']");
+            if($input.val().length > 3){ $input.val($input.val().substr(0,3)); };
+            $input.attr('maxlength','3');
+            $("#fakeLangForm select.languagePicker").clone().insertAfter($input);
+        } else {
+            var $row = $(this).parents('p.search_query_row');
+            $row.find("input[name='q']").removeAttr('maxlength');
+            $row.find("select.languagePicker").remove();
+        };
+    });
+    $("select.languagePicker").live('change',function(){
+        $(this).prev('input').val($(this).val());
+    });
+</script>
+
+</div>
+<!-- Language picker -->
+<form class="hidden" id="fakeLangForm">
+  <select class="languagePicker">
+    <option value="">Choose language</option>
+    
+      <option value="ara">&#1575;&#1604;&#1593;&#1585;&#1576;&#1610;&#1577; (Arabic)</option>
+    
+      <option value="arm">&#1344;&#1377;&#1397;&#1381;&#1408;&#1383;&#1398; (Armenian)</option>
+    
+      <option value="bul">&#1041;&#1098;&#1083;&#1075;&#1072;&#1088;&#1089;&#1082;&#1080; (Bulgarian)</option>
+    
+      <option value="chi">&#20013;&#25991; (Chinese)</option>
+    
+      <option value="cze">&#x010D;e&#353;tina (Czech)</option>
+    
+      <option value="dan">D&aelig;nsk (Danish)</option>
+    
+      <option value="dut">ned&#601;rl&#593;ns (Dutch)</option>
+    
+      <option value="eng">English (English)</option>
+    
+      <option value="fre">Fran&ccedil;ais (French)</option>
+    
+      <option value="ger">Deutsch (German)</option>
+    
+      <option value="gre">&#949;&#955;&#955;&#951;&#957;&#953;&#954;&#940; (Greek, Modern [1453- ])</option>
+    
+      <option value="heb">&#1506;&#1489;&#1512;&#1497;&#1514; (Hebrew)</option>
+    
+      <option value="hin">&#2361;&#2367;&#2344;&#2381;&#2342;&#2368; (Hindi)</option>
+    
+      <option value="hun">Magyar (Hungarian)</option>
+    
+      <option value="ind">Bahasa Indonesia (Indonesian)</option>
+    
+      <option value="ita">Italiano (Italian)</option>
+    
+      <option value="jpn">&#26085;&#26412;&#35486; (Japanese)</option>
+    
+      <option value="kor">&#54620;&#44397;&#50612; (Korean)</option>
+    
+      <option value="lat">Latina (Latin)</option>
+    
+      <option value="nor">Norsk (Norwegian)</option>
+    
+      <option value="per">&#1601;&#1575;&#1585;&#1587;&#1609; (Persian)</option>
+    
+      <option value="pol">Polski (Polish)</option>
+    
+      <option value="por">Portugu&ecirc;s (Portuguese)</option>
+    
+      <option value="rum">Rom&acirc;n&#259; (Romanian)</option>
+    
+      <option value="rus">&#1056;&#1091;&#1089;&#1089;&#1082;&#1080;&#1081; (Russian)</option>
+    
+      <option value="spa">Espa&ntilde;ol (Spanish)</option>
+    
+      <option value="swe">Svenska (Swedish)</option>
+    
+      <option value="tha">&#3616;&#3634;&#3625;&#3634;&#3652;&#3607;&#3618; (Thai)</option>
+    
+      <option value="tur">T&uuml;rk&ccedil;e (Turkish)</option>
+    
+      <option value="ukr">&#1059;&#1082;&#1088;&#1072;&#1111;&#1085;&#1089;&#1100;&#1082;&#1072; (Ukranian)</option>
+    
+  </select>
+</form>
+
+
+	<div class="ft">
+        <br/>
+<br/>
+<center><strong>Bern Dibner Library of Science and Technology</strong><br />
+
+Five MetroTech Center, Brooklyn, NY 11201-9818
+		
+<p id="copyrights">&copy; 2013 Polytechnic Institute of New York University.	</center>
+    </div>
+
+</div>
+
+
+
+
+</body>
+</html>
+

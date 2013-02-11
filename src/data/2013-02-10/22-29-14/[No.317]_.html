@@ -1,0 +1,2762 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!--
+SFX (tm) Searchable A-Z template Version 3
+Copyright Ex Libris, USA
+-->
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head profile="http://gmpg.org/xfn/11">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>Find e-Journal</title>
+	<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link rel="Stylesheet" type="text/css" href="/poly_nyu/css/public/style.css">
+	<link rel="Stylesheet" type="text/css" href="/poly_nyu/css/azlist_ver3/pagination.css">
+	<link rel="Stylesheet" type="text/css" href="/poly_nyu/css/public/custom.css">
+	<script type="text/javascript" src="http://echo.poly.edu/resources/sfx/jquery.labelify.js"></script>
+	<script language="JavaScript" src="/poly_nyu/js/admin/jquery-latest.js"></script>
+	<script language="JavaScript" type="text/javascript">
+		var azBase = "?&amp;param_sid_save=e28ee74d8366f04861b48206788dfded&amp;param_chinese_checkbox_type_save=Pinyin&amp;param_lang_save=eng&amp;param_letter_group_save=V&amp;param_perform_save=searchTitle&amp;param_letter_group_script_save=Latin&amp;param_chinese_checkbox_save=0&amp;param_services2filter_save=getFullTxt&amp;param_current_view_save=detail&amp;param_pattern_save=&amp;param_jumpToPage_save=&amp;param_type_save=browseLetterGroup&amp;param_textSearchType_save=contains&amp;param_ui_control_scripts_save=&amp;&amp;display_single_object=";
+		var imageBase = "/poly_nyu/img";
+		$(document).ready(function() {
+			$('form[name=az_user_form]').bind('keypress',
+				function(e){
+        			if (e.keyCode=='13'){
+                		document.forms.az_user_form.submit()
+        			}
+				});
+		});
+	</script>
+<script type="text/javascript">
+$(document).ready(function(){
+  $("input#maineg, input#inlist").labelify({labelledClass: "labelinside"});
+  $("input#inlabel").labelify({text: "label", labelledClass: "labelinside"});
+  $("input#kryogenix").labelify({text: function(input) { return "kryogenix.org"; }, labelledClass: "labelinside"});
+  $("input#classed").labelify({labelledClass: "redlabel"});
+});
+</script>
+<style type="text/css">
+input.labelinside {
+  color: #999;
+}
+input.redlabel { color: red; }
+</style>
+
+	<link rel="shortcut icon" href="http://library.poly.edu/sites/all/themes/bd_library/favicon.ico" type="image/x-icon" />	
+    <script language="JavaScript" type="text/javascript" src="/poly_nyu/js/azlist_ver3/common.js"></script>
+    <script language="JavaScript" type="text/javascript" src="/poly_nyu/js/azlist_ver3/category.js"></script>
+    <script language="JavaScript" type="text/javascript" src="/poly_nyu/js/azlist_ver3/locate.js"></script>
+    <script language="JavaScript" type="text/javascript" src="/poly_nyu/js/azlist_ver3/Popup.js"></script>
+    <script language="JavaScript" type="text/javascript" src="/poly_nyu/js/azlist_ver3/language_select_box.js"></script>    
+	<script type="text/javascript" language="JavaScript" src="/poly_nyu/js/common/main.js"></script>
+    <script type="text/javascript" language="JavaScript" src="/poly_nyu/js/common/date.js"></script>
+	<link rel="Stylesheet" type="text/css" href="/poly_nyu/css/azlist_ver3/tooltip.css">
+	
+	<!-- Language Select Box Styles -->	
+	<style type="text/css">
+	    select.replace { 	  
+	      display: block;
+	      margin: 0 0 10px;
+	      width: 150px;
+	    }
+	    select.replaced {   
+	      width: 1px;
+	      position: absolute;
+	      left: -999em;
+	    }
+	    ul.selectReplacement {
+	      margin: 0 0 10px;
+	      padding: 0;
+	      height: 30px;
+	      width: 150px;
+	      position: relative;
+	      z-index: 1000;
+	    }
+	    ul.selectReplacement li {
+	      text-align: left;
+	      color: #444;
+	      cursor: pointer;
+	      display: none;
+	      font-size: 11px;
+	      line-height: 1.7em;
+	      list-style: none;
+	      margin: 0;
+	      padding: 1px 12px;
+	    }
+	    
+	    ul.selectOpen li.firstOption{
+			background-image: url(/poly_nyu/img/azlist_ver3/select_top_focus.gif);    
+	        display: block;    
+	    	border: 0;
+	    }
+	
+	    ul.selectOpen li {
+	      background: white;
+	      display: block;
+	      border-right: 2px solid #808080;
+	      border-left: 2px solid #808080;
+	      border-bottom: 1px solid #808080;
+	    }
+	
+	    ul.selectReplacement1 li.firstOption{
+	        display: none;    
+	    	border: 0;
+	    }
+	
+	    ul.selectReplacement li.selected {
+	      color: #444;
+	      display: block;
+	      background: url(/poly_nyu/img/azlist_ver3/select_top.gif) top left no-repeat;
+	    }
+	    
+	    ul.selectOpen li.selected {
+		  font-weight: bold;
+	      border-right: 2px solid #808080;
+	      border-left: 2px solid #808080;
+	      border-bottom: 1px solid #808080;	  
+	      display: block;
+	      
+	    }
+	    
+	</style>
+<!-- End Of Language Select Box Styles -->	
+
+	<style type="text/css">
+.navigationTabActive{
+	text-align: center;
+	background: url("http://echo.poly.edu/resources/sfx/images/active_bg.jpg") repeat-x ;
+}
+
+
+.navigationTab{
+	text-align: center;
+	color: #FFF;
+
+}
+
+.navigationLinkActive{
+	color: #FFF;
+	font-size: 15px;
+	font-weight: bold;
+}
+.navigationLink{
+	color: #FFF;
+	font-size: 15px;
+	font-weight: normal;
+}
+
+
+.GoButton{
+	background-image: url(/poly_nyu/img/azlist_ver3/go_button_middle.gif);
+	text-align: center;
+	color: white;
+	font-size: 18px;
+	font-weight: bold;
+}
+
+.HalfCell{
+	background-image: url(/poly_nyu/img/azlist_ver3/half.gif);
+}
+</style>
+
+	
+	<script type="text/javascript" src="http://library.poly.edu/sites/all/themes/bd_library/js/qef1mhv.js"></script>
+
+	<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+    	<!--[if lte IE 7]>
+      		<link type="text/css" rel="stylesheet" media="all" href="http://library.poly.edu/sites/all/themes/bd_library/css/fix-ie.css" />    <![endif]-->
+    	<!--[if IE 8]>
+      		<link type="text/css" rel="stylesheet" media="all" href="http://library.poly.edu/sites/all/themes/bd_library/css/fix-ie8.css" />    <![endif]-->
+</head>
+<body >
+
+
+<div id="container">
+	<div id="header" class="clearfix">
+		<img src="http://echo.poly.edu/resources/sfx/images/beta-ribbon.png" style="float: left;"/> 
+		<br />
+		<h1 class="logo" style="margin-left: -30px;"><a href="http://library.poly.edu" title="Bern Dibner Library | Home" id="library-logo"><img src="http://library.poly.edu/sites/all/themes/bd_library/logo.png" alt="Bern Dibner Library" width="247" height="46"/></a><a href="http://www.poly.edu" id="nyu-poly-logo" title="Go to NYU-Poly website">poly.edu</a></h1>		<div id="header-links-right">
+		<ul id="header-links"><li><a href="http://poly.kohalibrary.com/cgi-bin/koha/opac-user.pl" rel="nofollow" class="btn1"><span>My Library Account</span></a></li><li><a href="/about/contact" class="btn1"><span>Contact Us</span></a></li><li><a href="/research/ask" title="" class="ask-librarian">Ask a librarian</a></li></ul>		</div>
+	</div><!-- / #header -->
+	<div id="header-container" class="clearfix">
+		<div class="insider">
+		<h1>Find Journals</h1>
+<form NAME="az_user_form" method="get" accept-charset="UTF-8" action="">
+
+<input type=hidden name="param_sid_save" value="e28ee74d8366f04861b48206788dfded">
+<input type=hidden name="param_chinese_checkbox_type_save" value="Pinyin">
+<input type=hidden name="param_lang_save" value="eng">
+<input type=hidden name="param_letter_group_save" value="V">
+<input type=hidden name="param_perform_save" value="searchTitle">
+<input type=hidden name="param_letter_group_script_save" value="Latin">
+<input type=hidden name="param_chinese_checkbox_save" value="0">
+<input type=hidden name="param_services2filter_save" value="getFullTxt">
+<input type=hidden name="param_current_view_save" value="detail">
+<input type=hidden name="param_pattern_save" value="">
+<input type=hidden name="param_jumpToPage_save" value="">
+<input type=hidden name="param_type_save" value="browseLetterGroup">
+<input type=hidden name="param_textSearchType_save" value="contains">
+
+<input type=hidden name="param_type_value" value="textSearch">
+<input type=hidden name="param_jumpToPage_value" value="">
+<!-- This is AJAX Powered template -->
+<script language="JavaScript" type="text/javascript" src="/poly_nyu/js/azlist_ver3/title.js"></script>
+<script language="JavaScript" type="text/javascript" src="/poly_nyu/js/azlist_ver3/tooltip.js"></script>
+
+<div id="title-content">
+
+	<div id="title-options">
+		<div id="option-first">
+			<label for="startsWith">Starts with</label>
+			<input type="radio" name="param_textSearchType_value" id="startsWith" value="startsWith" >
+		</div>
+		<div id="option-last">
+			<label for="contains">Contains</label>
+			<input type="radio" name="param_textSearchType_value" id="contains" value="contains" checked>
+		</div>
+	</div>
+	<div class="clear" style="height: 8px;"></div>
+	<div id="title-input">
+	
+	<div class="title-text-input">
+		<!-- search text field -->				
+	
+		<div>
+<script type="text/javascript" src="/poly_nyu/js/autocomplete/base64.js"></script>
+<script type="text/javascript" src="/poly_nyu/js/autocomplete/actb.js"></script>
+<script type="text/javascript" src="/poly_nyu/js/autocomplete/common.js"></script>
+
+<script type="text/javascript"> 
+var ajax = [];function pjx(args,fname,method) { this.target=args[1]; this.args=args[0]; method=(method)?method:'GET'; if(method=='post'){method='POST';} this.method = method; this.r=ghr(); this.url = this.getURL(fname);}function formDump(){ var all = []; var fL = document.forms.length; for(var f = 0;f<fL;f++){ var els = document.forms[f].elements; for(var e in els){ var tmp = (els[e].id != undefined)? els[e].id : els[e].name; if(typeof tmp != 'string'){continue;} if(tmp){ all[all.length]=tmp} } } return all;}function getVal(id) { if (id.constructor == Function ) { return id(); } if (typeof(id)!= 'string') { return id; } var element = document.getElementById(id); if( !element ) { for( var i=0; i<document.forms.length; i++ ){ element = document.forms[i].elements[id]; if( element ) break; } if( element && !element.type ) element = element[0]; } 
+if(!element){ return ''; } if(element.type == 'select-one') { if(element.selectedIndex == -1) return; var item = element[element.selectedIndex]; return item.value || item.text; } if(element.type == 'select-multiple') { varans = ''; var k =0; for (var i=0;i<element.length;i++) { if (element[i].selected || element[i].checked ) { var ans1= element[i].value || element[i].text;ans = ans + "," + ans1 } } return ans; } if(element.type == 'radio' || element.type == 'checkbox'){ var ans =[]; var elms = document.getElementsByTagName('input'); var endk = elms.length ; var i =0; for(var k=0;k<endk;k++){ if(elms[k].type== element.type && elms[k].checked && (elms[k].id==id||elms[k].name==id)){ ans[i++]=elms[k].value; } } return ans; } if( element.value == undefined ){ return element.innerHTML; }else{ return element.value; }}function fnsplit(arg) { var url=""; if(arg=='NO_CACHE'){return '&pjxrand='+Math.random()} if((typeof(arg)).toLowerCase() == 'object'){ for(var k in arg){ url += '&' + k + '=' + arg[k]; } }else if (arg.indexOf('__') != -1) { arga = arg.split(/__/); url += '&' + arga[0] +'='+ escape(arga[1]); } else { var res = getVal(arg) || ''; if(res.constructor != Array){ res = [res] } for(var i=0;i<res.length;i++) { var encoded = Base64.encode(res[i]); url += '&args=' + escape(encoded).replace(/\+/g,'%2b') + '&' + arg + '=' + escape(encoded).replace(/\+/g,'%2b'); } }   return url;}pjx.prototype = { send2perl : function(){ var r = this.r; var dt = this.target; this.pjxInitialized(dt); var url=this.url; var postdata; if(this.method=="POST"){ var idx=url.indexOf('?'); postdata = url.substr(idx+1); url = url.substr(0,idx); } r.open(this.method,url,true); ; if(this.method=="POST"){ r.setRequestHeader("Content-Type", "application/x-www-form-urlencoded"); r.send(postdata); } if(this.method=="GET"){ r.send(null); } r.onreadystatechange = handleReturn; }, pjxInitialized : function(){}, pjxCompleted : function(){}, readyState4 : function(){ var rsp = unescape(this.r.responseText); /* the response from perl */ var splitval = '__pjx__'; /* to split text */ /* fix IE problems with undef values in an Array getting squashed*/ rsp = rsp.replace(splitval+splitval+'g',splitval+" "+splitval); var data = rsp.split(splitval); dt = this.target; if (dt.constructor != Array) { dt=[dt]; } if (data.constructor != Array) { data=[data]; } if (typeof(dt[0])!='function') { for ( var i=0; i<dt.length; i++ ) { var div = document.getElementById(dt[i]); if (div.type =='text' || div.type=='textarea' || div.type=='hidden' ) { div.value=data[i]; } else{ div.innerHTML = data[i]; } } } else if (typeof(dt[0])=='function') { dt[0].apply(this,data); } this.pjxCompleted(dt); }, getURL : function(fname) { var args = this.args; var url= 'fname=' + fname; for (var i=0;i<args.length;i++) { url=url + args[i]; } return url; }};handleReturn = function() { for( var k=0; k<ajax.length; k++ ) { if (ajax[k].r==null) { ajax.splice(k--,1); continue; } if ( ajax[k].r.readyState== 4) { ajax[k].readyState4(); ajax.splice(k--,1); continue; } }};var ghr=getghr();function getghr(){ if(typeof XMLHttpRequest != "undefined") { return function(){return new XMLHttpRequest();} } var msv= ["Msxml2.XMLHTTP.7.0", "Msxml2.XMLHTTP.6.0", "Msxml2.XMLHTTP.5.0", "Msxml2.XMLHTTP.4.0", "MSXML2.XMLHTTP.3.0", "MSXML2.XMLHTTP", "Microsoft.XMLHTTP"]; for(var j=0;j<=msv.length;j++){ try { A = new ActiveXObject(msv[j]); if(A){ return function(){return new ActiveXObject(msv[j]);} } } catch(e) { } } return false;}function jsdebug(){ var tmp = document.getElementById('pjxdebugrequest').innerHTML = "<br><pre>"; for( var i=0; i < ajax.length; i++ ) { tmp += '<a href= '+ ajax[i].url +' target=_blank>' + decodeURI(ajax[i].url) + ' </' + 'a><br>'; } document.getElementById('pjxdebugrequest').innerHTML = tmp + "</" + "pre>";}function find_param_pattern_value() { var args = find_param_pattern_value.arguments; for( var i=0; i<args[0].length;i++ ) { args[0][i] = fnsplit(args[0][i]); } var l = ajax.length; ajax[l]= new pjx(args,"find_param_pattern_value",args[2]); ajax[l].url = '/poly_nyu/cgi/core/autocomplete_srv.cgi?list_size=10&id=param_pattern_value&class=AZLIST::Autocomplete&param_name_1=profile&param_value_1=default&' + ajax[l].url; ajax[l].send2perl(); ;}
+</script>
+
+
+<input type=text
+	AUTOCOMPLETE="off"
+	onfocus="AutocompleteObj_param_pattern_value.actb_hasfocus = true; ajaxStart('param_pattern_value','\'param_chinese_checkbox_value\',\'param_textSearchType_value\',\'param_ui_control_scripts_value\',\'azbook\',\'param_vendor_value\',\'param_aufirst_value\',\'param_aulast_value\''); return true;"
+	name="param_pattern_value" 
+	value="" 
+	id="param_pattern_value" 
+	style="width: 240px;"
+	onblur="AutocompleteObj_param_pattern_value.actb_hasfocus = false;"
+	onkeyup="ajaxStart('param_pattern_value','\'param_chinese_checkbox_value\',\'param_textSearchType_value\',\'param_ui_control_scripts_value\',\'azbook\',\'param_vendor_value\',\'param_aufirst_value\',\'param_aulast_value\''); return true;" 
+>
+
+<script type="text/javascript">
+	var AutocompleteObj_param_pattern_value = actb(document.getElementById('param_pattern_value'),new Array(), 'poly_nyu', '\'param_chinese_checkbox_value\',\'param_textSearchType_value\',\'param_ui_control_scripts_value\',\'azbook\',\'param_vendor_value\',\'param_aufirst_value\',\'param_aulast_value\'');
+	AutocompleteObj_param_pattern_value.actb_lim 		= '10';
+	AutocompleteObj_param_pattern_value.actb_bgColor 	= '#FAFBFC';
+	AutocompleteObj_param_pattern_value.actb_textColor = '#000000';
+	AutocompleteObj_param_pattern_value.actb_hColor 	= '#CDEDFC';
+	AutocompleteObj_param_pattern_value.actb_fFamily 	= 'Verdana';
+	AutocompleteObj_param_pattern_value.actb_fSize 	= '11px';
+	AutocompleteObj_param_pattern_value.actb_list_extra_width 	= 0;
+	AutocompleteObj_param_pattern_value.actb_more_results_available_msg 	= "More results are available...";
+	AutocompleteObj_param_pattern_value.actb_delimiter = new Array();
+</script>
+
+</div>
+	                                 
+	<!-- end of search text field -->
+	</div>
+	<div class="title-submit">
+		<span class="submit-btn"><input class="form-submit" type="submit" value="Go"/></span>
+	</div>
+	</div>
+	<div id="title-alphabet-loop">
+	<label style="color:#68280f">Browse by Title</label>
+	<p class="form-alpha-list"><span>
+	<!-- alphabet loop -->
+       	
+              	
+                     
+                     
+	              	<a class="ABC" href="?&amp;param_sid_save=e28ee74d8366f04861b48206788dfded&amp;param_chinese_checkbox_type_save=Pinyin&amp;param_lang_save=eng&amp;param_letter_group_save=V&amp;param_perform_save=searchTitle&amp;param_letter_group_script_save=Latin&amp;param_chinese_checkbox_save=0&amp;param_services2filter_save=getFullTxt&amp;param_current_view_save=detail&amp;param_pattern_save=&amp;param_jumpToPage_save=&amp;param_type_save=browseLetterGroup&amp;param_textSearchType_save=contains&amp;param_ui_control_scripts_save=&amp;&amp;param_type_value=browseLetterGroup&amp;param_jumpToPage_value=&amp;param_pattern_value=&amp;param_letter_group_value=0%2C1%2C2%2C3%2C4%2C5%2C6%2C7%2C8%2C9&amp;param_letter_group_script_value=Latin">0-9</a>
+                            
+              
+              	
+                     
+	              	<a class="ABC" href="?&amp;param_sid_save=e28ee74d8366f04861b48206788dfded&amp;param_chinese_checkbox_type_save=Pinyin&amp;param_lang_save=eng&amp;param_letter_group_save=V&amp;param_perform_save=searchTitle&amp;param_letter_group_script_save=Latin&amp;param_chinese_checkbox_save=0&amp;param_services2filter_save=getFullTxt&amp;param_current_view_save=detail&amp;param_pattern_save=&amp;param_jumpToPage_save=&amp;param_type_save=browseLetterGroup&amp;param_textSearchType_save=contains&amp;param_ui_control_scripts_save=&amp;&amp;param_type_value=browseLetterGroup&amp;param_jumpToPage_value=&amp;param_pattern_value=&amp;param_letter_group_value=A&amp;param_letter_group_script_value=Latin">A</a>
+                            
+              
+              	
+                     
+	              	<a class="ABC" href="?&amp;param_sid_save=e28ee74d8366f04861b48206788dfded&amp;param_chinese_checkbox_type_save=Pinyin&amp;param_lang_save=eng&amp;param_letter_group_save=V&amp;param_perform_save=searchTitle&amp;param_letter_group_script_save=Latin&amp;param_chinese_checkbox_save=0&amp;param_services2filter_save=getFullTxt&amp;param_current_view_save=detail&amp;param_pattern_save=&amp;param_jumpToPage_save=&amp;param_type_save=browseLetterGroup&amp;param_textSearchType_save=contains&amp;param_ui_control_scripts_save=&amp;&amp;param_type_value=browseLetterGroup&amp;param_jumpToPage_value=&amp;param_pattern_value=&amp;param_letter_group_value=B&amp;param_letter_group_script_value=Latin">B</a>
+                            
+              
+              	
+                     
+	              	<a class="ABC" href="?&amp;param_sid_save=e28ee74d8366f04861b48206788dfded&amp;param_chinese_checkbox_type_save=Pinyin&amp;param_lang_save=eng&amp;param_letter_group_save=V&amp;param_perform_save=searchTitle&amp;param_letter_group_script_save=Latin&amp;param_chinese_checkbox_save=0&amp;param_services2filter_save=getFullTxt&amp;param_current_view_save=detail&amp;param_pattern_save=&amp;param_jumpToPage_save=&amp;param_type_save=browseLetterGroup&amp;param_textSearchType_save=contains&amp;param_ui_control_scripts_save=&amp;&amp;param_type_value=browseLetterGroup&amp;param_jumpToPage_value=&amp;param_pattern_value=&amp;param_letter_group_value=C&amp;param_letter_group_script_value=Latin">C</a>
+                            
+              
+              	
+                     
+	              	<a class="ABC" href="?&amp;param_sid_save=e28ee74d8366f04861b48206788dfded&amp;param_chinese_checkbox_type_save=Pinyin&amp;param_lang_save=eng&amp;param_letter_group_save=V&amp;param_perform_save=searchTitle&amp;param_letter_group_script_save=Latin&amp;param_chinese_checkbox_save=0&amp;param_services2filter_save=getFullTxt&amp;param_current_view_save=detail&amp;param_pattern_save=&amp;param_jumpToPage_save=&amp;param_type_save=browseLetterGroup&amp;param_textSearchType_save=contains&amp;param_ui_control_scripts_save=&amp;&amp;param_type_value=browseLetterGroup&amp;param_jumpToPage_value=&amp;param_pattern_value=&amp;param_letter_group_value=D&amp;param_letter_group_script_value=Latin">D</a>
+                            
+              
+              	
+                     
+	              	<a class="ABC" href="?&amp;param_sid_save=e28ee74d8366f04861b48206788dfded&amp;param_chinese_checkbox_type_save=Pinyin&amp;param_lang_save=eng&amp;param_letter_group_save=V&amp;param_perform_save=searchTitle&amp;param_letter_group_script_save=Latin&amp;param_chinese_checkbox_save=0&amp;param_services2filter_save=getFullTxt&amp;param_current_view_save=detail&amp;param_pattern_save=&amp;param_jumpToPage_save=&amp;param_type_save=browseLetterGroup&amp;param_textSearchType_save=contains&amp;param_ui_control_scripts_save=&amp;&amp;param_type_value=browseLetterGroup&amp;param_jumpToPage_value=&amp;param_pattern_value=&amp;param_letter_group_value=E&amp;param_letter_group_script_value=Latin">E</a>
+                            
+              
+              	
+                     
+	              	<a class="ABC" href="?&amp;param_sid_save=e28ee74d8366f04861b48206788dfded&amp;param_chinese_checkbox_type_save=Pinyin&amp;param_lang_save=eng&amp;param_letter_group_save=V&amp;param_perform_save=searchTitle&amp;param_letter_group_script_save=Latin&amp;param_chinese_checkbox_save=0&amp;param_services2filter_save=getFullTxt&amp;param_current_view_save=detail&amp;param_pattern_save=&amp;param_jumpToPage_save=&amp;param_type_save=browseLetterGroup&amp;param_textSearchType_save=contains&amp;param_ui_control_scripts_save=&amp;&amp;param_type_value=browseLetterGroup&amp;param_jumpToPage_value=&amp;param_pattern_value=&amp;param_letter_group_value=F&amp;param_letter_group_script_value=Latin">F</a>
+                            
+              
+              	
+                     
+	              	<a class="ABC" href="?&amp;param_sid_save=e28ee74d8366f04861b48206788dfded&amp;param_chinese_checkbox_type_save=Pinyin&amp;param_lang_save=eng&amp;param_letter_group_save=V&amp;param_perform_save=searchTitle&amp;param_letter_group_script_save=Latin&amp;param_chinese_checkbox_save=0&amp;param_services2filter_save=getFullTxt&amp;param_current_view_save=detail&amp;param_pattern_save=&amp;param_jumpToPage_save=&amp;param_type_save=browseLetterGroup&amp;param_textSearchType_save=contains&amp;param_ui_control_scripts_save=&amp;&amp;param_type_value=browseLetterGroup&amp;param_jumpToPage_value=&amp;param_pattern_value=&amp;param_letter_group_value=G&amp;param_letter_group_script_value=Latin">G</a>
+                            
+              
+              	
+                     
+	              	<a class="ABC" href="?&amp;param_sid_save=e28ee74d8366f04861b48206788dfded&amp;param_chinese_checkbox_type_save=Pinyin&amp;param_lang_save=eng&amp;param_letter_group_save=V&amp;param_perform_save=searchTitle&amp;param_letter_group_script_save=Latin&amp;param_chinese_checkbox_save=0&amp;param_services2filter_save=getFullTxt&amp;param_current_view_save=detail&amp;param_pattern_save=&amp;param_jumpToPage_save=&amp;param_type_save=browseLetterGroup&amp;param_textSearchType_save=contains&amp;param_ui_control_scripts_save=&amp;&amp;param_type_value=browseLetterGroup&amp;param_jumpToPage_value=&amp;param_pattern_value=&amp;param_letter_group_value=H&amp;param_letter_group_script_value=Latin">H</a>
+                            
+              
+              	
+                     
+	              	<a class="ABC" href="?&amp;param_sid_save=e28ee74d8366f04861b48206788dfded&amp;param_chinese_checkbox_type_save=Pinyin&amp;param_lang_save=eng&amp;param_letter_group_save=V&amp;param_perform_save=searchTitle&amp;param_letter_group_script_save=Latin&amp;param_chinese_checkbox_save=0&amp;param_services2filter_save=getFullTxt&amp;param_current_view_save=detail&amp;param_pattern_save=&amp;param_jumpToPage_save=&amp;param_type_save=browseLetterGroup&amp;param_textSearchType_save=contains&amp;param_ui_control_scripts_save=&amp;&amp;param_type_value=browseLetterGroup&amp;param_jumpToPage_value=&amp;param_pattern_value=&amp;param_letter_group_value=I&amp;param_letter_group_script_value=Latin">I</a>
+                            
+              
+              	
+                     
+	              	<a class="ABC" href="?&amp;param_sid_save=e28ee74d8366f04861b48206788dfded&amp;param_chinese_checkbox_type_save=Pinyin&amp;param_lang_save=eng&amp;param_letter_group_save=V&amp;param_perform_save=searchTitle&amp;param_letter_group_script_save=Latin&amp;param_chinese_checkbox_save=0&amp;param_services2filter_save=getFullTxt&amp;param_current_view_save=detail&amp;param_pattern_save=&amp;param_jumpToPage_save=&amp;param_type_save=browseLetterGroup&amp;param_textSearchType_save=contains&amp;param_ui_control_scripts_save=&amp;&amp;param_type_value=browseLetterGroup&amp;param_jumpToPage_value=&amp;param_pattern_value=&amp;param_letter_group_value=J&amp;param_letter_group_script_value=Latin">J</a>
+                            
+              
+              	
+                     
+	              	<a class="ABC" href="?&amp;param_sid_save=e28ee74d8366f04861b48206788dfded&amp;param_chinese_checkbox_type_save=Pinyin&amp;param_lang_save=eng&amp;param_letter_group_save=V&amp;param_perform_save=searchTitle&amp;param_letter_group_script_save=Latin&amp;param_chinese_checkbox_save=0&amp;param_services2filter_save=getFullTxt&amp;param_current_view_save=detail&amp;param_pattern_save=&amp;param_jumpToPage_save=&amp;param_type_save=browseLetterGroup&amp;param_textSearchType_save=contains&amp;param_ui_control_scripts_save=&amp;&amp;param_type_value=browseLetterGroup&amp;param_jumpToPage_value=&amp;param_pattern_value=&amp;param_letter_group_value=K&amp;param_letter_group_script_value=Latin">K</a>
+                            
+              
+              	
+                     
+	              	<a class="ABC" href="?&amp;param_sid_save=e28ee74d8366f04861b48206788dfded&amp;param_chinese_checkbox_type_save=Pinyin&amp;param_lang_save=eng&amp;param_letter_group_save=V&amp;param_perform_save=searchTitle&amp;param_letter_group_script_save=Latin&amp;param_chinese_checkbox_save=0&amp;param_services2filter_save=getFullTxt&amp;param_current_view_save=detail&amp;param_pattern_save=&amp;param_jumpToPage_save=&amp;param_type_save=browseLetterGroup&amp;param_textSearchType_save=contains&amp;param_ui_control_scripts_save=&amp;&amp;param_type_value=browseLetterGroup&amp;param_jumpToPage_value=&amp;param_pattern_value=&amp;param_letter_group_value=L&amp;param_letter_group_script_value=Latin">L</a>
+                            
+              
+              	
+                     
+	              	<a class="ABC" href="?&amp;param_sid_save=e28ee74d8366f04861b48206788dfded&amp;param_chinese_checkbox_type_save=Pinyin&amp;param_lang_save=eng&amp;param_letter_group_save=V&amp;param_perform_save=searchTitle&amp;param_letter_group_script_save=Latin&amp;param_chinese_checkbox_save=0&amp;param_services2filter_save=getFullTxt&amp;param_current_view_save=detail&amp;param_pattern_save=&amp;param_jumpToPage_save=&amp;param_type_save=browseLetterGroup&amp;param_textSearchType_save=contains&amp;param_ui_control_scripts_save=&amp;&amp;param_type_value=browseLetterGroup&amp;param_jumpToPage_value=&amp;param_pattern_value=&amp;param_letter_group_value=M&amp;param_letter_group_script_value=Latin">M</a>
+                            
+              
+              	
+                     
+	              	<a class="ABC" href="?&amp;param_sid_save=e28ee74d8366f04861b48206788dfded&amp;param_chinese_checkbox_type_save=Pinyin&amp;param_lang_save=eng&amp;param_letter_group_save=V&amp;param_perform_save=searchTitle&amp;param_letter_group_script_save=Latin&amp;param_chinese_checkbox_save=0&amp;param_services2filter_save=getFullTxt&amp;param_current_view_save=detail&amp;param_pattern_save=&amp;param_jumpToPage_save=&amp;param_type_save=browseLetterGroup&amp;param_textSearchType_save=contains&amp;param_ui_control_scripts_save=&amp;&amp;param_type_value=browseLetterGroup&amp;param_jumpToPage_value=&amp;param_pattern_value=&amp;param_letter_group_value=N&amp;param_letter_group_script_value=Latin">N</a>
+                            
+              
+              	
+                     
+	              	<a class="ABC" href="?&amp;param_sid_save=e28ee74d8366f04861b48206788dfded&amp;param_chinese_checkbox_type_save=Pinyin&amp;param_lang_save=eng&amp;param_letter_group_save=V&amp;param_perform_save=searchTitle&amp;param_letter_group_script_save=Latin&amp;param_chinese_checkbox_save=0&amp;param_services2filter_save=getFullTxt&amp;param_current_view_save=detail&amp;param_pattern_save=&amp;param_jumpToPage_save=&amp;param_type_save=browseLetterGroup&amp;param_textSearchType_save=contains&amp;param_ui_control_scripts_save=&amp;&amp;param_type_value=browseLetterGroup&amp;param_jumpToPage_value=&amp;param_pattern_value=&amp;param_letter_group_value=O&amp;param_letter_group_script_value=Latin">O</a>
+                            
+              
+              	
+                     
+	              	<a class="ABC" href="?&amp;param_sid_save=e28ee74d8366f04861b48206788dfded&amp;param_chinese_checkbox_type_save=Pinyin&amp;param_lang_save=eng&amp;param_letter_group_save=V&amp;param_perform_save=searchTitle&amp;param_letter_group_script_save=Latin&amp;param_chinese_checkbox_save=0&amp;param_services2filter_save=getFullTxt&amp;param_current_view_save=detail&amp;param_pattern_save=&amp;param_jumpToPage_save=&amp;param_type_save=browseLetterGroup&amp;param_textSearchType_save=contains&amp;param_ui_control_scripts_save=&amp;&amp;param_type_value=browseLetterGroup&amp;param_jumpToPage_value=&amp;param_pattern_value=&amp;param_letter_group_value=P&amp;param_letter_group_script_value=Latin">P</a>
+                            
+              
+              	
+                     
+	              	<a class="ABC" href="?&amp;param_sid_save=e28ee74d8366f04861b48206788dfded&amp;param_chinese_checkbox_type_save=Pinyin&amp;param_lang_save=eng&amp;param_letter_group_save=V&amp;param_perform_save=searchTitle&amp;param_letter_group_script_save=Latin&amp;param_chinese_checkbox_save=0&amp;param_services2filter_save=getFullTxt&amp;param_current_view_save=detail&amp;param_pattern_save=&amp;param_jumpToPage_save=&amp;param_type_save=browseLetterGroup&amp;param_textSearchType_save=contains&amp;param_ui_control_scripts_save=&amp;&amp;param_type_value=browseLetterGroup&amp;param_jumpToPage_value=&amp;param_pattern_value=&amp;param_letter_group_value=Q&amp;param_letter_group_script_value=Latin">Q</a>
+                            
+              
+              	
+                     
+	              	<a class="ABC" href="?&amp;param_sid_save=e28ee74d8366f04861b48206788dfded&amp;param_chinese_checkbox_type_save=Pinyin&amp;param_lang_save=eng&amp;param_letter_group_save=V&amp;param_perform_save=searchTitle&amp;param_letter_group_script_save=Latin&amp;param_chinese_checkbox_save=0&amp;param_services2filter_save=getFullTxt&amp;param_current_view_save=detail&amp;param_pattern_save=&amp;param_jumpToPage_save=&amp;param_type_save=browseLetterGroup&amp;param_textSearchType_save=contains&amp;param_ui_control_scripts_save=&amp;&amp;param_type_value=browseLetterGroup&amp;param_jumpToPage_value=&amp;param_pattern_value=&amp;param_letter_group_value=R&amp;param_letter_group_script_value=Latin">R</a>
+                            
+              
+              	
+                     
+	              	<a class="ABC" href="?&amp;param_sid_save=e28ee74d8366f04861b48206788dfded&amp;param_chinese_checkbox_type_save=Pinyin&amp;param_lang_save=eng&amp;param_letter_group_save=V&amp;param_perform_save=searchTitle&amp;param_letter_group_script_save=Latin&amp;param_chinese_checkbox_save=0&amp;param_services2filter_save=getFullTxt&amp;param_current_view_save=detail&amp;param_pattern_save=&amp;param_jumpToPage_save=&amp;param_type_save=browseLetterGroup&amp;param_textSearchType_save=contains&amp;param_ui_control_scripts_save=&amp;&amp;param_type_value=browseLetterGroup&amp;param_jumpToPage_value=&amp;param_pattern_value=&amp;param_letter_group_value=S&amp;param_letter_group_script_value=Latin">S</a>
+                            
+              
+              	
+                     
+	              	<a class="ABC" href="?&amp;param_sid_save=e28ee74d8366f04861b48206788dfded&amp;param_chinese_checkbox_type_save=Pinyin&amp;param_lang_save=eng&amp;param_letter_group_save=V&amp;param_perform_save=searchTitle&amp;param_letter_group_script_save=Latin&amp;param_chinese_checkbox_save=0&amp;param_services2filter_save=getFullTxt&amp;param_current_view_save=detail&amp;param_pattern_save=&amp;param_jumpToPage_save=&amp;param_type_save=browseLetterGroup&amp;param_textSearchType_save=contains&amp;param_ui_control_scripts_save=&amp;&amp;param_type_value=browseLetterGroup&amp;param_jumpToPage_value=&amp;param_pattern_value=&amp;param_letter_group_value=T&amp;param_letter_group_script_value=Latin">T</a>
+                            
+              
+              	
+                     
+	              	<a class="ABC" href="?&amp;param_sid_save=e28ee74d8366f04861b48206788dfded&amp;param_chinese_checkbox_type_save=Pinyin&amp;param_lang_save=eng&amp;param_letter_group_save=V&amp;param_perform_save=searchTitle&amp;param_letter_group_script_save=Latin&amp;param_chinese_checkbox_save=0&amp;param_services2filter_save=getFullTxt&amp;param_current_view_save=detail&amp;param_pattern_save=&amp;param_jumpToPage_save=&amp;param_type_save=browseLetterGroup&amp;param_textSearchType_save=contains&amp;param_ui_control_scripts_save=&amp;&amp;param_type_value=browseLetterGroup&amp;param_jumpToPage_value=&amp;param_pattern_value=&amp;param_letter_group_value=U&amp;param_letter_group_script_value=Latin">U</a>
+                            
+              
+              	
+                     
+	              	<a class="ABC" href="?&amp;param_sid_save=e28ee74d8366f04861b48206788dfded&amp;param_chinese_checkbox_type_save=Pinyin&amp;param_lang_save=eng&amp;param_letter_group_save=V&amp;param_perform_save=searchTitle&amp;param_letter_group_script_save=Latin&amp;param_chinese_checkbox_save=0&amp;param_services2filter_save=getFullTxt&amp;param_current_view_save=detail&amp;param_pattern_save=&amp;param_jumpToPage_save=&amp;param_type_save=browseLetterGroup&amp;param_textSearchType_save=contains&amp;param_ui_control_scripts_save=&amp;&amp;param_type_value=browseLetterGroup&amp;param_jumpToPage_value=&amp;param_pattern_value=&amp;param_letter_group_value=V&amp;param_letter_group_script_value=Latin">V</a>
+                            
+              
+              	
+                     
+	              	<a class="ABC" href="?&amp;param_sid_save=e28ee74d8366f04861b48206788dfded&amp;param_chinese_checkbox_type_save=Pinyin&amp;param_lang_save=eng&amp;param_letter_group_save=V&amp;param_perform_save=searchTitle&amp;param_letter_group_script_save=Latin&amp;param_chinese_checkbox_save=0&amp;param_services2filter_save=getFullTxt&amp;param_current_view_save=detail&amp;param_pattern_save=&amp;param_jumpToPage_save=&amp;param_type_save=browseLetterGroup&amp;param_textSearchType_save=contains&amp;param_ui_control_scripts_save=&amp;&amp;param_type_value=browseLetterGroup&amp;param_jumpToPage_value=&amp;param_pattern_value=&amp;param_letter_group_value=W&amp;param_letter_group_script_value=Latin">W</a>
+                            
+              
+              	
+                     
+	              	<a class="ABC" href="?&amp;param_sid_save=e28ee74d8366f04861b48206788dfded&amp;param_chinese_checkbox_type_save=Pinyin&amp;param_lang_save=eng&amp;param_letter_group_save=V&amp;param_perform_save=searchTitle&amp;param_letter_group_script_save=Latin&amp;param_chinese_checkbox_save=0&amp;param_services2filter_save=getFullTxt&amp;param_current_view_save=detail&amp;param_pattern_save=&amp;param_jumpToPage_save=&amp;param_type_save=browseLetterGroup&amp;param_textSearchType_save=contains&amp;param_ui_control_scripts_save=&amp;&amp;param_type_value=browseLetterGroup&amp;param_jumpToPage_value=&amp;param_pattern_value=&amp;param_letter_group_value=X&amp;param_letter_group_script_value=Latin">X</a>
+                            
+              
+              	
+                     
+	              	<a class="ABC" href="?&amp;param_sid_save=e28ee74d8366f04861b48206788dfded&amp;param_chinese_checkbox_type_save=Pinyin&amp;param_lang_save=eng&amp;param_letter_group_save=V&amp;param_perform_save=searchTitle&amp;param_letter_group_script_save=Latin&amp;param_chinese_checkbox_save=0&amp;param_services2filter_save=getFullTxt&amp;param_current_view_save=detail&amp;param_pattern_save=&amp;param_jumpToPage_save=&amp;param_type_save=browseLetterGroup&amp;param_textSearchType_save=contains&amp;param_ui_control_scripts_save=&amp;&amp;param_type_value=browseLetterGroup&amp;param_jumpToPage_value=&amp;param_pattern_value=&amp;param_letter_group_value=Y&amp;param_letter_group_script_value=Latin">Y</a>
+                            
+              
+              	
+                     
+	              	<a class="ABC" href="?&amp;param_sid_save=e28ee74d8366f04861b48206788dfded&amp;param_chinese_checkbox_type_save=Pinyin&amp;param_lang_save=eng&amp;param_letter_group_save=V&amp;param_perform_save=searchTitle&amp;param_letter_group_script_save=Latin&amp;param_chinese_checkbox_save=0&amp;param_services2filter_save=getFullTxt&amp;param_current_view_save=detail&amp;param_pattern_save=&amp;param_jumpToPage_save=&amp;param_type_save=browseLetterGroup&amp;param_textSearchType_save=contains&amp;param_ui_control_scripts_save=&amp;&amp;param_type_value=browseLetterGroup&amp;param_jumpToPage_value=&amp;param_pattern_value=&amp;param_letter_group_value=Z&amp;param_letter_group_script_value=Latin">Z</a>
+                            
+              
+              	
+                     
+	              	<a class="ABC" href="?&amp;param_sid_save=e28ee74d8366f04861b48206788dfded&amp;param_chinese_checkbox_type_save=Pinyin&amp;param_lang_save=eng&amp;param_letter_group_save=V&amp;param_perform_save=searchTitle&amp;param_letter_group_script_save=Latin&amp;param_chinese_checkbox_save=0&amp;param_services2filter_save=getFullTxt&amp;param_current_view_save=detail&amp;param_pattern_save=&amp;param_jumpToPage_save=&amp;param_type_save=browseLetterGroup&amp;param_textSearchType_save=contains&amp;param_ui_control_scripts_save=&amp;&amp;param_type_value=browseLetterGroup&amp;param_jumpToPage_value=&amp;param_pattern_value=&amp;param_letter_group_value=Others&amp;param_letter_group_script_value=Latin">Others</a>
+                            
+              
+	<!-- end of alphabet loop -->
+	</span>
+	</p>
+	</div>
+<div class="clear"></div>	
+<!-- chinese checkbox -->
+
+
+<!-- needed to be passed as one of ajax parameters-->
+	<input type=hidden name=param_chinese_checkbox_value id=param_chinese_checkbox_value value="0">
+
+<!-- end chinese checkbox -->
+
+</div>
+<div class="clear"></div>
+<div id="title-nav">
+<div class="nav-wrap">
+
+	
+		
+		<div class="first-active"></div>
+		<div class="nav-active">
+		
+		<div class="nav-link">
+			Title
+		</div>
+		</div>
+		<div class="nav-divider"></div>
+
+	
+
+	
+		
+		
+		<div class="nav-links">
+		<a style="text-decoration: none" title="Category" href="?&amp;param_sid_save=e28ee74d8366f04861b48206788dfded&amp;param_chinese_checkbox_type_save=Pinyin&amp;param_lang_save=eng&amp;param_letter_group_save=V&amp;param_perform_save=searchTitle&amp;param_letter_group_script_save=Latin&amp;param_chinese_checkbox_save=0&amp;param_services2filter_save=getFullTxt&amp;param_current_view_save=detail&amp;param_pattern_save=&amp;param_jumpToPage_save=&amp;param_type_save=browseLetterGroup&amp;param_textSearchType_save=contains&amp;param_ui_control_scripts_save=&amp;&amp;param_perform_value=searchCategories">
+			Category
+		</a>
+		</div>
+		<div class="nav-divider"></div>
+		
+
+		
+
+	
+
+	
+		
+		
+		<div class="nav-links">
+		<a style="text-decoration: none" title="Locate" href="?&amp;param_sid_save=e28ee74d8366f04861b48206788dfded&amp;param_chinese_checkbox_type_save=Pinyin&amp;param_lang_save=eng&amp;param_letter_group_save=V&amp;param_perform_save=searchTitle&amp;param_letter_group_script_save=Latin&amp;param_chinese_checkbox_save=0&amp;param_services2filter_save=getFullTxt&amp;param_current_view_save=detail&amp;param_pattern_save=&amp;param_jumpToPage_save=&amp;param_type_save=browseLetterGroup&amp;param_textSearchType_save=contains&amp;param_ui_control_scripts_save=&amp;&amp;param_perform_value=locate">
+			Locate
+		</a>
+		</div>
+		<div class="nav-divider"></div>
+		
+
+		
+
+	
+
+	
+		
+		
+		<div class="nav-links">
+		<a style="text-decoration: none" title="CitationLinker" href="?&amp;param_sid_save=e28ee74d8366f04861b48206788dfded&amp;param_chinese_checkbox_type_save=Pinyin&amp;param_lang_save=eng&amp;param_letter_group_save=V&amp;param_perform_save=searchTitle&amp;param_letter_group_script_save=Latin&amp;param_chinese_checkbox_save=0&amp;param_services2filter_save=getFullTxt&amp;param_current_view_save=detail&amp;param_pattern_save=&amp;param_jumpToPage_save=&amp;param_type_save=browseLetterGroup&amp;param_textSearchType_save=contains&amp;param_ui_control_scripts_save=&amp;&amp;param_perform_value=citation">
+			CitationLinker
+		</a>
+		</div>
+		<div class="nav-divider"></div>
+		
+
+		
+
+	
+
+</div>
+</div>
+
+</div>
+<div class="clear"></div>
+<!-- /#header-container -->
+</div>
+
+</form>
+
+<div class="result-container">
+	<div class="result-insider">
+
+
+
+<!-- if result is present -->
+
+  <!-- result form declaration -->
+  <!-- comment out the form declaration to validate if needed -->
+  <!-- form name="az_result_form" method="get" action="" accept-charset="UTF-8" COMMENT !-->
+<!-- record list -->
+    
+<input type=hidden name="param_sid_save" value="e28ee74d8366f04861b48206788dfded">
+<input type=hidden name="param_chinese_checkbox_type_save" value="Pinyin">
+<input type=hidden name="param_lang_save" value="eng">
+<input type=hidden name="param_letter_group_save" value="V">
+<input type=hidden name="param_perform_save" value="searchTitle">
+<input type=hidden name="param_letter_group_script_save" value="Latin">
+<input type=hidden name="param_chinese_checkbox_save" value="0">
+<input type=hidden name="param_services2filter_save" value="getFullTxt">
+<input type=hidden name="param_current_view_save" value="detail">
+<input type=hidden name="param_pattern_save" value="">
+<input type=hidden name="param_jumpToPage_save" value="">
+<input type=hidden name="param_type_save" value="browseLetterGroup">
+<input type=hidden name="param_textSearchType_save" value="contains">
+
+
+<table class="table_563"  cellspacing="0">
+  <tr><td>&nbsp;</td></tr>
+  <tr>
+    <td class="LabelBold">
+		
+			Total number of e-Journals: 900
+		
+    </td>
+  </tr>
+  
+  <tr class="Block">
+    <td>
+      <table class="fullwidth">
+        <tr>
+          <td>
+            <a id="tableViewRequester"
+                
+                class="LabelBold" href="?param_current_view_value=table&amp;display_single_object=&amp;&amp;param_sid_save=e28ee74d8366f04861b48206788dfded&amp;param_chinese_checkbox_type_save=Pinyin&amp;param_lang_save=eng&amp;param_letter_group_save=V&amp;param_perform_save=searchTitle&amp;param_letter_group_script_save=Latin&amp;param_chinese_checkbox_save=0&amp;param_services2filter_save=getFullTxt&amp;param_current_view_save=detail&amp;param_pattern_save=&amp;param_jumpToPage_save=&amp;param_type_save=browseLetterGroup&amp;param_textSearchType_save=contains&amp;param_ui_control_scripts_save=&amp;">Switch to Table View</a>
+            <a id="detailViewRequester"
+                style="visibility:hidden; display: none;"
+                class="LabelBold" href="?param_current_view_value=detail&amp;display_single_object=&amp;&amp;param_sid_save=e28ee74d8366f04861b48206788dfded&amp;param_chinese_checkbox_type_save=Pinyin&amp;param_lang_save=eng&amp;param_letter_group_save=V&amp;param_perform_save=searchTitle&amp;param_letter_group_script_save=Latin&amp;param_chinese_checkbox_save=0&amp;param_services2filter_save=getFullTxt&amp;param_current_view_save=detail&amp;param_pattern_save=&amp;param_jumpToPage_save=&amp;param_type_save=browseLetterGroup&amp;param_textSearchType_save=contains&amp;param_ui_control_scripts_save=&amp;">Switch to Detail View</a>
+          </td>
+          
+        </tr>
+      </table>
+    </td>
+  </tr>
+  <tr><td>&nbsp;</td></tr>
+  
+
+<!-- more than one page found -->
+
+  <tr class="Block">
+    <td>
+	  <table width="100%">
+		<tr>
+			<td>Title Starts with:</td>
+			<td align="right" class="LabelBold">Showing page 1 of 45 pages.</td>
+		</tr>
+	  </table>
+      <table width="100%">
+        <tr>
+        <td><A NAME="Top"></A></td>
+          <td class="LabelBold">
+				
+					<span style="white-space: nowrap">
+					
+						<span class="Pagination Current">Ver - VA </span>
+					
+					*
+					</span>
+				
+					<span style="white-space: nowrap">
+					
+						<span class="Pagination Link"><a class="ABC" 
+							href="?&amp;param_sid_save=e28ee74d8366f04861b48206788dfded&amp;param_chinese_checkbox_type_save=Pinyin&amp;param_lang_save=eng&amp;param_letter_group_save=V&amp;param_perform_save=searchTitle&amp;param_letter_group_script_save=Latin&amp;param_chinese_checkbox_save=0&amp;param_services2filter_save=getFullTxt&amp;param_current_view_save=detail&amp;param_pattern_save=&amp;param_jumpToPage_save=&amp;param_type_save=browseLetterGroup&amp;param_textSearchType_save=contains&amp;param_ui_control_scripts_save=&amp;&amp;param_jumpToPage_value=2">VA  - Vad</a></span>
+					
+					*
+					</span>
+				
+					<span style="white-space: nowrap">
+					
+						<span class="Pagination Link"><a class="ABC" 
+							href="?&amp;param_sid_save=e28ee74d8366f04861b48206788dfded&amp;param_chinese_checkbox_type_save=Pinyin&amp;param_lang_save=eng&amp;param_letter_group_save=V&amp;param_perform_save=searchTitle&amp;param_letter_group_script_save=Latin&amp;param_chinese_checkbox_save=0&amp;param_services2filter_save=getFullTxt&amp;param_current_view_save=detail&amp;param_pattern_save=&amp;param_jumpToPage_save=&amp;param_type_save=browseLetterGroup&amp;param_textSearchType_save=contains&amp;param_ui_control_scripts_save=&amp;&amp;param_jumpToPage_value=3">Väe - Val</a></span>
+					
+					*
+					</span>
+				
+					<span style="white-space: nowrap">
+					
+						<span class="Pagination Link"><a class="ABC" 
+							href="?&amp;param_sid_save=e28ee74d8366f04861b48206788dfded&amp;param_chinese_checkbox_type_save=Pinyin&amp;param_lang_save=eng&amp;param_letter_group_save=V&amp;param_perform_save=searchTitle&amp;param_letter_group_script_save=Latin&amp;param_chinese_checkbox_save=0&amp;param_services2filter_save=getFullTxt&amp;param_current_view_save=detail&amp;param_pattern_save=&amp;param_jumpToPage_save=&amp;param_type_save=browseLetterGroup&amp;param_textSearchType_save=contains&amp;param_ui_control_scripts_save=&amp;&amp;param_jumpToPage_value=4">Val - Van</a></span>
+					
+					*
+					</span>
+				
+					<span style="white-space: nowrap">
+					
+						<span class="Pagination Link"><a class="ABC" 
+							href="?&amp;param_sid_save=e28ee74d8366f04861b48206788dfded&amp;param_chinese_checkbox_type_save=Pinyin&amp;param_lang_save=eng&amp;param_letter_group_save=V&amp;param_perform_save=searchTitle&amp;param_letter_group_script_save=Latin&amp;param_chinese_checkbox_save=0&amp;param_services2filter_save=getFullTxt&amp;param_current_view_save=detail&amp;param_pattern_save=&amp;param_jumpToPage_save=&amp;param_type_save=browseLetterGroup&amp;param_textSearchType_save=contains&amp;param_ui_control_scripts_save=&amp;&amp;param_jumpToPage_value=5">Van - Vár</a></span>
+					
+					*
+					</span>
+				
+					<span style="white-space: nowrap">
+					
+						<span class="Pagination Link"><a class="ABC" 
+							href="?&amp;param_sid_save=e28ee74d8366f04861b48206788dfded&amp;param_chinese_checkbox_type_save=Pinyin&amp;param_lang_save=eng&amp;param_letter_group_save=V&amp;param_perform_save=searchTitle&amp;param_letter_group_script_save=Latin&amp;param_chinese_checkbox_save=0&amp;param_services2filter_save=getFullTxt&amp;param_current_view_save=detail&amp;param_pattern_save=&amp;param_jumpToPage_save=&amp;param_type_save=browseLetterGroup&amp;param_textSearchType_save=contains&amp;param_ui_control_scripts_save=&amp;&amp;param_jumpToPage_value=6">Next set of titles &gt;&gt;</a></span>
+					
+					
+					</span>
+				
+			</td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+
+<!-- end more than one page found -->
+</table>
+
+
+<!-- detail view -->
+<!-- view toggler -->
+
+    <table id="detailView"
+        
+        	
+        
+        class="table_563" cellspacing="0">
+<!-- end view toggler -->
+        <CAPTION></CAPTION>
+        <tr>
+    <td>
+        <input type=hidden name='SFXButton_MDE' id="SFXButton_MDE" value="">
+        <input type=hidden name='AvailabilityInformation_MDE' id="detail_AvailabilityInformation_MDE" value="">
+        <input type=hidden name='ISSN_MDE' id="ISSN_MDE" value="">
+        <input type=hidden name='NOTE_MDE' id="NOTE_MDE" value="">
+        <input type=hidden name='AUTHENTICATION_MDE' id="AUTHENTICATION_MDE" value="1">        
+        <input type=hidden name='LCCN_MDE' id="LCCN_MDE" value="1">
+        <input type=hidden name='CODEN_MDE' id="CODEN_MDE" value="1">
+    </TD>
+</TR>
+
+  <tr>
+    <td>
+   	  
+			<span class="ResultsNoLink">Verhandlungen des Europaïschen Parlaments</span> [0378-5009]      		
+	  
+    </td>
+  </tr>
+
+<!-- target service listing -->
+  
+<!-- end target service listing -->
+
+<!-- category listing -->
+<tr>
+    <td>
+        <input type=hidden name='Categories_MDE' id="Categories_MDE_1000000000265615" value="1">
+    </td>
+</tr>
+    
+<!-- category listing -->
+  
+  
+<!-- end category listing -->
+
+<!-- end category listing -->
+	
+	
+	        <tr>
+	          <td height=3px></td>
+	        </tr>   	
+	    
+	        <tr>
+	            <td>
+	                <a href="?&amp;param_sid_save=e28ee74d8366f04861b48206788dfded&amp;param_chinese_checkbox_type_save=Pinyin&amp;param_lang_save=eng&amp;param_letter_group_save=V&amp;param_perform_save=searchTitle&amp;param_letter_group_script_save=Latin&amp;param_chinese_checkbox_save=0&amp;param_services2filter_save=getFullTxt&amp;param_current_view_save=detail&amp;param_pattern_save=&amp;param_jumpToPage_save=&amp;param_type_save=browseLetterGroup&amp;param_textSearchType_save=contains&amp;param_ui_control_scripts_save=&amp;&amp;display_single_object=110978977742703&amp;set_first_page=1" class="ABC">Other edition</a>:
+					Official journal of the European Communities
+					
+						[0378-5041]
+					
+				</td>
+	        </tr>
+	    
+	        <tr>
+	            <td>
+	                <a href="?&amp;param_sid_save=e28ee74d8366f04861b48206788dfded&amp;param_chinese_checkbox_type_save=Pinyin&amp;param_lang_save=eng&amp;param_letter_group_save=V&amp;param_perform_save=searchTitle&amp;param_letter_group_script_save=Latin&amp;param_chinese_checkbox_save=0&amp;param_services2filter_save=getFullTxt&amp;param_current_view_save=detail&amp;param_pattern_save=&amp;param_jumpToPage_save=&amp;param_type_save=browseLetterGroup&amp;param_textSearchType_save=contains&amp;param_ui_control_scripts_save=&amp;&amp;display_single_object=991042727983138&amp;set_first_page=1" class="ABC">Other edition</a>:
+					Débats du Parlement européen
+					
+						[0378-5017]
+					
+				</td>
+	        </tr>
+	    
+	
+
+<!-- info, SFX buttons, and blank line -->
+  <tr>
+    <td>
+      <table>
+        <tr>
+          <td>&nbsp;</td>
+          <td>
+          <a href="/poly_nyu-default/cgi/core/azlist_ver3/a-z_retrieve.cgi/default?&amp;param_sid_save=e28ee74d8366f04861b48206788dfded&amp;param_chinese_checkbox_type_save=Pinyin&amp;param_lang_save=eng&amp;param_letter_group_save=V&amp;param_perform_save=searchTitle&amp;param_letter_group_script_save=Latin&amp;param_chinese_checkbox_save=0&amp;param_services2filter_save=getFullTxt&amp;param_current_view_save=detail&amp;param_pattern_save=&amp;param_jumpToPage_save=&amp;param_type_save=browseLetterGroup&amp;param_textSearchType_save=contains&amp;param_ui_control_scripts_save=&amp;&amp;lang=eng&amp;function=get_info&amp;obj_id=1000000000265615&amp;issn=0378-5009&amp;profile=default&amp;exclude_issn=&amp;exclude_auth=1&amp;exclude_note=&amp;exclude_lccn=1&amp;exclude_coden=1&amp;exclude_availability=&amp;exclude_categories=1" onClick="return wrapContent(event, this.href, 0, 0, '<IFRAME NAME=frame SRC=/poly_nyu/cgi/core/azlist_ver3/a-z_retrieve.cgi/default?&amp;param_sid_save=e28ee74d8366f04861b48206788dfded&amp;param_chinese_checkbox_type_save=Pinyin&amp;param_lang_save=eng&amp;param_letter_group_save=V&amp;param_perform_save=searchTitle&amp;param_letter_group_script_save=Latin&amp;param_chinese_checkbox_save=0&amp;param_services2filter_save=getFullTxt&amp;param_current_view_save=detail&amp;param_pattern_save=&amp;param_jumpToPage_save=&amp;param_type_save=browseLetterGroup&amp;param_textSearchType_save=contains&amp;param_ui_control_scripts_save=&amp;&amp;lang=eng&amp;function=get_info&amp;obj_id=1000000000265615&amp;issn=0378-5009&amp;profile=default&amp;exclude_issn=&amp;exclude_auth=1&amp;exclude_note=&amp;exclude_lccn=1&amp;exclude_coden=1&amp;exclude_availability=&amp;exclude_categories=1&amp;institute_param=default HEIGHT=200 WIDTH=360 BORDER=0 FRAMEBORDER=0 FRAMESPACING=0 scrolling=no></IFRAME>', 360)"> <img src="/poly_nyu/img/azlist_ver3/info.gif" title="e-Journal Details" alt="e-Journal Details" border="0"></a>
+          </td>
+
+
+           
+	          <td><a href="/poly_nyu?url_ver=Z39.88-2004&amp;url_ctx_fmt=infofi/fmt:kev:mtx:ctx&amp;ctx_enc=info:ofi/enc:UTF-8&amp;ctx_ver=Z39.88-2004&amp;rfr_id=info:sid/sfxit.com:azlist&amp;sfx.ignore_date_threshold=1&amp;rft.object_id=1000000000265615
+" onclick="javascript:OpenWindow('/poly_nyu?url_ver=Z39.88-2004&amp;url_ctx_fmt=infofi/fmt:kev:mtx:ctx&amp;ctx_enc=info:ofi/enc:UTF-8&amp;ctx_ver=Z39.88-2004&amp;rfr_id=info:sid/sfxit.com:azlist&amp;sfx.ignore_date_threshold=1&amp;rft.object_id=1000000000265615'); return false;"><img src="/poly_nyu/img/azlist_ver3/sfx.gif" title="SFX" alt="SFX" border="0"></a></td>
+          
+          
+		  
+        </tr>
+      </table>
+    </td>
+  </tr>
+  <tr><td>&nbsp;</td></tr>
+<!-- end info, SFX buttons, and blank line -->
+
+
+  <tr>
+    <td>
+   	   
+			<a class="Results" href="/poly_nyu?url_ver=Z39.88-2004&amp;url_ctx_fmt=infofi/fmt:kev:mtx:ctx&amp;ctx_enc=info:ofi/enc:UTF-8&amp;ctx_ver=Z39.88-2004&amp;rfr_id=info:sid/sfxit.com:azlist&amp;sfx.ignore_date_threshold=1&amp;rft.object_id=991042728046256&amp;rft.object_portfolio_id=&amp;svc.fulltext=yes
+" onclick="javascript:OpenWindow('/poly_nyu?url_ver=Z39.88-2004&amp;url_ctx_fmt=infofi/fmt:kev:mtx:ctx&amp;ctx_enc=info:ofi/enc:UTF-8&amp;ctx_ver=Z39.88-2004&amp;rfr_id=info:sid/sfxit.com:azlist&amp;sfx.ignore_date_threshold=1&amp;rft.object_id=991042728046256&amp;svc.fulltext=yes'); return false;">V &amp; A conservation journal</a> [0967-2273]
+      
+    </td>
+  </tr>
+
+<!-- target service listing -->
+  
+
+  
+    <tr>
+      <td>Full text available via<a class="ABC" href="/poly_nyu?url_ver=Z39.88-2004&amp;url_ctx_fmt=infofi/fmt:kev:mtx:ctx&amp;ctx_enc=info:ofi/enc:UTF-8&amp;ctx_ver=Z39.88-2004&amp;rfr_id=info:sid/sfxit.com:azlist&amp;sfx.ignore_date_threshold=1&amp;rft.object_id=991042728046256&amp;rft.object_portfolio_id=1000000001357734&amp;svc.fulltext=yes
+" onclick="javascript:OpenWindow('/poly_nyu?url_ver=Z39.88-2004&amp;url_ctx_fmt=infofi/fmt:kev:mtx:ctx&amp;ctx_enc=info:ofi/enc:UTF-8&amp;ctx_ver=Z39.88-2004&amp;rfr_id=info:sid/sfxit.com:azlist&amp;sfx.ignore_date_threshold=1&amp;rft.object_id=991042728046256&amp;rft.object_portfolio_id=1000000001357734'); return false;"> Free E- Journals</a></td>
+    </tr>
+  
+  <tr>
+    <td>
+        <input type=hidden name='AvailabilityInformation_MDE' id="AvailabilityInformation_MDE_1000000001357734" value="">
+    </td>
+</tr>
+
+
+  
+    
+        <tr>
+          <td nowrap>
+            Available from
+                2003
+                
+                 issue: 43
+          </td>
+        </tr>
+    
+    
+  
+
+  
+  
+ 
+
+
+
+
+
+        
+
+
+    
+        
+    
+    
+
+    
+  
+<!-- end target service listing -->
+
+<!-- category listing -->
+<tr>
+    <td>
+        <input type=hidden name='Categories_MDE' id="Categories_MDE_991042728046256" value="1">
+    </td>
+</tr>
+    
+<!-- category listing -->
+  
+   
+  
+  
+<!-- end category listing -->
+
+<!-- end category listing -->
+	
+	
+
+<!-- info, SFX buttons, and blank line -->
+  <tr>
+    <td>
+      <table>
+        <tr>
+          <td>&nbsp;</td>
+          <td>
+          <a href="/poly_nyu-default/cgi/core/azlist_ver3/a-z_retrieve.cgi/default?&amp;param_sid_save=e28ee74d8366f04861b48206788dfded&amp;param_chinese_checkbox_type_save=Pinyin&amp;param_lang_save=eng&amp;param_letter_group_save=V&amp;param_perform_save=searchTitle&amp;param_letter_group_script_save=Latin&amp;param_chinese_checkbox_save=0&amp;param_services2filter_save=getFullTxt&amp;param_current_view_save=detail&amp;param_pattern_save=&amp;param_jumpToPage_save=&amp;param_type_save=browseLetterGroup&amp;param_textSearchType_save=contains&amp;param_ui_control_scripts_save=&amp;&amp;lang=eng&amp;function=get_info&amp;obj_id=991042728046256&amp;issn=0967-2273&amp;profile=default&amp;exclude_issn=&amp;exclude_auth=1&amp;exclude_note=&amp;exclude_lccn=1&amp;exclude_coden=1&amp;exclude_availability=&amp;exclude_categories=1" onClick="return wrapContent(event, this.href, 0, 0, '<IFRAME NAME=frame SRC=/poly_nyu/cgi/core/azlist_ver3/a-z_retrieve.cgi/default?&amp;param_sid_save=e28ee74d8366f04861b48206788dfded&amp;param_chinese_checkbox_type_save=Pinyin&amp;param_lang_save=eng&amp;param_letter_group_save=V&amp;param_perform_save=searchTitle&amp;param_letter_group_script_save=Latin&amp;param_chinese_checkbox_save=0&amp;param_services2filter_save=getFullTxt&amp;param_current_view_save=detail&amp;param_pattern_save=&amp;param_jumpToPage_save=&amp;param_type_save=browseLetterGroup&amp;param_textSearchType_save=contains&amp;param_ui_control_scripts_save=&amp;&amp;lang=eng&amp;function=get_info&amp;obj_id=991042728046256&amp;issn=0967-2273&amp;profile=default&amp;exclude_issn=&amp;exclude_auth=1&amp;exclude_note=&amp;exclude_lccn=1&amp;exclude_coden=1&amp;exclude_availability=&amp;exclude_categories=1&amp;institute_param=default HEIGHT=200 WIDTH=360 BORDER=0 FRAMEBORDER=0 FRAMESPACING=0 scrolling=no></IFRAME>', 360)"> <img src="/poly_nyu/img/azlist_ver3/info.gif" title="e-Journal Details" alt="e-Journal Details" border="0"></a>
+          </td>
+
+
+           
+	          <td><a href="/poly_nyu?url_ver=Z39.88-2004&amp;url_ctx_fmt=infofi/fmt:kev:mtx:ctx&amp;ctx_enc=info:ofi/enc:UTF-8&amp;ctx_ver=Z39.88-2004&amp;rfr_id=info:sid/sfxit.com:azlist&amp;sfx.ignore_date_threshold=1&amp;rft.object_id=991042728046256
+" onclick="javascript:OpenWindow('/poly_nyu?url_ver=Z39.88-2004&amp;url_ctx_fmt=infofi/fmt:kev:mtx:ctx&amp;ctx_enc=info:ofi/enc:UTF-8&amp;ctx_ver=Z39.88-2004&amp;rfr_id=info:sid/sfxit.com:azlist&amp;sfx.ignore_date_threshold=1&amp;rft.object_id=991042728046256'); return false;"><img src="/poly_nyu/img/azlist_ver3/sfx.gif" title="SFX" alt="SFX" border="0"></a></td>
+          
+          
+		  
+        </tr>
+      </table>
+    </td>
+  </tr>
+  <tr><td>&nbsp;</td></tr>
+<!-- end info, SFX buttons, and blank line -->
+
+
+  <tr>
+    <td>
+   	   
+			<a class="Results" href="/poly_nyu?url_ver=Z39.88-2004&amp;url_ctx_fmt=infofi/fmt:kev:mtx:ctx&amp;ctx_enc=info:ofi/enc:UTF-8&amp;ctx_ver=Z39.88-2004&amp;rfr_id=info:sid/sfxit.com:azlist&amp;sfx.ignore_date_threshold=1&amp;rft.object_id=1000000000532749&amp;rft.object_portfolio_id=&amp;svc.fulltext=yes
+" onclick="javascript:OpenWindow('/poly_nyu?url_ver=Z39.88-2004&amp;url_ctx_fmt=infofi/fmt:kev:mtx:ctx&amp;ctx_enc=info:ofi/enc:UTF-8&amp;ctx_ver=Z39.88-2004&amp;rfr_id=info:sid/sfxit.com:azlist&amp;sfx.ignore_date_threshold=1&amp;rft.object_id=1000000000532749&amp;svc.fulltext=yes'); return false;">V.i.S.d.P. [ViSdP] : Magazin für Medienmacher</a> 
+      
+    </td>
+  </tr>
+
+<!-- target service listing -->
+  
+
+  
+    <tr>
+      <td>Full text available via<a class="ABC" href="/poly_nyu?url_ver=Z39.88-2004&amp;url_ctx_fmt=infofi/fmt:kev:mtx:ctx&amp;ctx_enc=info:ofi/enc:UTF-8&amp;ctx_ver=Z39.88-2004&amp;rfr_id=info:sid/sfxit.com:azlist&amp;sfx.ignore_date_threshold=1&amp;rft.object_id=1000000000532749&amp;rft.object_portfolio_id=1000000001371409&amp;svc.fulltext=yes
+" onclick="javascript:OpenWindow('/poly_nyu?url_ver=Z39.88-2004&amp;url_ctx_fmt=infofi/fmt:kev:mtx:ctx&amp;ctx_enc=info:ofi/enc:UTF-8&amp;ctx_ver=Z39.88-2004&amp;rfr_id=info:sid/sfxit.com:azlist&amp;sfx.ignore_date_threshold=1&amp;rft.object_id=1000000000532749&amp;rft.object_portfolio_id=1000000001371409'); return false;"> Free E- Journals</a></td>
+    </tr>
+  
+  <tr>
+    <td>
+        <input type=hidden name='AvailabilityInformation_MDE' id="AvailabilityInformation_MDE_1000000001371409" value="">
+    </td>
+</tr>
+
+
+  
+    
+        <tr>
+          <td nowrap>
+            Available from
+                2004
+                
+                 issue: 1
+          </td>
+        </tr>
+    
+    
+  
+
+  
+  
+ 
+
+
+
+
+
+        
+
+
+    
+        
+    
+    
+
+    
+  
+<!-- end target service listing -->
+
+<!-- category listing -->
+<tr>
+    <td>
+        <input type=hidden name='Categories_MDE' id="Categories_MDE_1000000000532749" value="1">
+    </td>
+</tr>
+    
+<!-- category listing -->
+  
+  
+<!-- end category listing -->
+
+<!-- end category listing -->
+	
+	
+
+<!-- info, SFX buttons, and blank line -->
+  <tr>
+    <td>
+      <table>
+        <tr>
+          <td>&nbsp;</td>
+          <td>
+          <a href="/poly_nyu-default/cgi/core/azlist_ver3/a-z_retrieve.cgi/default?&amp;param_sid_save=e28ee74d8366f04861b48206788dfded&amp;param_chinese_checkbox_type_save=Pinyin&amp;param_lang_save=eng&amp;param_letter_group_save=V&amp;param_perform_save=searchTitle&amp;param_letter_group_script_save=Latin&amp;param_chinese_checkbox_save=0&amp;param_services2filter_save=getFullTxt&amp;param_current_view_save=detail&amp;param_pattern_save=&amp;param_jumpToPage_save=&amp;param_type_save=browseLetterGroup&amp;param_textSearchType_save=contains&amp;param_ui_control_scripts_save=&amp;&amp;lang=eng&amp;function=get_info&amp;obj_id=1000000000532749&amp;issn=&amp;profile=default&amp;exclude_issn=&amp;exclude_auth=1&amp;exclude_note=&amp;exclude_lccn=1&amp;exclude_coden=1&amp;exclude_availability=&amp;exclude_categories=1" onClick="return wrapContent(event, this.href, 0, 0, '<IFRAME NAME=frame SRC=/poly_nyu/cgi/core/azlist_ver3/a-z_retrieve.cgi/default?&amp;param_sid_save=e28ee74d8366f04861b48206788dfded&amp;param_chinese_checkbox_type_save=Pinyin&amp;param_lang_save=eng&amp;param_letter_group_save=V&amp;param_perform_save=searchTitle&amp;param_letter_group_script_save=Latin&amp;param_chinese_checkbox_save=0&amp;param_services2filter_save=getFullTxt&amp;param_current_view_save=detail&amp;param_pattern_save=&amp;param_jumpToPage_save=&amp;param_type_save=browseLetterGroup&amp;param_textSearchType_save=contains&amp;param_ui_control_scripts_save=&amp;&amp;lang=eng&amp;function=get_info&amp;obj_id=1000000000532749&amp;issn=&amp;profile=default&amp;exclude_issn=&amp;exclude_auth=1&amp;exclude_note=&amp;exclude_lccn=1&amp;exclude_coden=1&amp;exclude_availability=&amp;exclude_categories=1&amp;institute_param=default HEIGHT=200 WIDTH=360 BORDER=0 FRAMEBORDER=0 FRAMESPACING=0 scrolling=no></IFRAME>', 360)"> <img src="/poly_nyu/img/azlist_ver3/info.gif" title="e-Journal Details" alt="e-Journal Details" border="0"></a>
+          </td>
+
+
+           
+	          <td><a href="/poly_nyu?url_ver=Z39.88-2004&amp;url_ctx_fmt=infofi/fmt:kev:mtx:ctx&amp;ctx_enc=info:ofi/enc:UTF-8&amp;ctx_ver=Z39.88-2004&amp;rfr_id=info:sid/sfxit.com:azlist&amp;sfx.ignore_date_threshold=1&amp;rft.object_id=1000000000532749
+" onclick="javascript:OpenWindow('/poly_nyu?url_ver=Z39.88-2004&amp;url_ctx_fmt=infofi/fmt:kev:mtx:ctx&amp;ctx_enc=info:ofi/enc:UTF-8&amp;ctx_ver=Z39.88-2004&amp;rfr_id=info:sid/sfxit.com:azlist&amp;sfx.ignore_date_threshold=1&amp;rft.object_id=1000000000532749'); return false;"><img src="/poly_nyu/img/azlist_ver3/sfx.gif" title="SFX" alt="SFX" border="0"></a></td>
+          
+          
+		  
+        </tr>
+      </table>
+    </td>
+  </tr>
+  <tr><td>&nbsp;</td></tr>
+<!-- end info, SFX buttons, and blank line -->
+
+
+  <tr>
+    <td>
+   	   
+			<a class="Results" href="/poly_nyu?url_ver=Z39.88-2004&amp;url_ctx_fmt=infofi/fmt:kev:mtx:ctx&amp;ctx_enc=info:ofi/enc:UTF-8&amp;ctx_ver=Z39.88-2004&amp;rfr_id=info:sid/sfxit.com:azlist&amp;sfx.ignore_date_threshold=1&amp;rft.object_id=110978984566343&amp;rft.object_portfolio_id=&amp;svc.fulltext=yes
+" onclick="javascript:OpenWindow('/poly_nyu?url_ver=Z39.88-2004&amp;url_ctx_fmt=infofi/fmt:kev:mtx:ctx&amp;ctx_enc=info:ofi/enc:UTF-8&amp;ctx_ver=Z39.88-2004&amp;rfr_id=info:sid/sfxit.com:azlist&amp;sfx.ignore_date_threshold=1&amp;rft.object_id=110978984566343&amp;svc.fulltext=yes'); return false;">V-iA</a> [1137-7402]
+      
+    </td>
+  </tr>
+
+<!-- target service listing -->
+  
+
+  
+    <tr>
+      <td>Full text available via<a class="ABC" href="/poly_nyu?url_ver=Z39.88-2004&amp;url_ctx_fmt=infofi/fmt:kev:mtx:ctx&amp;ctx_enc=info:ofi/enc:UTF-8&amp;ctx_ver=Z39.88-2004&amp;rfr_id=info:sid/sfxit.com:azlist&amp;sfx.ignore_date_threshold=1&amp;rft.object_id=110978984566343&amp;rft.object_portfolio_id=1000000001026787&amp;svc.fulltext=yes
+" onclick="javascript:OpenWindow('/poly_nyu?url_ver=Z39.88-2004&amp;url_ctx_fmt=infofi/fmt:kev:mtx:ctx&amp;ctx_enc=info:ofi/enc:UTF-8&amp;ctx_ver=Z39.88-2004&amp;rfr_id=info:sid/sfxit.com:azlist&amp;sfx.ignore_date_threshold=1&amp;rft.object_id=110978984566343&amp;rft.object_portfolio_id=1000000001026787'); return false;"> Dialnet</a></td>
+    </tr>
+  
+  <tr>
+    <td>
+        <input type=hidden name='AvailabilityInformation_MDE' id="AvailabilityInformation_MDE_1000000001026787" value="">
+    </td>
+</tr>
+
+
+  
+    
+        <tr>
+          <td nowrap>
+            Available from
+                1997
+                
+                
+          </td>
+        </tr>
+    
+    
+  
+
+  
+  
+ 
+
+
+
+
+
+        
+
+
+    
+        
+    
+    
+
+    
+  
+<!-- end target service listing -->
+
+<!-- category listing -->
+<tr>
+    <td>
+        <input type=hidden name='Categories_MDE' id="Categories_MDE_110978984566343" value="1">
+    </td>
+</tr>
+    
+<!-- category listing -->
+  
+   
+  
+  
+<!-- end category listing -->
+
+<!-- end category listing -->
+	
+	
+
+<!-- info, SFX buttons, and blank line -->
+  <tr>
+    <td>
+      <table>
+        <tr>
+          <td>&nbsp;</td>
+          <td>
+          <a href="/poly_nyu-default/cgi/core/azlist_ver3/a-z_retrieve.cgi/default?&amp;param_sid_save=e28ee74d8366f04861b48206788dfded&amp;param_chinese_checkbox_type_save=Pinyin&amp;param_lang_save=eng&amp;param_letter_group_save=V&amp;param_perform_save=searchTitle&amp;param_letter_group_script_save=Latin&amp;param_chinese_checkbox_save=0&amp;param_services2filter_save=getFullTxt&amp;param_current_view_save=detail&amp;param_pattern_save=&amp;param_jumpToPage_save=&amp;param_type_save=browseLetterGroup&amp;param_textSearchType_save=contains&amp;param_ui_control_scripts_save=&amp;&amp;lang=eng&amp;function=get_info&amp;obj_id=110978984566343&amp;issn=1137-7402&amp;profile=default&amp;exclude_issn=&amp;exclude_auth=1&amp;exclude_note=&amp;exclude_lccn=1&amp;exclude_coden=1&amp;exclude_availability=&amp;exclude_categories=1" onClick="return wrapContent(event, this.href, 0, 0, '<IFRAME NAME=frame SRC=/poly_nyu/cgi/core/azlist_ver3/a-z_retrieve.cgi/default?&amp;param_sid_save=e28ee74d8366f04861b48206788dfded&amp;param_chinese_checkbox_type_save=Pinyin&amp;param_lang_save=eng&amp;param_letter_group_save=V&amp;param_perform_save=searchTitle&amp;param_letter_group_script_save=Latin&amp;param_chinese_checkbox_save=0&amp;param_services2filter_save=getFullTxt&amp;param_current_view_save=detail&amp;param_pattern_save=&amp;param_jumpToPage_save=&amp;param_type_save=browseLetterGroup&amp;param_textSearchType_save=contains&amp;param_ui_control_scripts_save=&amp;&amp;lang=eng&amp;function=get_info&amp;obj_id=110978984566343&amp;issn=1137-7402&amp;profile=default&amp;exclude_issn=&amp;exclude_auth=1&amp;exclude_note=&amp;exclude_lccn=1&amp;exclude_coden=1&amp;exclude_availability=&amp;exclude_categories=1&amp;institute_param=default HEIGHT=200 WIDTH=360 BORDER=0 FRAMEBORDER=0 FRAMESPACING=0 scrolling=no></IFRAME>', 360)"> <img src="/poly_nyu/img/azlist_ver3/info.gif" title="e-Journal Details" alt="e-Journal Details" border="0"></a>
+          </td>
+
+
+           
+	          <td><a href="/poly_nyu?url_ver=Z39.88-2004&amp;url_ctx_fmt=infofi/fmt:kev:mtx:ctx&amp;ctx_enc=info:ofi/enc:UTF-8&amp;ctx_ver=Z39.88-2004&amp;rfr_id=info:sid/sfxit.com:azlist&amp;sfx.ignore_date_threshold=1&amp;rft.object_id=110978984566343
+" onclick="javascript:OpenWindow('/poly_nyu?url_ver=Z39.88-2004&amp;url_ctx_fmt=infofi/fmt:kev:mtx:ctx&amp;ctx_enc=info:ofi/enc:UTF-8&amp;ctx_ver=Z39.88-2004&amp;rfr_id=info:sid/sfxit.com:azlist&amp;sfx.ignore_date_threshold=1&amp;rft.object_id=110978984566343'); return false;"><img src="/poly_nyu/img/azlist_ver3/sfx.gif" title="SFX" alt="SFX" border="0"></a></td>
+          
+          
+		  
+        </tr>
+      </table>
+    </td>
+  </tr>
+  <tr><td>&nbsp;</td></tr>
+<!-- end info, SFX buttons, and blank line -->
+
+
+  <tr>
+    <td>
+   	   
+			<a class="Results" href="/poly_nyu?url_ver=Z39.88-2004&amp;url_ctx_fmt=infofi/fmt:kev:mtx:ctx&amp;ctx_enc=info:ofi/enc:UTF-8&amp;ctx_ver=Z39.88-2004&amp;rfr_id=info:sid/sfxit.com:azlist&amp;sfx.ignore_date_threshold=1&amp;rft.object_id=110978966561480&amp;rft.object_portfolio_id=&amp;svc.fulltext=yes
+" onclick="javascript:OpenWindow('/poly_nyu?url_ver=Z39.88-2004&amp;url_ctx_fmt=infofi/fmt:kev:mtx:ctx&amp;ctx_enc=info:ofi/enc:UTF-8&amp;ctx_ver=Z39.88-2004&amp;rfr_id=info:sid/sfxit.com:azlist&amp;sfx.ignore_date_threshold=1&amp;rft.object_id=110978966561480&amp;svc.fulltext=yes'); return false;">V.R.B. Informatie</a> [0777-6306]
+      
+    </td>
+  </tr>
+
+<!-- target service listing -->
+  
+
+  
+    <tr>
+      <td>Full text available via<a class="ABC" href="/poly_nyu?url_ver=Z39.88-2004&amp;url_ctx_fmt=infofi/fmt:kev:mtx:ctx&amp;ctx_enc=info:ofi/enc:UTF-8&amp;ctx_ver=Z39.88-2004&amp;rfr_id=info:sid/sfxit.com:azlist&amp;sfx.ignore_date_threshold=1&amp;rft.object_id=110978966561480&amp;rft.object_portfolio_id=1000000000672507&amp;svc.fulltext=yes
+" onclick="javascript:OpenWindow('/poly_nyu?url_ver=Z39.88-2004&amp;url_ctx_fmt=infofi/fmt:kev:mtx:ctx&amp;ctx_enc=info:ofi/enc:UTF-8&amp;ctx_ver=Z39.88-2004&amp;rfr_id=info:sid/sfxit.com:azlist&amp;sfx.ignore_date_threshold=1&amp;rft.object_id=110978966561480&amp;rft.object_portfolio_id=1000000000672507'); return false;"> Free E- Journals</a></td>
+    </tr>
+  
+  <tr>
+    <td>
+        <input type=hidden name='AvailabilityInformation_MDE' id="AvailabilityInformation_MDE_1000000000672507" value="">
+    </td>
+</tr>
+
+
+  
+    
+        <tr>
+          <td nowrap>
+            Available from
+                2000
+                
+                
+          </td>
+        </tr>
+    
+    
+  
+
+  
+  
+ 
+
+
+
+
+
+        
+
+
+    
+        
+    
+    
+
+    
+  
+<!-- end target service listing -->
+
+<!-- category listing -->
+<tr>
+    <td>
+        <input type=hidden name='Categories_MDE' id="Categories_MDE_110978966561480" value="1">
+    </td>
+</tr>
+    
+<!-- category listing -->
+  
+  
+<!-- end category listing -->
+
+<!-- end category listing -->
+	
+	
+
+<!-- info, SFX buttons, and blank line -->
+  <tr>
+    <td>
+      <table>
+        <tr>
+          <td>&nbsp;</td>
+          <td>
+          <a href="/poly_nyu-default/cgi/core/azlist_ver3/a-z_retrieve.cgi/default?&amp;param_sid_save=e28ee74d8366f04861b48206788dfded&amp;param_chinese_checkbox_type_save=Pinyin&amp;param_lang_save=eng&amp;param_letter_group_save=V&amp;param_perform_save=searchTitle&amp;param_letter_group_script_save=Latin&amp;param_chinese_checkbox_save=0&amp;param_services2filter_save=getFullTxt&amp;param_current_view_save=detail&amp;param_pattern_save=&amp;param_jumpToPage_save=&amp;param_type_save=browseLetterGroup&amp;param_textSearchType_save=contains&amp;param_ui_control_scripts_save=&amp;&amp;lang=eng&amp;function=get_info&amp;obj_id=110978966561480&amp;issn=0777-6306&amp;profile=default&amp;exclude_issn=&amp;exclude_auth=1&amp;exclude_note=&amp;exclude_lccn=1&amp;exclude_coden=1&amp;exclude_availability=&amp;exclude_categories=1" onClick="return wrapContent(event, this.href, 0, 0, '<IFRAME NAME=frame SRC=/poly_nyu/cgi/core/azlist_ver3/a-z_retrieve.cgi/default?&amp;param_sid_save=e28ee74d8366f04861b48206788dfded&amp;param_chinese_checkbox_type_save=Pinyin&amp;param_lang_save=eng&amp;param_letter_group_save=V&amp;param_perform_save=searchTitle&amp;param_letter_group_script_save=Latin&amp;param_chinese_checkbox_save=0&amp;param_services2filter_save=getFullTxt&amp;param_current_view_save=detail&amp;param_pattern_save=&amp;param_jumpToPage_save=&amp;param_type_save=browseLetterGroup&amp;param_textSearchType_save=contains&amp;param_ui_control_scripts_save=&amp;&amp;lang=eng&amp;function=get_info&amp;obj_id=110978966561480&amp;issn=0777-6306&amp;profile=default&amp;exclude_issn=&amp;exclude_auth=1&amp;exclude_note=&amp;exclude_lccn=1&amp;exclude_coden=1&amp;exclude_availability=&amp;exclude_categories=1&amp;institute_param=default HEIGHT=200 WIDTH=360 BORDER=0 FRAMEBORDER=0 FRAMESPACING=0 scrolling=no></IFRAME>', 360)"> <img src="/poly_nyu/img/azlist_ver3/info.gif" title="e-Journal Details" alt="e-Journal Details" border="0"></a>
+          </td>
+
+
+           
+	          <td><a href="/poly_nyu?url_ver=Z39.88-2004&amp;url_ctx_fmt=infofi/fmt:kev:mtx:ctx&amp;ctx_enc=info:ofi/enc:UTF-8&amp;ctx_ver=Z39.88-2004&amp;rfr_id=info:sid/sfxit.com:azlist&amp;sfx.ignore_date_threshold=1&amp;rft.object_id=110978966561480
+" onclick="javascript:OpenWindow('/poly_nyu?url_ver=Z39.88-2004&amp;url_ctx_fmt=infofi/fmt:kev:mtx:ctx&amp;ctx_enc=info:ofi/enc:UTF-8&amp;ctx_ver=Z39.88-2004&amp;rfr_id=info:sid/sfxit.com:azlist&amp;sfx.ignore_date_threshold=1&amp;rft.object_id=110978966561480'); return false;"><img src="/poly_nyu/img/azlist_ver3/sfx.gif" title="SFX" alt="SFX" border="0"></a></td>
+          
+          
+		  
+        </tr>
+      </table>
+    </td>
+  </tr>
+  <tr><td>&nbsp;</td></tr>
+<!-- end info, SFX buttons, and blank line -->
+
+
+  <tr>
+    <td>
+   	   
+			<a class="Results" href="/poly_nyu?url_ver=Z39.88-2004&amp;url_ctx_fmt=infofi/fmt:kev:mtx:ctx&amp;ctx_enc=info:ofi/enc:UTF-8&amp;ctx_ver=Z39.88-2004&amp;rfr_id=info:sid/sfxit.com:azlist&amp;sfx.ignore_date_threshold=1&amp;rft.object_id=3310000000009321&amp;rft.object_portfolio_id=&amp;svc.fulltext=yes
+" onclick="javascript:OpenWindow('/poly_nyu?url_ver=Z39.88-2004&amp;url_ctx_fmt=infofi/fmt:kev:mtx:ctx&amp;ctx_enc=info:ofi/enc:UTF-8&amp;ctx_ver=Z39.88-2004&amp;rfr_id=info:sid/sfxit.com:azlist&amp;sfx.ignore_date_threshold=1&amp;rft.object_id=3310000000009321&amp;svc.fulltext=yes'); return false;">VA and NC Medical Surgery Malpractice Attorneys Blog</a> 
+      
+    </td>
+  </tr>
+
+<!-- target service listing -->
+  
+
+  
+    <tr>
+      <td>Full text available via<a class="ABC" href="/poly_nyu?url_ver=Z39.88-2004&amp;url_ctx_fmt=infofi/fmt:kev:mtx:ctx&amp;ctx_enc=info:ofi/enc:UTF-8&amp;ctx_ver=Z39.88-2004&amp;rfr_id=info:sid/sfxit.com:azlist&amp;sfx.ignore_date_threshold=1&amp;rft.object_id=3310000000009321&amp;rft.object_portfolio_id=3310000000019578&amp;svc.fulltext=yes
+" onclick="javascript:OpenWindow('/poly_nyu?url_ver=Z39.88-2004&amp;url_ctx_fmt=infofi/fmt:kev:mtx:ctx&amp;ctx_enc=info:ofi/enc:UTF-8&amp;ctx_ver=Z39.88-2004&amp;rfr_id=info:sid/sfxit.com:azlist&amp;sfx.ignore_date_threshold=1&amp;rft.object_id=3310000000009321&amp;rft.object_portfolio_id=3310000000019578'); return false;"> LexisNexis Academic Universe</a></td>
+    </tr>
+  
+  <tr>
+    <td>
+        <input type=hidden name='AvailabilityInformation_MDE' id="AvailabilityInformation_MDE_3310000000019578" value="">
+    </td>
+</tr>
+
+
+  
+    
+        <tr>
+          <td nowrap>
+            Available from
+                2009
+                
+                
+          </td>
+        </tr>
+    
+    
+  
+
+  
+  
+ 
+
+
+
+
+
+        
+
+
+    
+        
+    
+    
+
+    
+  
+<!-- end target service listing -->
+
+<!-- category listing -->
+<tr>
+    <td>
+        <input type=hidden name='Categories_MDE' id="Categories_MDE_3310000000009321" value="1">
+    </td>
+</tr>
+    
+<!-- category listing -->
+  
+  
+<!-- end category listing -->
+
+<!-- end category listing -->
+	
+	
+
+<!-- info, SFX buttons, and blank line -->
+  <tr>
+    <td>
+      <table>
+        <tr>
+          <td>&nbsp;</td>
+          <td>
+          <a href="/poly_nyu-default/cgi/core/azlist_ver3/a-z_retrieve.cgi/default?&amp;param_sid_save=e28ee74d8366f04861b48206788dfded&amp;param_chinese_checkbox_type_save=Pinyin&amp;param_lang_save=eng&amp;param_letter_group_save=V&amp;param_perform_save=searchTitle&amp;param_letter_group_script_save=Latin&amp;param_chinese_checkbox_save=0&amp;param_services2filter_save=getFullTxt&amp;param_current_view_save=detail&amp;param_pattern_save=&amp;param_jumpToPage_save=&amp;param_type_save=browseLetterGroup&amp;param_textSearchType_save=contains&amp;param_ui_control_scripts_save=&amp;&amp;lang=eng&amp;function=get_info&amp;obj_id=3310000000009321&amp;issn=&amp;profile=default&amp;exclude_issn=&amp;exclude_auth=1&amp;exclude_note=&amp;exclude_lccn=1&amp;exclude_coden=1&amp;exclude_availability=&amp;exclude_categories=1" onClick="return wrapContent(event, this.href, 0, 0, '<IFRAME NAME=frame SRC=/poly_nyu/cgi/core/azlist_ver3/a-z_retrieve.cgi/default?&amp;param_sid_save=e28ee74d8366f04861b48206788dfded&amp;param_chinese_checkbox_type_save=Pinyin&amp;param_lang_save=eng&amp;param_letter_group_save=V&amp;param_perform_save=searchTitle&amp;param_letter_group_script_save=Latin&amp;param_chinese_checkbox_save=0&amp;param_services2filter_save=getFullTxt&amp;param_current_view_save=detail&amp;param_pattern_save=&amp;param_jumpToPage_save=&amp;param_type_save=browseLetterGroup&amp;param_textSearchType_save=contains&amp;param_ui_control_scripts_save=&amp;&amp;lang=eng&amp;function=get_info&amp;obj_id=3310000000009321&amp;issn=&amp;profile=default&amp;exclude_issn=&amp;exclude_auth=1&amp;exclude_note=&amp;exclude_lccn=1&amp;exclude_coden=1&amp;exclude_availability=&amp;exclude_categories=1&amp;institute_param=default HEIGHT=200 WIDTH=360 BORDER=0 FRAMEBORDER=0 FRAMESPACING=0 scrolling=no></IFRAME>', 360)"> <img src="/poly_nyu/img/azlist_ver3/info.gif" title="e-Journal Details" alt="e-Journal Details" border="0"></a>
+          </td>
+
+
+           
+	          <td><a href="/poly_nyu?url_ver=Z39.88-2004&amp;url_ctx_fmt=infofi/fmt:kev:mtx:ctx&amp;ctx_enc=info:ofi/enc:UTF-8&amp;ctx_ver=Z39.88-2004&amp;rfr_id=info:sid/sfxit.com:azlist&amp;sfx.ignore_date_threshold=1&amp;rft.object_id=3310000000009321
+" onclick="javascript:OpenWindow('/poly_nyu?url_ver=Z39.88-2004&amp;url_ctx_fmt=infofi/fmt:kev:mtx:ctx&amp;ctx_enc=info:ofi/enc:UTF-8&amp;ctx_ver=Z39.88-2004&amp;rfr_id=info:sid/sfxit.com:azlist&amp;sfx.ignore_date_threshold=1&amp;rft.object_id=3310000000009321'); return false;"><img src="/poly_nyu/img/azlist_ver3/sfx.gif" title="SFX" alt="SFX" border="0"></a></td>
+          
+          
+		  
+        </tr>
+      </table>
+    </td>
+  </tr>
+  <tr><td>&nbsp;</td></tr>
+<!-- end info, SFX buttons, and blank line -->
+
+
+  <tr>
+    <td>
+   	   
+			<a class="Results" href="/poly_nyu?url_ver=Z39.88-2004&amp;url_ctx_fmt=infofi/fmt:kev:mtx:ctx&amp;ctx_enc=info:ofi/enc:UTF-8&amp;ctx_ver=Z39.88-2004&amp;rfr_id=info:sid/sfxit.com:azlist&amp;sfx.ignore_date_threshold=1&amp;rft.object_id=1000000000216555&amp;rft.object_portfolio_id=&amp;svc.fulltext=yes
+" onclick="javascript:OpenWindow('/poly_nyu?url_ver=Z39.88-2004&amp;url_ctx_fmt=infofi/fmt:kev:mtx:ctx&amp;ctx_enc=info:ofi/enc:UTF-8&amp;ctx_ver=Z39.88-2004&amp;rfr_id=info:sid/sfxit.com:azlist&amp;sfx.ignore_date_threshold=1&amp;rft.object_id=1000000000216555&amp;svc.fulltext=yes'); return false;">VA Attorney General Opinions</a> 
+      
+    </td>
+  </tr>
+
+<!-- target service listing -->
+  
+
+  
+    <tr>
+      <td>Full text available via<a class="ABC" href="/poly_nyu?url_ver=Z39.88-2004&amp;url_ctx_fmt=infofi/fmt:kev:mtx:ctx&amp;ctx_enc=info:ofi/enc:UTF-8&amp;ctx_ver=Z39.88-2004&amp;rfr_id=info:sid/sfxit.com:azlist&amp;sfx.ignore_date_threshold=1&amp;rft.object_id=1000000000216555&amp;rft.object_portfolio_id=1000000000450129&amp;svc.fulltext=yes
+" onclick="javascript:OpenWindow('/poly_nyu?url_ver=Z39.88-2004&amp;url_ctx_fmt=infofi/fmt:kev:mtx:ctx&amp;ctx_enc=info:ofi/enc:UTF-8&amp;ctx_ver=Z39.88-2004&amp;rfr_id=info:sid/sfxit.com:azlist&amp;sfx.ignore_date_threshold=1&amp;rft.object_id=1000000000216555&amp;rft.object_portfolio_id=1000000000450129'); return false;"> LexisNexis Academic Universe</a></td>
+    </tr>
+  
+  <tr>
+    <td>
+        <input type=hidden name='AvailabilityInformation_MDE' id="AvailabilityInformation_MDE_1000000000450129" value="">
+    </td>
+</tr>
+
+
+  
+    
+        <tr>
+          <td nowrap>
+            Available from
+                1958
+                
+                
+          </td>
+        </tr>
+    
+    
+  
+
+  
+  
+ 
+
+
+
+
+
+        
+
+
+    
+        
+    
+    
+
+    
+  
+<!-- end target service listing -->
+
+<!-- category listing -->
+<tr>
+    <td>
+        <input type=hidden name='Categories_MDE' id="Categories_MDE_1000000000216555" value="1">
+    </td>
+</tr>
+    
+<!-- category listing -->
+  
+  
+<!-- end category listing -->
+
+<!-- end category listing -->
+	
+	
+
+<!-- info, SFX buttons, and blank line -->
+  <tr>
+    <td>
+      <table>
+        <tr>
+          <td>&nbsp;</td>
+          <td>
+          <a href="/poly_nyu-default/cgi/core/azlist_ver3/a-z_retrieve.cgi/default?&amp;param_sid_save=e28ee74d8366f04861b48206788dfded&amp;param_chinese_checkbox_type_save=Pinyin&amp;param_lang_save=eng&amp;param_letter_group_save=V&amp;param_perform_save=searchTitle&amp;param_letter_group_script_save=Latin&amp;param_chinese_checkbox_save=0&amp;param_services2filter_save=getFullTxt&amp;param_current_view_save=detail&amp;param_pattern_save=&amp;param_jumpToPage_save=&amp;param_type_save=browseLetterGroup&amp;param_textSearchType_save=contains&amp;param_ui_control_scripts_save=&amp;&amp;lang=eng&amp;function=get_info&amp;obj_id=1000000000216555&amp;issn=&amp;profile=default&amp;exclude_issn=&amp;exclude_auth=1&amp;exclude_note=&amp;exclude_lccn=1&amp;exclude_coden=1&amp;exclude_availability=&amp;exclude_categories=1" onClick="return wrapContent(event, this.href, 0, 0, '<IFRAME NAME=frame SRC=/poly_nyu/cgi/core/azlist_ver3/a-z_retrieve.cgi/default?&amp;param_sid_save=e28ee74d8366f04861b48206788dfded&amp;param_chinese_checkbox_type_save=Pinyin&amp;param_lang_save=eng&amp;param_letter_group_save=V&amp;param_perform_save=searchTitle&amp;param_letter_group_script_save=Latin&amp;param_chinese_checkbox_save=0&amp;param_services2filter_save=getFullTxt&amp;param_current_view_save=detail&amp;param_pattern_save=&amp;param_jumpToPage_save=&amp;param_type_save=browseLetterGroup&amp;param_textSearchType_save=contains&amp;param_ui_control_scripts_save=&amp;&amp;lang=eng&amp;function=get_info&amp;obj_id=1000000000216555&amp;issn=&amp;profile=default&amp;exclude_issn=&amp;exclude_auth=1&amp;exclude_note=&amp;exclude_lccn=1&amp;exclude_coden=1&amp;exclude_availability=&amp;exclude_categories=1&amp;institute_param=default HEIGHT=200 WIDTH=360 BORDER=0 FRAMEBORDER=0 FRAMESPACING=0 scrolling=no></IFRAME>', 360)"> <img src="/poly_nyu/img/azlist_ver3/info.gif" title="e-Journal Details" alt="e-Journal Details" border="0"></a>
+          </td>
+
+
+           
+	          <td><a href="/poly_nyu?url_ver=Z39.88-2004&amp;url_ctx_fmt=infofi/fmt:kev:mtx:ctx&amp;ctx_enc=info:ofi/enc:UTF-8&amp;ctx_ver=Z39.88-2004&amp;rfr_id=info:sid/sfxit.com:azlist&amp;sfx.ignore_date_threshold=1&amp;rft.object_id=1000000000216555
+" onclick="javascript:OpenWindow('/poly_nyu?url_ver=Z39.88-2004&amp;url_ctx_fmt=infofi/fmt:kev:mtx:ctx&amp;ctx_enc=info:ofi/enc:UTF-8&amp;ctx_ver=Z39.88-2004&amp;rfr_id=info:sid/sfxit.com:azlist&amp;sfx.ignore_date_threshold=1&amp;rft.object_id=1000000000216555'); return false;"><img src="/poly_nyu/img/azlist_ver3/sfx.gif" title="SFX" alt="SFX" border="0"></a></td>
+          
+          
+		  
+        </tr>
+      </table>
+    </td>
+  </tr>
+  <tr><td>&nbsp;</td></tr>
+<!-- end info, SFX buttons, and blank line -->
+
+
+  <tr>
+    <td>
+   	   
+			<a class="Results" href="/poly_nyu?url_ver=Z39.88-2004&amp;url_ctx_fmt=infofi/fmt:kev:mtx:ctx&amp;ctx_enc=info:ofi/enc:UTF-8&amp;ctx_ver=Z39.88-2004&amp;rfr_id=info:sid/sfxit.com:azlist&amp;sfx.ignore_date_threshold=1&amp;rft.object_id=1000000000216842&amp;rft.object_portfolio_id=&amp;svc.fulltext=yes
+" onclick="javascript:OpenWindow('/poly_nyu?url_ver=Z39.88-2004&amp;url_ctx_fmt=infofi/fmt:kev:mtx:ctx&amp;ctx_enc=info:ofi/enc:UTF-8&amp;ctx_ver=Z39.88-2004&amp;rfr_id=info:sid/sfxit.com:azlist&amp;sfx.ignore_date_threshold=1&amp;rft.object_id=1000000000216842&amp;svc.fulltext=yes'); return false;">VA Circuit Court Cases from 1855</a> 
+      
+    </td>
+  </tr>
+
+<!-- target service listing -->
+  
+
+  
+    <tr>
+      <td>Full text available via<a class="ABC" href="/poly_nyu?url_ver=Z39.88-2004&amp;url_ctx_fmt=infofi/fmt:kev:mtx:ctx&amp;ctx_enc=info:ofi/enc:UTF-8&amp;ctx_ver=Z39.88-2004&amp;rfr_id=info:sid/sfxit.com:azlist&amp;sfx.ignore_date_threshold=1&amp;rft.object_id=1000000000216842&amp;rft.object_portfolio_id=1000000000450416&amp;svc.fulltext=yes
+" onclick="javascript:OpenWindow('/poly_nyu?url_ver=Z39.88-2004&amp;url_ctx_fmt=infofi/fmt:kev:mtx:ctx&amp;ctx_enc=info:ofi/enc:UTF-8&amp;ctx_ver=Z39.88-2004&amp;rfr_id=info:sid/sfxit.com:azlist&amp;sfx.ignore_date_threshold=1&amp;rft.object_id=1000000000216842&amp;rft.object_portfolio_id=1000000000450416'); return false;"> LexisNexis Academic Universe</a></td>
+    </tr>
+  
+  <tr>
+    <td>
+        <input type=hidden name='AvailabilityInformation_MDE' id="AvailabilityInformation_MDE_1000000000450416" value="">
+    </td>
+</tr>
+
+
+  
+    
+        <tr>
+          <td nowrap>
+            Available from
+                1855
+                
+                
+          </td>
+        </tr>
+    
+    
+  
+
+  
+  
+ 
+
+
+
+
+
+        
+
+
+    
+        
+    
+    
+
+    
+  
+<!-- end target service listing -->
+
+<!-- category listing -->
+<tr>
+    <td>
+        <input type=hidden name='Categories_MDE' id="Categories_MDE_1000000000216842" value="1">
+    </td>
+</tr>
+    
+<!-- category listing -->
+  
+  
+<!-- end category listing -->
+
+<!-- end category listing -->
+	
+	
+
+<!-- info, SFX buttons, and blank line -->
+  <tr>
+    <td>
+      <table>
+        <tr>
+          <td>&nbsp;</td>
+          <td>
+          <a href="/poly_nyu-default/cgi/core/azlist_ver3/a-z_retrieve.cgi/default?&amp;param_sid_save=e28ee74d8366f04861b48206788dfded&amp;param_chinese_checkbox_type_save=Pinyin&amp;param_lang_save=eng&amp;param_letter_group_save=V&amp;param_perform_save=searchTitle&amp;param_letter_group_script_save=Latin&amp;param_chinese_checkbox_save=0&amp;param_services2filter_save=getFullTxt&amp;param_current_view_save=detail&amp;param_pattern_save=&amp;param_jumpToPage_save=&amp;param_type_save=browseLetterGroup&amp;param_textSearchType_save=contains&amp;param_ui_control_scripts_save=&amp;&amp;lang=eng&amp;function=get_info&amp;obj_id=1000000000216842&amp;issn=&amp;profile=default&amp;exclude_issn=&amp;exclude_auth=1&amp;exclude_note=&amp;exclude_lccn=1&amp;exclude_coden=1&amp;exclude_availability=&amp;exclude_categories=1" onClick="return wrapContent(event, this.href, 0, 0, '<IFRAME NAME=frame SRC=/poly_nyu/cgi/core/azlist_ver3/a-z_retrieve.cgi/default?&amp;param_sid_save=e28ee74d8366f04861b48206788dfded&amp;param_chinese_checkbox_type_save=Pinyin&amp;param_lang_save=eng&amp;param_letter_group_save=V&amp;param_perform_save=searchTitle&amp;param_letter_group_script_save=Latin&amp;param_chinese_checkbox_save=0&amp;param_services2filter_save=getFullTxt&amp;param_current_view_save=detail&amp;param_pattern_save=&amp;param_jumpToPage_save=&amp;param_type_save=browseLetterGroup&amp;param_textSearchType_save=contains&amp;param_ui_control_scripts_save=&amp;&amp;lang=eng&amp;function=get_info&amp;obj_id=1000000000216842&amp;issn=&amp;profile=default&amp;exclude_issn=&amp;exclude_auth=1&amp;exclude_note=&amp;exclude_lccn=1&amp;exclude_coden=1&amp;exclude_availability=&amp;exclude_categories=1&amp;institute_param=default HEIGHT=200 WIDTH=360 BORDER=0 FRAMEBORDER=0 FRAMESPACING=0 scrolling=no></IFRAME>', 360)"> <img src="/poly_nyu/img/azlist_ver3/info.gif" title="e-Journal Details" alt="e-Journal Details" border="0"></a>
+          </td>
+
+
+           
+	          <td><a href="/poly_nyu?url_ver=Z39.88-2004&amp;url_ctx_fmt=infofi/fmt:kev:mtx:ctx&amp;ctx_enc=info:ofi/enc:UTF-8&amp;ctx_ver=Z39.88-2004&amp;rfr_id=info:sid/sfxit.com:azlist&amp;sfx.ignore_date_threshold=1&amp;rft.object_id=1000000000216842
+" onclick="javascript:OpenWindow('/poly_nyu?url_ver=Z39.88-2004&amp;url_ctx_fmt=infofi/fmt:kev:mtx:ctx&amp;ctx_enc=info:ofi/enc:UTF-8&amp;ctx_ver=Z39.88-2004&amp;rfr_id=info:sid/sfxit.com:azlist&amp;sfx.ignore_date_threshold=1&amp;rft.object_id=1000000000216842'); return false;"><img src="/poly_nyu/img/azlist_ver3/sfx.gif" title="SFX" alt="SFX" border="0"></a></td>
+          
+          
+		  
+        </tr>
+      </table>
+    </td>
+  </tr>
+  <tr><td>&nbsp;</td></tr>
+<!-- end info, SFX buttons, and blank line -->
+
+
+  <tr>
+    <td>
+   	   
+			<a class="Results" href="/poly_nyu?url_ver=Z39.88-2004&amp;url_ctx_fmt=infofi/fmt:kev:mtx:ctx&amp;ctx_enc=info:ofi/enc:UTF-8&amp;ctx_ver=Z39.88-2004&amp;rfr_id=info:sid/sfxit.com:azlist&amp;sfx.ignore_date_threshold=1&amp;rft.object_id=1000000000216576&amp;rft.object_portfolio_id=&amp;svc.fulltext=yes
+" onclick="javascript:OpenWindow('/poly_nyu?url_ver=Z39.88-2004&amp;url_ctx_fmt=infofi/fmt:kev:mtx:ctx&amp;ctx_enc=info:ofi/enc:UTF-8&amp;ctx_ver=Z39.88-2004&amp;rfr_id=info:sid/sfxit.com:azlist&amp;sfx.ignore_date_threshold=1&amp;rft.object_id=1000000000216576&amp;svc.fulltext=yes'); return false;">VA - Code of Virginia</a> 
+      
+    </td>
+  </tr>
+
+<!-- target service listing -->
+  
+
+  
+    <tr>
+      <td>Full text available via<a class="ABC" href="/poly_nyu?url_ver=Z39.88-2004&amp;url_ctx_fmt=infofi/fmt:kev:mtx:ctx&amp;ctx_enc=info:ofi/enc:UTF-8&amp;ctx_ver=Z39.88-2004&amp;rfr_id=info:sid/sfxit.com:azlist&amp;sfx.ignore_date_threshold=1&amp;rft.object_id=1000000000216576&amp;rft.object_portfolio_id=1000000000450150&amp;svc.fulltext=yes
+" onclick="javascript:OpenWindow('/poly_nyu?url_ver=Z39.88-2004&amp;url_ctx_fmt=infofi/fmt:kev:mtx:ctx&amp;ctx_enc=info:ofi/enc:UTF-8&amp;ctx_ver=Z39.88-2004&amp;rfr_id=info:sid/sfxit.com:azlist&amp;sfx.ignore_date_threshold=1&amp;rft.object_id=1000000000216576&amp;rft.object_portfolio_id=1000000000450150'); return false;"> LexisNexis Academic Universe</a></td>
+    </tr>
+  
+  <tr>
+    <td>
+        <input type=hidden name='AvailabilityInformation_MDE' id="AvailabilityInformation_MDE_1000000000450150" value="">
+    </td>
+</tr>
+
+
+  
+    
+        <tr>
+          <td nowrap>
+            Available from
+                2001
+                
+                
+          </td>
+        </tr>
+    
+    
+  
+
+  
+  
+ 
+
+
+
+
+
+        
+
+
+    
+        
+    
+    
+
+    
+  
+<!-- end target service listing -->
+
+<!-- category listing -->
+<tr>
+    <td>
+        <input type=hidden name='Categories_MDE' id="Categories_MDE_1000000000216576" value="1">
+    </td>
+</tr>
+    
+<!-- category listing -->
+  
+  
+<!-- end category listing -->
+
+<!-- end category listing -->
+	
+	
+
+<!-- info, SFX buttons, and blank line -->
+  <tr>
+    <td>
+      <table>
+        <tr>
+          <td>&nbsp;</td>
+          <td>
+          <a href="/poly_nyu-default/cgi/core/azlist_ver3/a-z_retrieve.cgi/default?&amp;param_sid_save=e28ee74d8366f04861b48206788dfded&amp;param_chinese_checkbox_type_save=Pinyin&amp;param_lang_save=eng&amp;param_letter_group_save=V&amp;param_perform_save=searchTitle&amp;param_letter_group_script_save=Latin&amp;param_chinese_checkbox_save=0&amp;param_services2filter_save=getFullTxt&amp;param_current_view_save=detail&amp;param_pattern_save=&amp;param_jumpToPage_save=&amp;param_type_save=browseLetterGroup&amp;param_textSearchType_save=contains&amp;param_ui_control_scripts_save=&amp;&amp;lang=eng&amp;function=get_info&amp;obj_id=1000000000216576&amp;issn=&amp;profile=default&amp;exclude_issn=&amp;exclude_auth=1&amp;exclude_note=&amp;exclude_lccn=1&amp;exclude_coden=1&amp;exclude_availability=&amp;exclude_categories=1" onClick="return wrapContent(event, this.href, 0, 0, '<IFRAME NAME=frame SRC=/poly_nyu/cgi/core/azlist_ver3/a-z_retrieve.cgi/default?&amp;param_sid_save=e28ee74d8366f04861b48206788dfded&amp;param_chinese_checkbox_type_save=Pinyin&amp;param_lang_save=eng&amp;param_letter_group_save=V&amp;param_perform_save=searchTitle&amp;param_letter_group_script_save=Latin&amp;param_chinese_checkbox_save=0&amp;param_services2filter_save=getFullTxt&amp;param_current_view_save=detail&amp;param_pattern_save=&amp;param_jumpToPage_save=&amp;param_type_save=browseLetterGroup&amp;param_textSearchType_save=contains&amp;param_ui_control_scripts_save=&amp;&amp;lang=eng&amp;function=get_info&amp;obj_id=1000000000216576&amp;issn=&amp;profile=default&amp;exclude_issn=&amp;exclude_auth=1&amp;exclude_note=&amp;exclude_lccn=1&amp;exclude_coden=1&amp;exclude_availability=&amp;exclude_categories=1&amp;institute_param=default HEIGHT=200 WIDTH=360 BORDER=0 FRAMEBORDER=0 FRAMESPACING=0 scrolling=no></IFRAME>', 360)"> <img src="/poly_nyu/img/azlist_ver3/info.gif" title="e-Journal Details" alt="e-Journal Details" border="0"></a>
+          </td>
+
+
+           
+	          <td><a href="/poly_nyu?url_ver=Z39.88-2004&amp;url_ctx_fmt=infofi/fmt:kev:mtx:ctx&amp;ctx_enc=info:ofi/enc:UTF-8&amp;ctx_ver=Z39.88-2004&amp;rfr_id=info:sid/sfxit.com:azlist&amp;sfx.ignore_date_threshold=1&amp;rft.object_id=1000000000216576
+" onclick="javascript:OpenWindow('/poly_nyu?url_ver=Z39.88-2004&amp;url_ctx_fmt=infofi/fmt:kev:mtx:ctx&amp;ctx_enc=info:ofi/enc:UTF-8&amp;ctx_ver=Z39.88-2004&amp;rfr_id=info:sid/sfxit.com:azlist&amp;sfx.ignore_date_threshold=1&amp;rft.object_id=1000000000216576'); return false;"><img src="/poly_nyu/img/azlist_ver3/sfx.gif" title="SFX" alt="SFX" border="0"></a></td>
+          
+          
+		  
+        </tr>
+      </table>
+    </td>
+  </tr>
+  <tr><td>&nbsp;</td></tr>
+<!-- end info, SFX buttons, and blank line -->
+
+
+  <tr>
+    <td>
+   	   
+			<a class="Results" href="/poly_nyu?url_ver=Z39.88-2004&amp;url_ctx_fmt=infofi/fmt:kev:mtx:ctx&amp;ctx_enc=info:ofi/enc:UTF-8&amp;ctx_ver=Z39.88-2004&amp;rfr_id=info:sid/sfxit.com:azlist&amp;sfx.ignore_date_threshold=1&amp;rft.object_id=1000000000425940&amp;rft.object_portfolio_id=&amp;svc.fulltext=yes
+" onclick="javascript:OpenWindow('/poly_nyu?url_ver=Z39.88-2004&amp;url_ctx_fmt=infofi/fmt:kev:mtx:ctx&amp;ctx_enc=info:ofi/enc:UTF-8&amp;ctx_ver=Z39.88-2004&amp;rfr_id=info:sid/sfxit.com:azlist&amp;sfx.ignore_date_threshold=1&amp;rft.object_id=1000000000425940&amp;svc.fulltext=yes'); return false;">VA Corporation Commission Financial Services</a> 
+      
+    </td>
+  </tr>
+
+<!-- target service listing -->
+  
+
+  
+    <tr>
+      <td>Full text available via<a class="ABC" href="/poly_nyu?url_ver=Z39.88-2004&amp;url_ctx_fmt=infofi/fmt:kev:mtx:ctx&amp;ctx_enc=info:ofi/enc:UTF-8&amp;ctx_ver=Z39.88-2004&amp;rfr_id=info:sid/sfxit.com:azlist&amp;sfx.ignore_date_threshold=1&amp;rft.object_id=1000000000425940&amp;rft.object_portfolio_id=1000000001048970&amp;svc.fulltext=yes
+" onclick="javascript:OpenWindow('/poly_nyu?url_ver=Z39.88-2004&amp;url_ctx_fmt=infofi/fmt:kev:mtx:ctx&amp;ctx_enc=info:ofi/enc:UTF-8&amp;ctx_ver=Z39.88-2004&amp;rfr_id=info:sid/sfxit.com:azlist&amp;sfx.ignore_date_threshold=1&amp;rft.object_id=1000000000425940&amp;rft.object_portfolio_id=1000000001048970'); return false;"> LexisNexis Academic Universe</a></td>
+    </tr>
+  
+  <tr>
+    <td>
+        <input type=hidden name='AvailabilityInformation_MDE' id="AvailabilityInformation_MDE_1000000001048970" value="">
+    </td>
+</tr>
+
+
+  
+    
+        <tr>
+          <td nowrap>
+            Available from
+                1976
+                
+                
+          </td>
+        </tr>
+    
+    
+  
+
+  
+  
+ 
+
+
+
+
+
+        
+
+
+    
+        
+    
+    
+
+    
+  
+<!-- end target service listing -->
+
+<!-- category listing -->
+<tr>
+    <td>
+        <input type=hidden name='Categories_MDE' id="Categories_MDE_1000000000425940" value="1">
+    </td>
+</tr>
+    
+<!-- category listing -->
+  
+  
+<!-- end category listing -->
+
+<!-- end category listing -->
+	
+	
+
+<!-- info, SFX buttons, and blank line -->
+  <tr>
+    <td>
+      <table>
+        <tr>
+          <td>&nbsp;</td>
+          <td>
+          <a href="/poly_nyu-default/cgi/core/azlist_ver3/a-z_retrieve.cgi/default?&amp;param_sid_save=e28ee74d8366f04861b48206788dfded&amp;param_chinese_checkbox_type_save=Pinyin&amp;param_lang_save=eng&amp;param_letter_group_save=V&amp;param_perform_save=searchTitle&amp;param_letter_group_script_save=Latin&amp;param_chinese_checkbox_save=0&amp;param_services2filter_save=getFullTxt&amp;param_current_view_save=detail&amp;param_pattern_save=&amp;param_jumpToPage_save=&amp;param_type_save=browseLetterGroup&amp;param_textSearchType_save=contains&amp;param_ui_control_scripts_save=&amp;&amp;lang=eng&amp;function=get_info&amp;obj_id=1000000000425940&amp;issn=&amp;profile=default&amp;exclude_issn=&amp;exclude_auth=1&amp;exclude_note=&amp;exclude_lccn=1&amp;exclude_coden=1&amp;exclude_availability=&amp;exclude_categories=1" onClick="return wrapContent(event, this.href, 0, 0, '<IFRAME NAME=frame SRC=/poly_nyu/cgi/core/azlist_ver3/a-z_retrieve.cgi/default?&amp;param_sid_save=e28ee74d8366f04861b48206788dfded&amp;param_chinese_checkbox_type_save=Pinyin&amp;param_lang_save=eng&amp;param_letter_group_save=V&amp;param_perform_save=searchTitle&amp;param_letter_group_script_save=Latin&amp;param_chinese_checkbox_save=0&amp;param_services2filter_save=getFullTxt&amp;param_current_view_save=detail&amp;param_pattern_save=&amp;param_jumpToPage_save=&amp;param_type_save=browseLetterGroup&amp;param_textSearchType_save=contains&amp;param_ui_control_scripts_save=&amp;&amp;lang=eng&amp;function=get_info&amp;obj_id=1000000000425940&amp;issn=&amp;profile=default&amp;exclude_issn=&amp;exclude_auth=1&amp;exclude_note=&amp;exclude_lccn=1&amp;exclude_coden=1&amp;exclude_availability=&amp;exclude_categories=1&amp;institute_param=default HEIGHT=200 WIDTH=360 BORDER=0 FRAMEBORDER=0 FRAMESPACING=0 scrolling=no></IFRAME>', 360)"> <img src="/poly_nyu/img/azlist_ver3/info.gif" title="e-Journal Details" alt="e-Journal Details" border="0"></a>
+          </td>
+
+
+           
+	          <td><a href="/poly_nyu?url_ver=Z39.88-2004&amp;url_ctx_fmt=infofi/fmt:kev:mtx:ctx&amp;ctx_enc=info:ofi/enc:UTF-8&amp;ctx_ver=Z39.88-2004&amp;rfr_id=info:sid/sfxit.com:azlist&amp;sfx.ignore_date_threshold=1&amp;rft.object_id=1000000000425940
+" onclick="javascript:OpenWindow('/poly_nyu?url_ver=Z39.88-2004&amp;url_ctx_fmt=infofi/fmt:kev:mtx:ctx&amp;ctx_enc=info:ofi/enc:UTF-8&amp;ctx_ver=Z39.88-2004&amp;rfr_id=info:sid/sfxit.com:azlist&amp;sfx.ignore_date_threshold=1&amp;rft.object_id=1000000000425940'); return false;"><img src="/poly_nyu/img/azlist_ver3/sfx.gif" title="SFX" alt="SFX" border="0"></a></td>
+          
+          
+		  
+        </tr>
+      </table>
+    </td>
+  </tr>
+  <tr><td>&nbsp;</td></tr>
+<!-- end info, SFX buttons, and blank line -->
+
+
+  <tr>
+    <td>
+   	   
+			<a class="Results" href="/poly_nyu?url_ver=Z39.88-2004&amp;url_ctx_fmt=infofi/fmt:kev:mtx:ctx&amp;ctx_enc=info:ofi/enc:UTF-8&amp;ctx_ver=Z39.88-2004&amp;rfr_id=info:sid/sfxit.com:azlist&amp;sfx.ignore_date_threshold=1&amp;rft.object_id=1000000000425941&amp;rft.object_portfolio_id=&amp;svc.fulltext=yes
+" onclick="javascript:OpenWindow('/poly_nyu?url_ver=Z39.88-2004&amp;url_ctx_fmt=infofi/fmt:kev:mtx:ctx&amp;ctx_enc=info:ofi/enc:UTF-8&amp;ctx_ver=Z39.88-2004&amp;rfr_id=info:sid/sfxit.com:azlist&amp;sfx.ignore_date_threshold=1&amp;rft.object_id=1000000000425941&amp;svc.fulltext=yes'); return false;">VA Corporation Commission Miscellaneous Decisions</a> 
+      
+    </td>
+  </tr>
+
+<!-- target service listing -->
+  
+
+  
+    <tr>
+      <td>Full text available via<a class="ABC" href="/poly_nyu?url_ver=Z39.88-2004&amp;url_ctx_fmt=infofi/fmt:kev:mtx:ctx&amp;ctx_enc=info:ofi/enc:UTF-8&amp;ctx_ver=Z39.88-2004&amp;rfr_id=info:sid/sfxit.com:azlist&amp;sfx.ignore_date_threshold=1&amp;rft.object_id=1000000000425941&amp;rft.object_portfolio_id=1000000001048971&amp;svc.fulltext=yes
+" onclick="javascript:OpenWindow('/poly_nyu?url_ver=Z39.88-2004&amp;url_ctx_fmt=infofi/fmt:kev:mtx:ctx&amp;ctx_enc=info:ofi/enc:UTF-8&amp;ctx_ver=Z39.88-2004&amp;rfr_id=info:sid/sfxit.com:azlist&amp;sfx.ignore_date_threshold=1&amp;rft.object_id=1000000000425941&amp;rft.object_portfolio_id=1000000001048971'); return false;"> LexisNexis Academic Universe</a></td>
+    </tr>
+  
+  <tr>
+    <td>
+        <input type=hidden name='AvailabilityInformation_MDE' id="AvailabilityInformation_MDE_1000000001048971" value="">
+    </td>
+</tr>
+
+
+  
+    
+        <tr>
+          <td nowrap>
+            Available from
+                1977
+                
+                
+          </td>
+        </tr>
+    
+    
+  
+
+  
+  
+ 
+
+
+
+
+
+        
+
+
+    
+        
+    
+    
+
+    
+  
+<!-- end target service listing -->
+
+<!-- category listing -->
+<tr>
+    <td>
+        <input type=hidden name='Categories_MDE' id="Categories_MDE_1000000000425941" value="1">
+    </td>
+</tr>
+    
+<!-- category listing -->
+  
+  
+<!-- end category listing -->
+
+<!-- end category listing -->
+	
+	
+
+<!-- info, SFX buttons, and blank line -->
+  <tr>
+    <td>
+      <table>
+        <tr>
+          <td>&nbsp;</td>
+          <td>
+          <a href="/poly_nyu-default/cgi/core/azlist_ver3/a-z_retrieve.cgi/default?&amp;param_sid_save=e28ee74d8366f04861b48206788dfded&amp;param_chinese_checkbox_type_save=Pinyin&amp;param_lang_save=eng&amp;param_letter_group_save=V&amp;param_perform_save=searchTitle&amp;param_letter_group_script_save=Latin&amp;param_chinese_checkbox_save=0&amp;param_services2filter_save=getFullTxt&amp;param_current_view_save=detail&amp;param_pattern_save=&amp;param_jumpToPage_save=&amp;param_type_save=browseLetterGroup&amp;param_textSearchType_save=contains&amp;param_ui_control_scripts_save=&amp;&amp;lang=eng&amp;function=get_info&amp;obj_id=1000000000425941&amp;issn=&amp;profile=default&amp;exclude_issn=&amp;exclude_auth=1&amp;exclude_note=&amp;exclude_lccn=1&amp;exclude_coden=1&amp;exclude_availability=&amp;exclude_categories=1" onClick="return wrapContent(event, this.href, 0, 0, '<IFRAME NAME=frame SRC=/poly_nyu/cgi/core/azlist_ver3/a-z_retrieve.cgi/default?&amp;param_sid_save=e28ee74d8366f04861b48206788dfded&amp;param_chinese_checkbox_type_save=Pinyin&amp;param_lang_save=eng&amp;param_letter_group_save=V&amp;param_perform_save=searchTitle&amp;param_letter_group_script_save=Latin&amp;param_chinese_checkbox_save=0&amp;param_services2filter_save=getFullTxt&amp;param_current_view_save=detail&amp;param_pattern_save=&amp;param_jumpToPage_save=&amp;param_type_save=browseLetterGroup&amp;param_textSearchType_save=contains&amp;param_ui_control_scripts_save=&amp;&amp;lang=eng&amp;function=get_info&amp;obj_id=1000000000425941&amp;issn=&amp;profile=default&amp;exclude_issn=&amp;exclude_auth=1&amp;exclude_note=&amp;exclude_lccn=1&amp;exclude_coden=1&amp;exclude_availability=&amp;exclude_categories=1&amp;institute_param=default HEIGHT=200 WIDTH=360 BORDER=0 FRAMEBORDER=0 FRAMESPACING=0 scrolling=no></IFRAME>', 360)"> <img src="/poly_nyu/img/azlist_ver3/info.gif" title="e-Journal Details" alt="e-Journal Details" border="0"></a>
+          </td>
+
+
+           
+	          <td><a href="/poly_nyu?url_ver=Z39.88-2004&amp;url_ctx_fmt=infofi/fmt:kev:mtx:ctx&amp;ctx_enc=info:ofi/enc:UTF-8&amp;ctx_ver=Z39.88-2004&amp;rfr_id=info:sid/sfxit.com:azlist&amp;sfx.ignore_date_threshold=1&amp;rft.object_id=1000000000425941
+" onclick="javascript:OpenWindow('/poly_nyu?url_ver=Z39.88-2004&amp;url_ctx_fmt=infofi/fmt:kev:mtx:ctx&amp;ctx_enc=info:ofi/enc:UTF-8&amp;ctx_ver=Z39.88-2004&amp;rfr_id=info:sid/sfxit.com:azlist&amp;sfx.ignore_date_threshold=1&amp;rft.object_id=1000000000425941'); return false;"><img src="/poly_nyu/img/azlist_ver3/sfx.gif" title="SFX" alt="SFX" border="0"></a></td>
+          
+          
+		  
+        </tr>
+      </table>
+    </td>
+  </tr>
+  <tr><td>&nbsp;</td></tr>
+<!-- end info, SFX buttons, and blank line -->
+
+
+  <tr>
+    <td>
+   	   
+			<a class="Results" href="/poly_nyu?url_ver=Z39.88-2004&amp;url_ctx_fmt=infofi/fmt:kev:mtx:ctx&amp;ctx_enc=info:ofi/enc:UTF-8&amp;ctx_ver=Z39.88-2004&amp;rfr_id=info:sid/sfxit.com:azlist&amp;sfx.ignore_date_threshold=1&amp;rft.object_id=1000000000425942&amp;rft.object_portfolio_id=&amp;svc.fulltext=yes
+" onclick="javascript:OpenWindow('/poly_nyu?url_ver=Z39.88-2004&amp;url_ctx_fmt=infofi/fmt:kev:mtx:ctx&amp;ctx_enc=info:ofi/enc:UTF-8&amp;ctx_ver=Z39.88-2004&amp;rfr_id=info:sid/sfxit.com:azlist&amp;sfx.ignore_date_threshold=1&amp;rft.object_id=1000000000425942&amp;svc.fulltext=yes'); return false;">VA Federal District Courts</a> 
+      
+    </td>
+  </tr>
+
+<!-- target service listing -->
+  
+
+  
+    <tr>
+      <td>Full text available via<a class="ABC" href="/poly_nyu?url_ver=Z39.88-2004&amp;url_ctx_fmt=infofi/fmt:kev:mtx:ctx&amp;ctx_enc=info:ofi/enc:UTF-8&amp;ctx_ver=Z39.88-2004&amp;rfr_id=info:sid/sfxit.com:azlist&amp;sfx.ignore_date_threshold=1&amp;rft.object_id=1000000000425942&amp;rft.object_portfolio_id=1000000001048972&amp;svc.fulltext=yes
+" onclick="javascript:OpenWindow('/poly_nyu?url_ver=Z39.88-2004&amp;url_ctx_fmt=infofi/fmt:kev:mtx:ctx&amp;ctx_enc=info:ofi/enc:UTF-8&amp;ctx_ver=Z39.88-2004&amp;rfr_id=info:sid/sfxit.com:azlist&amp;sfx.ignore_date_threshold=1&amp;rft.object_id=1000000000425942&amp;rft.object_portfolio_id=1000000001048972'); return false;"> LexisNexis Academic Universe</a></td>
+    </tr>
+  
+  <tr>
+    <td>
+        <input type=hidden name='AvailabilityInformation_MDE' id="AvailabilityInformation_MDE_1000000001048972" value="">
+    </td>
+</tr>
+
+
+  
+    
+    
+        <tr>
+          <td nowrap>
+            Available from
+                1912
+                
+                
+    
+  
+
+  
+  
+ 
+
+  
+
+  
+    
+    
+            until
+                2005
+                
+                
+          </td>
+        </tr>
+    
+  
+  
+ 
+
+
+
+
+
+        
+
+
+    
+        
+    
+    
+
+    
+  
+<!-- end target service listing -->
+
+<!-- category listing -->
+<tr>
+    <td>
+        <input type=hidden name='Categories_MDE' id="Categories_MDE_1000000000425942" value="1">
+    </td>
+</tr>
+    
+<!-- category listing -->
+  
+  
+<!-- end category listing -->
+
+<!-- end category listing -->
+	
+	
+
+<!-- info, SFX buttons, and blank line -->
+  <tr>
+    <td>
+      <table>
+        <tr>
+          <td>&nbsp;</td>
+          <td>
+          <a href="/poly_nyu-default/cgi/core/azlist_ver3/a-z_retrieve.cgi/default?&amp;param_sid_save=e28ee74d8366f04861b48206788dfded&amp;param_chinese_checkbox_type_save=Pinyin&amp;param_lang_save=eng&amp;param_letter_group_save=V&amp;param_perform_save=searchTitle&amp;param_letter_group_script_save=Latin&amp;param_chinese_checkbox_save=0&amp;param_services2filter_save=getFullTxt&amp;param_current_view_save=detail&amp;param_pattern_save=&amp;param_jumpToPage_save=&amp;param_type_save=browseLetterGroup&amp;param_textSearchType_save=contains&amp;param_ui_control_scripts_save=&amp;&amp;lang=eng&amp;function=get_info&amp;obj_id=1000000000425942&amp;issn=&amp;profile=default&amp;exclude_issn=&amp;exclude_auth=1&amp;exclude_note=&amp;exclude_lccn=1&amp;exclude_coden=1&amp;exclude_availability=&amp;exclude_categories=1" onClick="return wrapContent(event, this.href, 0, 0, '<IFRAME NAME=frame SRC=/poly_nyu/cgi/core/azlist_ver3/a-z_retrieve.cgi/default?&amp;param_sid_save=e28ee74d8366f04861b48206788dfded&amp;param_chinese_checkbox_type_save=Pinyin&amp;param_lang_save=eng&amp;param_letter_group_save=V&amp;param_perform_save=searchTitle&amp;param_letter_group_script_save=Latin&amp;param_chinese_checkbox_save=0&amp;param_services2filter_save=getFullTxt&amp;param_current_view_save=detail&amp;param_pattern_save=&amp;param_jumpToPage_save=&amp;param_type_save=browseLetterGroup&amp;param_textSearchType_save=contains&amp;param_ui_control_scripts_save=&amp;&amp;lang=eng&amp;function=get_info&amp;obj_id=1000000000425942&amp;issn=&amp;profile=default&amp;exclude_issn=&amp;exclude_auth=1&amp;exclude_note=&amp;exclude_lccn=1&amp;exclude_coden=1&amp;exclude_availability=&amp;exclude_categories=1&amp;institute_param=default HEIGHT=200 WIDTH=360 BORDER=0 FRAMEBORDER=0 FRAMESPACING=0 scrolling=no></IFRAME>', 360)"> <img src="/poly_nyu/img/azlist_ver3/info.gif" title="e-Journal Details" alt="e-Journal Details" border="0"></a>
+          </td>
+
+
+           
+	          <td><a href="/poly_nyu?url_ver=Z39.88-2004&amp;url_ctx_fmt=infofi/fmt:kev:mtx:ctx&amp;ctx_enc=info:ofi/enc:UTF-8&amp;ctx_ver=Z39.88-2004&amp;rfr_id=info:sid/sfxit.com:azlist&amp;sfx.ignore_date_threshold=1&amp;rft.object_id=1000000000425942
+" onclick="javascript:OpenWindow('/poly_nyu?url_ver=Z39.88-2004&amp;url_ctx_fmt=infofi/fmt:kev:mtx:ctx&amp;ctx_enc=info:ofi/enc:UTF-8&amp;ctx_ver=Z39.88-2004&amp;rfr_id=info:sid/sfxit.com:azlist&amp;sfx.ignore_date_threshold=1&amp;rft.object_id=1000000000425942'); return false;"><img src="/poly_nyu/img/azlist_ver3/sfx.gif" title="SFX" alt="SFX" border="0"></a></td>
+          
+          
+		  
+        </tr>
+      </table>
+    </td>
+  </tr>
+  <tr><td>&nbsp;</td></tr>
+<!-- end info, SFX buttons, and blank line -->
+
+
+  <tr>
+    <td>
+   	   
+			<a class="Results" href="/poly_nyu?url_ver=Z39.88-2004&amp;url_ctx_fmt=infofi/fmt:kev:mtx:ctx&amp;ctx_enc=info:ofi/enc:UTF-8&amp;ctx_ver=Z39.88-2004&amp;rfr_id=info:sid/sfxit.com:azlist&amp;sfx.ignore_date_threshold=1&amp;rft.object_id=1000000000497821&amp;rft.object_portfolio_id=&amp;svc.fulltext=yes
+" onclick="javascript:OpenWindow('/poly_nyu?url_ver=Z39.88-2004&amp;url_ctx_fmt=infofi/fmt:kev:mtx:ctx&amp;ctx_enc=info:ofi/enc:UTF-8&amp;ctx_ver=Z39.88-2004&amp;rfr_id=info:sid/sfxit.com:azlist&amp;sfx.ignore_date_threshold=1&amp;rft.object_id=1000000000497821&amp;svc.fulltext=yes'); return false;">VA - Local Rules of U.S. District &amp; Bankruptcy Courts in Virginia</a> 
+      
+    </td>
+  </tr>
+
+<!-- target service listing -->
+  
+
+  
+    <tr>
+      <td>Full text available via<a class="ABC" href="/poly_nyu?url_ver=Z39.88-2004&amp;url_ctx_fmt=infofi/fmt:kev:mtx:ctx&amp;ctx_enc=info:ofi/enc:UTF-8&amp;ctx_ver=Z39.88-2004&amp;rfr_id=info:sid/sfxit.com:azlist&amp;sfx.ignore_date_threshold=1&amp;rft.object_id=1000000000497821&amp;rft.object_portfolio_id=1000000001230905&amp;svc.fulltext=yes
+" onclick="javascript:OpenWindow('/poly_nyu?url_ver=Z39.88-2004&amp;url_ctx_fmt=infofi/fmt:kev:mtx:ctx&amp;ctx_enc=info:ofi/enc:UTF-8&amp;ctx_ver=Z39.88-2004&amp;rfr_id=info:sid/sfxit.com:azlist&amp;sfx.ignore_date_threshold=1&amp;rft.object_id=1000000000497821&amp;rft.object_portfolio_id=1000000001230905'); return false;"> LexisNexis Academic Universe</a></td>
+    </tr>
+  
+  <tr>
+    <td>
+        <input type=hidden name='AvailabilityInformation_MDE' id="AvailabilityInformation_MDE_1000000001230905" value="">
+    </td>
+</tr>
+
+
+  
+    
+    
+        <tr>
+          <td nowrap>
+            Available from
+                1999
+                
+                
+    
+  
+
+  
+  
+ 
+
+  
+
+  
+    
+    
+            until
+                2009
+                
+                
+          </td>
+        </tr>
+    
+  
+  
+ 
+
+
+
+
+
+        
+
+
+    
+        
+    
+    
+
+    
+  
+<!-- end target service listing -->
+
+<!-- category listing -->
+<tr>
+    <td>
+        <input type=hidden name='Categories_MDE' id="Categories_MDE_1000000000497821" value="1">
+    </td>
+</tr>
+    
+<!-- category listing -->
+  
+  
+<!-- end category listing -->
+
+<!-- end category listing -->
+	
+	
+
+<!-- info, SFX buttons, and blank line -->
+  <tr>
+    <td>
+      <table>
+        <tr>
+          <td>&nbsp;</td>
+          <td>
+          <a href="/poly_nyu-default/cgi/core/azlist_ver3/a-z_retrieve.cgi/default?&amp;param_sid_save=e28ee74d8366f04861b48206788dfded&amp;param_chinese_checkbox_type_save=Pinyin&amp;param_lang_save=eng&amp;param_letter_group_save=V&amp;param_perform_save=searchTitle&amp;param_letter_group_script_save=Latin&amp;param_chinese_checkbox_save=0&amp;param_services2filter_save=getFullTxt&amp;param_current_view_save=detail&amp;param_pattern_save=&amp;param_jumpToPage_save=&amp;param_type_save=browseLetterGroup&amp;param_textSearchType_save=contains&amp;param_ui_control_scripts_save=&amp;&amp;lang=eng&amp;function=get_info&amp;obj_id=1000000000497821&amp;issn=&amp;profile=default&amp;exclude_issn=&amp;exclude_auth=1&amp;exclude_note=&amp;exclude_lccn=1&amp;exclude_coden=1&amp;exclude_availability=&amp;exclude_categories=1" onClick="return wrapContent(event, this.href, 0, 0, '<IFRAME NAME=frame SRC=/poly_nyu/cgi/core/azlist_ver3/a-z_retrieve.cgi/default?&amp;param_sid_save=e28ee74d8366f04861b48206788dfded&amp;param_chinese_checkbox_type_save=Pinyin&amp;param_lang_save=eng&amp;param_letter_group_save=V&amp;param_perform_save=searchTitle&amp;param_letter_group_script_save=Latin&amp;param_chinese_checkbox_save=0&amp;param_services2filter_save=getFullTxt&amp;param_current_view_save=detail&amp;param_pattern_save=&amp;param_jumpToPage_save=&amp;param_type_save=browseLetterGroup&amp;param_textSearchType_save=contains&amp;param_ui_control_scripts_save=&amp;&amp;lang=eng&amp;function=get_info&amp;obj_id=1000000000497821&amp;issn=&amp;profile=default&amp;exclude_issn=&amp;exclude_auth=1&amp;exclude_note=&amp;exclude_lccn=1&amp;exclude_coden=1&amp;exclude_availability=&amp;exclude_categories=1&amp;institute_param=default HEIGHT=200 WIDTH=360 BORDER=0 FRAMEBORDER=0 FRAMESPACING=0 scrolling=no></IFRAME>', 360)"> <img src="/poly_nyu/img/azlist_ver3/info.gif" title="e-Journal Details" alt="e-Journal Details" border="0"></a>
+          </td>
+
+
+           
+	          <td><a href="/poly_nyu?url_ver=Z39.88-2004&amp;url_ctx_fmt=infofi/fmt:kev:mtx:ctx&amp;ctx_enc=info:ofi/enc:UTF-8&amp;ctx_ver=Z39.88-2004&amp;rfr_id=info:sid/sfxit.com:azlist&amp;sfx.ignore_date_threshold=1&amp;rft.object_id=1000000000497821
+" onclick="javascript:OpenWindow('/poly_nyu?url_ver=Z39.88-2004&amp;url_ctx_fmt=infofi/fmt:kev:mtx:ctx&amp;ctx_enc=info:ofi/enc:UTF-8&amp;ctx_ver=Z39.88-2004&amp;rfr_id=info:sid/sfxit.com:azlist&amp;sfx.ignore_date_threshold=1&amp;rft.object_id=1000000000497821'); return false;"><img src="/poly_nyu/img/azlist_ver3/sfx.gif" title="SFX" alt="SFX" border="0"></a></td>
+          
+          
+		  
+        </tr>
+      </table>
+    </td>
+  </tr>
+  <tr><td>&nbsp;</td></tr>
+<!-- end info, SFX buttons, and blank line -->
+
+
+  <tr>
+    <td>
+   	  
+			<span class="ResultsNoLink">VA practitioner</span> [0883-5721]      		
+	  
+    </td>
+  </tr>
+
+<!-- target service listing -->
+  
+<!-- end target service listing -->
+
+<!-- category listing -->
+<tr>
+    <td>
+        <input type=hidden name='Categories_MDE' id="Categories_MDE_991042745939356" value="1">
+    </td>
+</tr>
+    
+<!-- category listing -->
+  
+  
+<!-- end category listing -->
+
+<!-- end category listing -->
+	
+	
+	        <tr>
+	          <td height=3px></td>
+	        </tr>   	
+	    
+	        <tr>
+	            <td>
+	                <a href="?&amp;param_sid_save=e28ee74d8366f04861b48206788dfded&amp;param_chinese_checkbox_type_save=Pinyin&amp;param_lang_save=eng&amp;param_letter_group_save=V&amp;param_perform_save=searchTitle&amp;param_letter_group_script_save=Latin&amp;param_chinese_checkbox_save=0&amp;param_services2filter_save=getFullTxt&amp;param_current_view_save=detail&amp;param_pattern_save=&amp;param_jumpToPage_save=&amp;param_type_save=browseLetterGroup&amp;param_textSearchType_save=contains&amp;param_ui_control_scripts_save=&amp;&amp;display_single_object=110978978557351&amp;set_first_page=1" class="ABC">Continued by</a>:
+					Federal practitioner
+					
+						[1078-4497]
+					
+				</td>
+	        </tr>
+	    
+	
+
+<!-- info, SFX buttons, and blank line -->
+  <tr>
+    <td>
+      <table>
+        <tr>
+          <td>&nbsp;</td>
+          <td>
+          <a href="/poly_nyu-default/cgi/core/azlist_ver3/a-z_retrieve.cgi/default?&amp;param_sid_save=e28ee74d8366f04861b48206788dfded&amp;param_chinese_checkbox_type_save=Pinyin&amp;param_lang_save=eng&amp;param_letter_group_save=V&amp;param_perform_save=searchTitle&amp;param_letter_group_script_save=Latin&amp;param_chinese_checkbox_save=0&amp;param_services2filter_save=getFullTxt&amp;param_current_view_save=detail&amp;param_pattern_save=&amp;param_jumpToPage_save=&amp;param_type_save=browseLetterGroup&amp;param_textSearchType_save=contains&amp;param_ui_control_scripts_save=&amp;&amp;lang=eng&amp;function=get_info&amp;obj_id=991042745939356&amp;issn=0883-5721&amp;profile=default&amp;exclude_issn=&amp;exclude_auth=1&amp;exclude_note=&amp;exclude_lccn=1&amp;exclude_coden=1&amp;exclude_availability=&amp;exclude_categories=1" onClick="return wrapContent(event, this.href, 0, 0, '<IFRAME NAME=frame SRC=/poly_nyu/cgi/core/azlist_ver3/a-z_retrieve.cgi/default?&amp;param_sid_save=e28ee74d8366f04861b48206788dfded&amp;param_chinese_checkbox_type_save=Pinyin&amp;param_lang_save=eng&amp;param_letter_group_save=V&amp;param_perform_save=searchTitle&amp;param_letter_group_script_save=Latin&amp;param_chinese_checkbox_save=0&amp;param_services2filter_save=getFullTxt&amp;param_current_view_save=detail&amp;param_pattern_save=&amp;param_jumpToPage_save=&amp;param_type_save=browseLetterGroup&amp;param_textSearchType_save=contains&amp;param_ui_control_scripts_save=&amp;&amp;lang=eng&amp;function=get_info&amp;obj_id=991042745939356&amp;issn=0883-5721&amp;profile=default&amp;exclude_issn=&amp;exclude_auth=1&amp;exclude_note=&amp;exclude_lccn=1&amp;exclude_coden=1&amp;exclude_availability=&amp;exclude_categories=1&amp;institute_param=default HEIGHT=200 WIDTH=360 BORDER=0 FRAMEBORDER=0 FRAMESPACING=0 scrolling=no></IFRAME>', 360)"> <img src="/poly_nyu/img/azlist_ver3/info.gif" title="e-Journal Details" alt="e-Journal Details" border="0"></a>
+          </td>
+
+
+           
+	          <td><a href="/poly_nyu?url_ver=Z39.88-2004&amp;url_ctx_fmt=infofi/fmt:kev:mtx:ctx&amp;ctx_enc=info:ofi/enc:UTF-8&amp;ctx_ver=Z39.88-2004&amp;rfr_id=info:sid/sfxit.com:azlist&amp;sfx.ignore_date_threshold=1&amp;rft.object_id=991042745939356
+" onclick="javascript:OpenWindow('/poly_nyu?url_ver=Z39.88-2004&amp;url_ctx_fmt=infofi/fmt:kev:mtx:ctx&amp;ctx_enc=info:ofi/enc:UTF-8&amp;ctx_ver=Z39.88-2004&amp;rfr_id=info:sid/sfxit.com:azlist&amp;sfx.ignore_date_threshold=1&amp;rft.object_id=991042745939356'); return false;"><img src="/poly_nyu/img/azlist_ver3/sfx.gif" title="SFX" alt="SFX" border="0"></a></td>
+          
+          
+		  
+        </tr>
+      </table>
+    </td>
+  </tr>
+  <tr><td>&nbsp;</td></tr>
+<!-- end info, SFX buttons, and blank line -->
+
+
+  <tr>
+    <td>
+   	   
+			<a class="Results" href="/poly_nyu?url_ver=Z39.88-2004&amp;url_ctx_fmt=infofi/fmt:kev:mtx:ctx&amp;ctx_enc=info:ofi/enc:UTF-8&amp;ctx_ver=Z39.88-2004&amp;rfr_id=info:sid/sfxit.com:azlist&amp;sfx.ignore_date_threshold=1&amp;rft.object_id=3360000000338951&amp;rft.object_portfolio_id=&amp;svc.fulltext=yes
+" onclick="javascript:OpenWindow('/poly_nyu?url_ver=Z39.88-2004&amp;url_ctx_fmt=infofi/fmt:kev:mtx:ctx&amp;ctx_enc=info:ofi/enc:UTF-8&amp;ctx_ver=Z39.88-2004&amp;rfr_id=info:sid/sfxit.com:azlist&amp;sfx.ignore_date_threshold=1&amp;rft.object_id=3360000000338951&amp;svc.fulltext=yes'); return false;">VA-rapport</a> [1653-6843]
+      
+    </td>
+  </tr>
+
+<!-- target service listing -->
+  
+
+  
+    <tr>
+      <td>Full text available via<a class="ABC" href="/poly_nyu?url_ver=Z39.88-2004&amp;url_ctx_fmt=infofi/fmt:kev:mtx:ctx&amp;ctx_enc=info:ofi/enc:UTF-8&amp;ctx_ver=Z39.88-2004&amp;rfr_id=info:sid/sfxit.com:azlist&amp;sfx.ignore_date_threshold=1&amp;rft.object_id=3360000000338951&amp;rft.object_portfolio_id=3360000000357223&amp;svc.fulltext=yes
+" onclick="javascript:OpenWindow('/poly_nyu?url_ver=Z39.88-2004&amp;url_ctx_fmt=infofi/fmt:kev:mtx:ctx&amp;ctx_enc=info:ofi/enc:UTF-8&amp;ctx_ver=Z39.88-2004&amp;rfr_id=info:sid/sfxit.com:azlist&amp;sfx.ignore_date_threshold=1&amp;rft.object_id=3360000000338951&amp;rft.object_portfolio_id=3360000000357223'); return false;"> Free E- Journals</a></td>
+    </tr>
+  
+  <tr>
+    <td>
+        <input type=hidden name='AvailabilityInformation_MDE' id="AvailabilityInformation_MDE_3360000000357223" value="">
+    </td>
+</tr>
+
+
+  
+    
+        <tr>
+          <td nowrap>
+            Available from
+                2002
+                
+                
+          </td>
+        </tr>
+    
+    
+  
+
+  
+  
+ 
+
+
+
+
+
+        
+
+
+    
+        
+    
+    
+
+    
+  
+<!-- end target service listing -->
+
+<!-- category listing -->
+<tr>
+    <td>
+        <input type=hidden name='Categories_MDE' id="Categories_MDE_3360000000338951" value="1">
+    </td>
+</tr>
+    
+<!-- category listing -->
+  
+  
+<!-- end category listing -->
+
+<!-- end category listing -->
+	
+	
+
+<!-- info, SFX buttons, and blank line -->
+  <tr>
+    <td>
+      <table>
+        <tr>
+          <td>&nbsp;</td>
+          <td>
+          <a href="/poly_nyu-default/cgi/core/azlist_ver3/a-z_retrieve.cgi/default?&amp;param_sid_save=e28ee74d8366f04861b48206788dfded&amp;param_chinese_checkbox_type_save=Pinyin&amp;param_lang_save=eng&amp;param_letter_group_save=V&amp;param_perform_save=searchTitle&amp;param_letter_group_script_save=Latin&amp;param_chinese_checkbox_save=0&amp;param_services2filter_save=getFullTxt&amp;param_current_view_save=detail&amp;param_pattern_save=&amp;param_jumpToPage_save=&amp;param_type_save=browseLetterGroup&amp;param_textSearchType_save=contains&amp;param_ui_control_scripts_save=&amp;&amp;lang=eng&amp;function=get_info&amp;obj_id=3360000000338951&amp;issn=1653-6843&amp;profile=default&amp;exclude_issn=&amp;exclude_auth=1&amp;exclude_note=&amp;exclude_lccn=1&amp;exclude_coden=1&amp;exclude_availability=&amp;exclude_categories=1" onClick="return wrapContent(event, this.href, 0, 0, '<IFRAME NAME=frame SRC=/poly_nyu/cgi/core/azlist_ver3/a-z_retrieve.cgi/default?&amp;param_sid_save=e28ee74d8366f04861b48206788dfded&amp;param_chinese_checkbox_type_save=Pinyin&amp;param_lang_save=eng&amp;param_letter_group_save=V&amp;param_perform_save=searchTitle&amp;param_letter_group_script_save=Latin&amp;param_chinese_checkbox_save=0&amp;param_services2filter_save=getFullTxt&amp;param_current_view_save=detail&amp;param_pattern_save=&amp;param_jumpToPage_save=&amp;param_type_save=browseLetterGroup&amp;param_textSearchType_save=contains&amp;param_ui_control_scripts_save=&amp;&amp;lang=eng&amp;function=get_info&amp;obj_id=3360000000338951&amp;issn=1653-6843&amp;profile=default&amp;exclude_issn=&amp;exclude_auth=1&amp;exclude_note=&amp;exclude_lccn=1&amp;exclude_coden=1&amp;exclude_availability=&amp;exclude_categories=1&amp;institute_param=default HEIGHT=200 WIDTH=360 BORDER=0 FRAMEBORDER=0 FRAMESPACING=0 scrolling=no></IFRAME>', 360)"> <img src="/poly_nyu/img/azlist_ver3/info.gif" title="e-Journal Details" alt="e-Journal Details" border="0"></a>
+          </td>
+
+
+           
+	          <td><a href="/poly_nyu?url_ver=Z39.88-2004&amp;url_ctx_fmt=infofi/fmt:kev:mtx:ctx&amp;ctx_enc=info:ofi/enc:UTF-8&amp;ctx_ver=Z39.88-2004&amp;rfr_id=info:sid/sfxit.com:azlist&amp;sfx.ignore_date_threshold=1&amp;rft.object_id=3360000000338951
+" onclick="javascript:OpenWindow('/poly_nyu?url_ver=Z39.88-2004&amp;url_ctx_fmt=infofi/fmt:kev:mtx:ctx&amp;ctx_enc=info:ofi/enc:UTF-8&amp;ctx_ver=Z39.88-2004&amp;rfr_id=info:sid/sfxit.com:azlist&amp;sfx.ignore_date_threshold=1&amp;rft.object_id=3360000000338951'); return false;"><img src="/poly_nyu/img/azlist_ver3/sfx.gif" title="SFX" alt="SFX" border="0"></a></td>
+          
+          
+		  
+        </tr>
+      </table>
+    </td>
+  </tr>
+  <tr><td>&nbsp;</td></tr>
+<!-- end info, SFX buttons, and blank line -->
+
+
+  <tr>
+    <td>
+   	   
+			<a class="Results" href="/poly_nyu?url_ver=Z39.88-2004&amp;url_ctx_fmt=infofi/fmt:kev:mtx:ctx&amp;ctx_enc=info:ofi/enc:UTF-8&amp;ctx_ver=Z39.88-2004&amp;rfr_id=info:sid/sfxit.com:azlist&amp;sfx.ignore_date_threshold=1&amp;rft.object_id=1000000000425943&amp;rft.object_portfolio_id=&amp;svc.fulltext=yes
+" onclick="javascript:OpenWindow('/poly_nyu?url_ver=Z39.88-2004&amp;url_ctx_fmt=infofi/fmt:kev:mtx:ctx&amp;ctx_enc=info:ofi/enc:UTF-8&amp;ctx_ver=Z39.88-2004&amp;rfr_id=info:sid/sfxit.com:azlist&amp;sfx.ignore_date_threshold=1&amp;rft.object_id=1000000000425943&amp;svc.fulltext=yes'); return false;">VA State Corporation Commission PUC Decisions</a> 
+      
+    </td>
+  </tr>
+
+<!-- target service listing -->
+  
+
+  
+    <tr>
+      <td>Full text available via<a class="ABC" href="/poly_nyu?url_ver=Z39.88-2004&amp;url_ctx_fmt=infofi/fmt:kev:mtx:ctx&amp;ctx_enc=info:ofi/enc:UTF-8&amp;ctx_ver=Z39.88-2004&amp;rfr_id=info:sid/sfxit.com:azlist&amp;sfx.ignore_date_threshold=1&amp;rft.object_id=1000000000425943&amp;rft.object_portfolio_id=1000000001048973&amp;svc.fulltext=yes
+" onclick="javascript:OpenWindow('/poly_nyu?url_ver=Z39.88-2004&amp;url_ctx_fmt=infofi/fmt:kev:mtx:ctx&amp;ctx_enc=info:ofi/enc:UTF-8&amp;ctx_ver=Z39.88-2004&amp;rfr_id=info:sid/sfxit.com:azlist&amp;sfx.ignore_date_threshold=1&amp;rft.object_id=1000000000425943&amp;rft.object_portfolio_id=1000000001048973'); return false;"> LexisNexis Academic Universe</a></td>
+    </tr>
+  
+  <tr>
+    <td>
+        <input type=hidden name='AvailabilityInformation_MDE' id="AvailabilityInformation_MDE_1000000001048973" value="">
+    </td>
+</tr>
+
+
+  
+    
+        <tr>
+          <td nowrap>
+            Available from
+                1977
+                
+                
+          </td>
+        </tr>
+    
+    
+  
+
+  
+  
+ 
+
+
+
+
+
+        
+
+
+    
+        
+    
+    
+
+    
+  
+<!-- end target service listing -->
+
+<!-- category listing -->
+<tr>
+    <td>
+        <input type=hidden name='Categories_MDE' id="Categories_MDE_1000000000425943" value="1">
+    </td>
+</tr>
+    
+<!-- category listing -->
+  
+  
+<!-- end category listing -->
+
+<!-- end category listing -->
+	
+	
+
+<!-- info, SFX buttons, and blank line -->
+  <tr>
+    <td>
+      <table>
+        <tr>
+          <td>&nbsp;</td>
+          <td>
+          <a href="/poly_nyu-default/cgi/core/azlist_ver3/a-z_retrieve.cgi/default?&amp;param_sid_save=e28ee74d8366f04861b48206788dfded&amp;param_chinese_checkbox_type_save=Pinyin&amp;param_lang_save=eng&amp;param_letter_group_save=V&amp;param_perform_save=searchTitle&amp;param_letter_group_script_save=Latin&amp;param_chinese_checkbox_save=0&amp;param_services2filter_save=getFullTxt&amp;param_current_view_save=detail&amp;param_pattern_save=&amp;param_jumpToPage_save=&amp;param_type_save=browseLetterGroup&amp;param_textSearchType_save=contains&amp;param_ui_control_scripts_save=&amp;&amp;lang=eng&amp;function=get_info&amp;obj_id=1000000000425943&amp;issn=&amp;profile=default&amp;exclude_issn=&amp;exclude_auth=1&amp;exclude_note=&amp;exclude_lccn=1&amp;exclude_coden=1&amp;exclude_availability=&amp;exclude_categories=1" onClick="return wrapContent(event, this.href, 0, 0, '<IFRAME NAME=frame SRC=/poly_nyu/cgi/core/azlist_ver3/a-z_retrieve.cgi/default?&amp;param_sid_save=e28ee74d8366f04861b48206788dfded&amp;param_chinese_checkbox_type_save=Pinyin&amp;param_lang_save=eng&amp;param_letter_group_save=V&amp;param_perform_save=searchTitle&amp;param_letter_group_script_save=Latin&amp;param_chinese_checkbox_save=0&amp;param_services2filter_save=getFullTxt&amp;param_current_view_save=detail&amp;param_pattern_save=&amp;param_jumpToPage_save=&amp;param_type_save=browseLetterGroup&amp;param_textSearchType_save=contains&amp;param_ui_control_scripts_save=&amp;&amp;lang=eng&amp;function=get_info&amp;obj_id=1000000000425943&amp;issn=&amp;profile=default&amp;exclude_issn=&amp;exclude_auth=1&amp;exclude_note=&amp;exclude_lccn=1&amp;exclude_coden=1&amp;exclude_availability=&amp;exclude_categories=1&amp;institute_param=default HEIGHT=200 WIDTH=360 BORDER=0 FRAMEBORDER=0 FRAMESPACING=0 scrolling=no></IFRAME>', 360)"> <img src="/poly_nyu/img/azlist_ver3/info.gif" title="e-Journal Details" alt="e-Journal Details" border="0"></a>
+          </td>
+
+
+           
+	          <td><a href="/poly_nyu?url_ver=Z39.88-2004&amp;url_ctx_fmt=infofi/fmt:kev:mtx:ctx&amp;ctx_enc=info:ofi/enc:UTF-8&amp;ctx_ver=Z39.88-2004&amp;rfr_id=info:sid/sfxit.com:azlist&amp;sfx.ignore_date_threshold=1&amp;rft.object_id=1000000000425943
+" onclick="javascript:OpenWindow('/poly_nyu?url_ver=Z39.88-2004&amp;url_ctx_fmt=infofi/fmt:kev:mtx:ctx&amp;ctx_enc=info:ofi/enc:UTF-8&amp;ctx_ver=Z39.88-2004&amp;rfr_id=info:sid/sfxit.com:azlist&amp;sfx.ignore_date_threshold=1&amp;rft.object_id=1000000000425943'); return false;"><img src="/poly_nyu/img/azlist_ver3/sfx.gif" title="SFX" alt="SFX" border="0"></a></td>
+          
+          
+		  
+        </tr>
+      </table>
+    </td>
+  </tr>
+  <tr><td>&nbsp;</td></tr>
+<!-- end info, SFX buttons, and blank line -->
+
+
+  <tr>
+    <td>
+   	   
+			<a class="Results" href="/poly_nyu?url_ver=Z39.88-2004&amp;url_ctx_fmt=infofi/fmt:kev:mtx:ctx&amp;ctx_enc=info:ofi/enc:UTF-8&amp;ctx_ver=Z39.88-2004&amp;rfr_id=info:sid/sfxit.com:azlist&amp;sfx.ignore_date_threshold=1&amp;rft.object_id=1000000000216574&amp;rft.object_portfolio_id=&amp;svc.fulltext=yes
+" onclick="javascript:OpenWindow('/poly_nyu?url_ver=Z39.88-2004&amp;url_ctx_fmt=infofi/fmt:kev:mtx:ctx&amp;ctx_enc=info:ofi/enc:UTF-8&amp;ctx_ver=Z39.88-2004&amp;rfr_id=info:sid/sfxit.com:azlist&amp;sfx.ignore_date_threshold=1&amp;rft.object_id=1000000000216574&amp;svc.fulltext=yes'); return false;">VA Supreme Court Cases from 1730</a> 
+      
+    </td>
+  </tr>
+
+<!-- target service listing -->
+  
+
+  
+    <tr>
+      <td>Full text available via<a class="ABC" href="/poly_nyu?url_ver=Z39.88-2004&amp;url_ctx_fmt=infofi/fmt:kev:mtx:ctx&amp;ctx_enc=info:ofi/enc:UTF-8&amp;ctx_ver=Z39.88-2004&amp;rfr_id=info:sid/sfxit.com:azlist&amp;sfx.ignore_date_threshold=1&amp;rft.object_id=1000000000216574&amp;rft.object_portfolio_id=1000000000450148&amp;svc.fulltext=yes
+" onclick="javascript:OpenWindow('/poly_nyu?url_ver=Z39.88-2004&amp;url_ctx_fmt=infofi/fmt:kev:mtx:ctx&amp;ctx_enc=info:ofi/enc:UTF-8&amp;ctx_ver=Z39.88-2004&amp;rfr_id=info:sid/sfxit.com:azlist&amp;sfx.ignore_date_threshold=1&amp;rft.object_id=1000000000216574&amp;rft.object_portfolio_id=1000000000450148'); return false;"> LexisNexis Academic Universe</a></td>
+    </tr>
+  
+  <tr>
+    <td>
+        <input type=hidden name='AvailabilityInformation_MDE' id="AvailabilityInformation_MDE_1000000000450148" value="">
+    </td>
+</tr>
+
+
+  
+    
+    
+        <tr>
+          <td nowrap>
+            Available from
+                1999
+                
+                
+    
+  
+
+  
+  
+ 
+
+  
+
+  
+    
+    
+            until
+                2005
+                
+                
+          </td>
+        </tr>
+    
+  
+  
+ 
+
+
+
+
+
+        
+
+
+    
+        
+    
+    
+
+    
+  
+<!-- end target service listing -->
+
+<!-- category listing -->
+<tr>
+    <td>
+        <input type=hidden name='Categories_MDE' id="Categories_MDE_1000000000216574" value="1">
+    </td>
+</tr>
+    
+<!-- category listing -->
+  
+  
+<!-- end category listing -->
+
+<!-- end category listing -->
+	
+	
+
+<!-- info, SFX buttons, and blank line -->
+  <tr>
+    <td>
+      <table>
+        <tr>
+          <td>&nbsp;</td>
+          <td>
+          <a href="/poly_nyu-default/cgi/core/azlist_ver3/a-z_retrieve.cgi/default?&amp;param_sid_save=e28ee74d8366f04861b48206788dfded&amp;param_chinese_checkbox_type_save=Pinyin&amp;param_lang_save=eng&amp;param_letter_group_save=V&amp;param_perform_save=searchTitle&amp;param_letter_group_script_save=Latin&amp;param_chinese_checkbox_save=0&amp;param_services2filter_save=getFullTxt&amp;param_current_view_save=detail&amp;param_pattern_save=&amp;param_jumpToPage_save=&amp;param_type_save=browseLetterGroup&amp;param_textSearchType_save=contains&amp;param_ui_control_scripts_save=&amp;&amp;lang=eng&amp;function=get_info&amp;obj_id=1000000000216574&amp;issn=&amp;profile=default&amp;exclude_issn=&amp;exclude_auth=1&amp;exclude_note=&amp;exclude_lccn=1&amp;exclude_coden=1&amp;exclude_availability=&amp;exclude_categories=1" onClick="return wrapContent(event, this.href, 0, 0, '<IFRAME NAME=frame SRC=/poly_nyu/cgi/core/azlist_ver3/a-z_retrieve.cgi/default?&amp;param_sid_save=e28ee74d8366f04861b48206788dfded&amp;param_chinese_checkbox_type_save=Pinyin&amp;param_lang_save=eng&amp;param_letter_group_save=V&amp;param_perform_save=searchTitle&amp;param_letter_group_script_save=Latin&amp;param_chinese_checkbox_save=0&amp;param_services2filter_save=getFullTxt&amp;param_current_view_save=detail&amp;param_pattern_save=&amp;param_jumpToPage_save=&amp;param_type_save=browseLetterGroup&amp;param_textSearchType_save=contains&amp;param_ui_control_scripts_save=&amp;&amp;lang=eng&amp;function=get_info&amp;obj_id=1000000000216574&amp;issn=&amp;profile=default&amp;exclude_issn=&amp;exclude_auth=1&amp;exclude_note=&amp;exclude_lccn=1&amp;exclude_coden=1&amp;exclude_availability=&amp;exclude_categories=1&amp;institute_param=default HEIGHT=200 WIDTH=360 BORDER=0 FRAMEBORDER=0 FRAMESPACING=0 scrolling=no></IFRAME>', 360)"> <img src="/poly_nyu/img/azlist_ver3/info.gif" title="e-Journal Details" alt="e-Journal Details" border="0"></a>
+          </td>
+
+
+           
+	          <td><a href="/poly_nyu?url_ver=Z39.88-2004&amp;url_ctx_fmt=infofi/fmt:kev:mtx:ctx&amp;ctx_enc=info:ofi/enc:UTF-8&amp;ctx_ver=Z39.88-2004&amp;rfr_id=info:sid/sfxit.com:azlist&amp;sfx.ignore_date_threshold=1&amp;rft.object_id=1000000000216574
+" onclick="javascript:OpenWindow('/poly_nyu?url_ver=Z39.88-2004&amp;url_ctx_fmt=infofi/fmt:kev:mtx:ctx&amp;ctx_enc=info:ofi/enc:UTF-8&amp;ctx_ver=Z39.88-2004&amp;rfr_id=info:sid/sfxit.com:azlist&amp;sfx.ignore_date_threshold=1&amp;rft.object_id=1000000000216574'); return false;"><img src="/poly_nyu/img/azlist_ver3/sfx.gif" title="SFX" alt="SFX" border="0"></a></td>
+          
+          
+		  
+        </tr>
+      </table>
+    </td>
+  </tr>
+  <tr><td>&nbsp;</td></tr>
+<!-- end info, SFX buttons, and blank line -->
+
+
+  <tr>
+    <td>
+   	   
+			<a class="Results" href="/poly_nyu?url_ver=Z39.88-2004&amp;url_ctx_fmt=infofi/fmt:kev:mtx:ctx&amp;ctx_enc=info:ofi/enc:UTF-8&amp;ctx_ver=Z39.88-2004&amp;rfr_id=info:sid/sfxit.com:azlist&amp;sfx.ignore_date_threshold=1&amp;rft.object_id=1000000000497822&amp;rft.object_portfolio_id=&amp;svc.fulltext=yes
+" onclick="javascript:OpenWindow('/poly_nyu?url_ver=Z39.88-2004&amp;url_ctx_fmt=infofi/fmt:kev:mtx:ctx&amp;ctx_enc=info:ofi/enc:UTF-8&amp;ctx_ver=Z39.88-2004&amp;rfr_id=info:sid/sfxit.com:azlist&amp;sfx.ignore_date_threshold=1&amp;rft.object_id=1000000000497822&amp;svc.fulltext=yes'); return false;">VA - Virginia Administrative Code</a> 
+      
+    </td>
+  </tr>
+
+<!-- target service listing -->
+  
+
+  
+    <tr>
+      <td>Full text available via<a class="ABC" href="/poly_nyu?url_ver=Z39.88-2004&amp;url_ctx_fmt=infofi/fmt:kev:mtx:ctx&amp;ctx_enc=info:ofi/enc:UTF-8&amp;ctx_ver=Z39.88-2004&amp;rfr_id=info:sid/sfxit.com:azlist&amp;sfx.ignore_date_threshold=1&amp;rft.object_id=1000000000497822&amp;rft.object_portfolio_id=1000000001230906&amp;svc.fulltext=yes
+" onclick="javascript:OpenWindow('/poly_nyu?url_ver=Z39.88-2004&amp;url_ctx_fmt=infofi/fmt:kev:mtx:ctx&amp;ctx_enc=info:ofi/enc:UTF-8&amp;ctx_ver=Z39.88-2004&amp;rfr_id=info:sid/sfxit.com:azlist&amp;sfx.ignore_date_threshold=1&amp;rft.object_id=1000000000497822&amp;rft.object_portfolio_id=1000000001230906'); return false;"> LexisNexis Academic Universe</a></td>
+    </tr>
+  
+  <tr>
+    <td>
+        <input type=hidden name='AvailabilityInformation_MDE' id="AvailabilityInformation_MDE_1000000001230906" value="">
+    </td>
+</tr>
+
+
+  
+
+  
+  
+                <tr>
+                  <td nowrap>
+                    Available in
+                    2006
+                    
+                    
+                  </td>
+                </tr>
+    
+ 
+
+
+
+
+
+        
+
+
+    
+        
+    
+    
+
+    
+  
+<!-- end target service listing -->
+
+<!-- category listing -->
+<tr>
+    <td>
+        <input type=hidden name='Categories_MDE' id="Categories_MDE_1000000000497822" value="1">
+    </td>
+</tr>
+    
+<!-- category listing -->
+  
+  
+<!-- end category listing -->
+
+<!-- end category listing -->
+	
+	
+
+<!-- info, SFX buttons, and blank line -->
+  <tr>
+    <td>
+      <table>
+        <tr>
+          <td>&nbsp;</td>
+          <td>
+          <a href="/poly_nyu-default/cgi/core/azlist_ver3/a-z_retrieve.cgi/default?&amp;param_sid_save=e28ee74d8366f04861b48206788dfded&amp;param_chinese_checkbox_type_save=Pinyin&amp;param_lang_save=eng&amp;param_letter_group_save=V&amp;param_perform_save=searchTitle&amp;param_letter_group_script_save=Latin&amp;param_chinese_checkbox_save=0&amp;param_services2filter_save=getFullTxt&amp;param_current_view_save=detail&amp;param_pattern_save=&amp;param_jumpToPage_save=&amp;param_type_save=browseLetterGroup&amp;param_textSearchType_save=contains&amp;param_ui_control_scripts_save=&amp;&amp;lang=eng&amp;function=get_info&amp;obj_id=1000000000497822&amp;issn=&amp;profile=default&amp;exclude_issn=&amp;exclude_auth=1&amp;exclude_note=&amp;exclude_lccn=1&amp;exclude_coden=1&amp;exclude_availability=&amp;exclude_categories=1" onClick="return wrapContent(event, this.href, 0, 0, '<IFRAME NAME=frame SRC=/poly_nyu/cgi/core/azlist_ver3/a-z_retrieve.cgi/default?&amp;param_sid_save=e28ee74d8366f04861b48206788dfded&amp;param_chinese_checkbox_type_save=Pinyin&amp;param_lang_save=eng&amp;param_letter_group_save=V&amp;param_perform_save=searchTitle&amp;param_letter_group_script_save=Latin&amp;param_chinese_checkbox_save=0&amp;param_services2filter_save=getFullTxt&amp;param_current_view_save=detail&amp;param_pattern_save=&amp;param_jumpToPage_save=&amp;param_type_save=browseLetterGroup&amp;param_textSearchType_save=contains&amp;param_ui_control_scripts_save=&amp;&amp;lang=eng&amp;function=get_info&amp;obj_id=1000000000497822&amp;issn=&amp;profile=default&amp;exclude_issn=&amp;exclude_auth=1&amp;exclude_note=&amp;exclude_lccn=1&amp;exclude_coden=1&amp;exclude_availability=&amp;exclude_categories=1&amp;institute_param=default HEIGHT=200 WIDTH=360 BORDER=0 FRAMEBORDER=0 FRAMESPACING=0 scrolling=no></IFRAME>', 360)"> <img src="/poly_nyu/img/azlist_ver3/info.gif" title="e-Journal Details" alt="e-Journal Details" border="0"></a>
+          </td>
+
+
+           
+	          <td><a href="/poly_nyu?url_ver=Z39.88-2004&amp;url_ctx_fmt=infofi/fmt:kev:mtx:ctx&amp;ctx_enc=info:ofi/enc:UTF-8&amp;ctx_ver=Z39.88-2004&amp;rfr_id=info:sid/sfxit.com:azlist&amp;sfx.ignore_date_threshold=1&amp;rft.object_id=1000000000497822
+" onclick="javascript:OpenWindow('/poly_nyu?url_ver=Z39.88-2004&amp;url_ctx_fmt=infofi/fmt:kev:mtx:ctx&amp;ctx_enc=info:ofi/enc:UTF-8&amp;ctx_ver=Z39.88-2004&amp;rfr_id=info:sid/sfxit.com:azlist&amp;sfx.ignore_date_threshold=1&amp;rft.object_id=1000000000497822'); return false;"><img src="/poly_nyu/img/azlist_ver3/sfx.gif" title="SFX" alt="SFX" border="0"></a></td>
+          
+          
+		  
+        </tr>
+      </table>
+    </td>
+  </tr>
+  <tr><td>&nbsp;</td></tr>
+<!-- end info, SFX buttons, and blank line -->
+
+
+  <tr>
+    <td>
+   	   
+			<a class="Results" href="/poly_nyu?url_ver=Z39.88-2004&amp;url_ctx_fmt=infofi/fmt:kev:mtx:ctx&amp;ctx_enc=info:ofi/enc:UTF-8&amp;ctx_ver=Z39.88-2004&amp;rfr_id=info:sid/sfxit.com:azlist&amp;sfx.ignore_date_threshold=1&amp;rft.object_id=1000000000497825&amp;rft.object_portfolio_id=&amp;svc.fulltext=yes
+" onclick="javascript:OpenWindow('/poly_nyu?url_ver=Z39.88-2004&amp;url_ctx_fmt=infofi/fmt:kev:mtx:ctx&amp;ctx_enc=info:ofi/enc:UTF-8&amp;ctx_ver=Z39.88-2004&amp;rfr_id=info:sid/sfxit.com:azlist&amp;sfx.ignore_date_threshold=1&amp;rft.object_id=1000000000497825&amp;svc.fulltext=yes'); return false;">VA - Virginia Administrative Code and Virginia Register of Regulations</a> 
+      
+    </td>
+  </tr>
+
+<!-- target service listing -->
+  
+
+  
+    <tr>
+      <td>Full text available via<a class="ABC" href="/poly_nyu?url_ver=Z39.88-2004&amp;url_ctx_fmt=infofi/fmt:kev:mtx:ctx&amp;ctx_enc=info:ofi/enc:UTF-8&amp;ctx_ver=Z39.88-2004&amp;rfr_id=info:sid/sfxit.com:azlist&amp;sfx.ignore_date_threshold=1&amp;rft.object_id=1000000000497825&amp;rft.object_portfolio_id=1000000001230909&amp;svc.fulltext=yes
+" onclick="javascript:OpenWindow('/poly_nyu?url_ver=Z39.88-2004&amp;url_ctx_fmt=infofi/fmt:kev:mtx:ctx&amp;ctx_enc=info:ofi/enc:UTF-8&amp;ctx_ver=Z39.88-2004&amp;rfr_id=info:sid/sfxit.com:azlist&amp;sfx.ignore_date_threshold=1&amp;rft.object_id=1000000000497825&amp;rft.object_portfolio_id=1000000001230909'); return false;"> LexisNexis Academic Universe</a></td>
+    </tr>
+  
+  <tr>
+    <td>
+        <input type=hidden name='AvailabilityInformation_MDE' id="AvailabilityInformation_MDE_1000000001230909" value="">
+    </td>
+</tr>
+
+
+  
+    
+        <tr>
+          <td nowrap>
+            Available from
+                1999
+                
+                
+          </td>
+        </tr>
+    
+    
+  
+
+  
+  
+ 
+
+
+
+
+
+        
+
+
+    
+        
+    
+    
+
+    
+  
+<!-- end target service listing -->
+
+<!-- category listing -->
+<tr>
+    <td>
+        <input type=hidden name='Categories_MDE' id="Categories_MDE_1000000000497825" value="1">
+    </td>
+</tr>
+    
+<!-- category listing -->
+  
+  
+<!-- end category listing -->
+
+<!-- end category listing -->
+	
+	
+
+<!-- info, SFX buttons, and blank line -->
+  <tr>
+    <td>
+      <table>
+        <tr>
+          <td>&nbsp;</td>
+          <td>
+          <a href="/poly_nyu-default/cgi/core/azlist_ver3/a-z_retrieve.cgi/default?&amp;param_sid_save=e28ee74d8366f04861b48206788dfded&amp;param_chinese_checkbox_type_save=Pinyin&amp;param_lang_save=eng&amp;param_letter_group_save=V&amp;param_perform_save=searchTitle&amp;param_letter_group_script_save=Latin&amp;param_chinese_checkbox_save=0&amp;param_services2filter_save=getFullTxt&amp;param_current_view_save=detail&amp;param_pattern_save=&amp;param_jumpToPage_save=&amp;param_type_save=browseLetterGroup&amp;param_textSearchType_save=contains&amp;param_ui_control_scripts_save=&amp;&amp;lang=eng&amp;function=get_info&amp;obj_id=1000000000497825&amp;issn=&amp;profile=default&amp;exclude_issn=&amp;exclude_auth=1&amp;exclude_note=&amp;exclude_lccn=1&amp;exclude_coden=1&amp;exclude_availability=&amp;exclude_categories=1" onClick="return wrapContent(event, this.href, 0, 0, '<IFRAME NAME=frame SRC=/poly_nyu/cgi/core/azlist_ver3/a-z_retrieve.cgi/default?&amp;param_sid_save=e28ee74d8366f04861b48206788dfded&amp;param_chinese_checkbox_type_save=Pinyin&amp;param_lang_save=eng&amp;param_letter_group_save=V&amp;param_perform_save=searchTitle&amp;param_letter_group_script_save=Latin&amp;param_chinese_checkbox_save=0&amp;param_services2filter_save=getFullTxt&amp;param_current_view_save=detail&amp;param_pattern_save=&amp;param_jumpToPage_save=&amp;param_type_save=browseLetterGroup&amp;param_textSearchType_save=contains&amp;param_ui_control_scripts_save=&amp;&amp;lang=eng&amp;function=get_info&amp;obj_id=1000000000497825&amp;issn=&amp;profile=default&amp;exclude_issn=&amp;exclude_auth=1&amp;exclude_note=&amp;exclude_lccn=1&amp;exclude_coden=1&amp;exclude_availability=&amp;exclude_categories=1&amp;institute_param=default HEIGHT=200 WIDTH=360 BORDER=0 FRAMEBORDER=0 FRAMESPACING=0 scrolling=no></IFRAME>', 360)"> <img src="/poly_nyu/img/azlist_ver3/info.gif" title="e-Journal Details" alt="e-Journal Details" border="0"></a>
+          </td>
+
+
+           
+	          <td><a href="/poly_nyu?url_ver=Z39.88-2004&amp;url_ctx_fmt=infofi/fmt:kev:mtx:ctx&amp;ctx_enc=info:ofi/enc:UTF-8&amp;ctx_ver=Z39.88-2004&amp;rfr_id=info:sid/sfxit.com:azlist&amp;sfx.ignore_date_threshold=1&amp;rft.object_id=1000000000497825
+" onclick="javascript:OpenWindow('/poly_nyu?url_ver=Z39.88-2004&amp;url_ctx_fmt=infofi/fmt:kev:mtx:ctx&amp;ctx_enc=info:ofi/enc:UTF-8&amp;ctx_ver=Z39.88-2004&amp;rfr_id=info:sid/sfxit.com:azlist&amp;sfx.ignore_date_threshold=1&amp;rft.object_id=1000000000497825'); return false;"><img src="/poly_nyu/img/azlist_ver3/sfx.gif" title="SFX" alt="SFX" border="0"></a></td>
+          
+          
+		  
+        </tr>
+      </table>
+    </td>
+  </tr>
+  <tr><td>&nbsp;</td></tr>
+<!-- end info, SFX buttons, and blank line -->
+
+
+  <tr>
+    <td>
+   	   
+			<a class="Results" href="/poly_nyu?url_ver=Z39.88-2004&amp;url_ctx_fmt=infofi/fmt:kev:mtx:ctx&amp;ctx_enc=info:ofi/enc:UTF-8&amp;ctx_ver=Z39.88-2004&amp;rfr_id=info:sid/sfxit.com:azlist&amp;sfx.ignore_date_threshold=1&amp;rft.object_id=1000000000425938&amp;rft.object_portfolio_id=&amp;svc.fulltext=yes
+" onclick="javascript:OpenWindow('/poly_nyu?url_ver=Z39.88-2004&amp;url_ctx_fmt=infofi/fmt:kev:mtx:ctx&amp;ctx_enc=info:ofi/enc:UTF-8&amp;ctx_ver=Z39.88-2004&amp;rfr_id=info:sid/sfxit.com:azlist&amp;sfx.ignore_date_threshold=1&amp;rft.object_id=1000000000425938&amp;svc.fulltext=yes'); return false;">VA - Virginia Administrative Code Archive</a> 
+      
+    </td>
+  </tr>
+
+<!-- target service listing -->
+  
+
+  
+    <tr>
+      <td>Full text available via<a class="ABC" href="/poly_nyu?url_ver=Z39.88-2004&amp;url_ctx_fmt=infofi/fmt:kev:mtx:ctx&amp;ctx_enc=info:ofi/enc:UTF-8&amp;ctx_ver=Z39.88-2004&amp;rfr_id=info:sid/sfxit.com:azlist&amp;sfx.ignore_date_threshold=1&amp;rft.object_id=1000000000425938&amp;rft.object_portfolio_id=1000000001048968&amp;svc.fulltext=yes
+" onclick="javascript:OpenWindow('/poly_nyu?url_ver=Z39.88-2004&amp;url_ctx_fmt=infofi/fmt:kev:mtx:ctx&amp;ctx_enc=info:ofi/enc:UTF-8&amp;ctx_ver=Z39.88-2004&amp;rfr_id=info:sid/sfxit.com:azlist&amp;sfx.ignore_date_threshold=1&amp;rft.object_id=1000000000425938&amp;rft.object_portfolio_id=1000000001048968'); return false;"> LexisNexis Academic Universe</a></td>
+    </tr>
+  
+  <tr>
+    <td>
+        <input type=hidden name='AvailabilityInformation_MDE' id="AvailabilityInformation_MDE_1000000001048968" value="">
+    </td>
+</tr>
+
+
+  
+    
+        <tr>
+          <td nowrap>
+            Available from
+                2004
+                
+                
+          </td>
+        </tr>
+    
+    
+  
+
+  
+  
+ 
+
+
+
+
+
+        
+
+
+    
+        
+    
+    
+
+    
+  
+<!-- end target service listing -->
+
+<!-- category listing -->
+<tr>
+    <td>
+        <input type=hidden name='Categories_MDE' id="Categories_MDE_1000000000425938" value="1">
+    </td>
+</tr>
+    
+<!-- category listing -->
+  
+  
+<!-- end category listing -->
+
+<!-- end category listing -->
+	
+	
+
+<!-- info, SFX buttons, and blank line -->
+  <tr>
+    <td>
+      <table>
+        <tr>
+          <td>&nbsp;</td>
+          <td>
+          <a href="/poly_nyu-default/cgi/core/azlist_ver3/a-z_retrieve.cgi/default?&amp;param_sid_save=e28ee74d8366f04861b48206788dfded&amp;param_chinese_checkbox_type_save=Pinyin&amp;param_lang_save=eng&amp;param_letter_group_save=V&amp;param_perform_save=searchTitle&amp;param_letter_group_script_save=Latin&amp;param_chinese_checkbox_save=0&amp;param_services2filter_save=getFullTxt&amp;param_current_view_save=detail&amp;param_pattern_save=&amp;param_jumpToPage_save=&amp;param_type_save=browseLetterGroup&amp;param_textSearchType_save=contains&amp;param_ui_control_scripts_save=&amp;&amp;lang=eng&amp;function=get_info&amp;obj_id=1000000000425938&amp;issn=&amp;profile=default&amp;exclude_issn=&amp;exclude_auth=1&amp;exclude_note=&amp;exclude_lccn=1&amp;exclude_coden=1&amp;exclude_availability=&amp;exclude_categories=1" onClick="return wrapContent(event, this.href, 0, 0, '<IFRAME NAME=frame SRC=/poly_nyu/cgi/core/azlist_ver3/a-z_retrieve.cgi/default?&amp;param_sid_save=e28ee74d8366f04861b48206788dfded&amp;param_chinese_checkbox_type_save=Pinyin&amp;param_lang_save=eng&amp;param_letter_group_save=V&amp;param_perform_save=searchTitle&amp;param_letter_group_script_save=Latin&amp;param_chinese_checkbox_save=0&amp;param_services2filter_save=getFullTxt&amp;param_current_view_save=detail&amp;param_pattern_save=&amp;param_jumpToPage_save=&amp;param_type_save=browseLetterGroup&amp;param_textSearchType_save=contains&amp;param_ui_control_scripts_save=&amp;&amp;lang=eng&amp;function=get_info&amp;obj_id=1000000000425938&amp;issn=&amp;profile=default&amp;exclude_issn=&amp;exclude_auth=1&amp;exclude_note=&amp;exclude_lccn=1&amp;exclude_coden=1&amp;exclude_availability=&amp;exclude_categories=1&amp;institute_param=default HEIGHT=200 WIDTH=360 BORDER=0 FRAMEBORDER=0 FRAMESPACING=0 scrolling=no></IFRAME>', 360)"> <img src="/poly_nyu/img/azlist_ver3/info.gif" title="e-Journal Details" alt="e-Journal Details" border="0"></a>
+          </td>
+
+
+           
+	          <td><a href="/poly_nyu?url_ver=Z39.88-2004&amp;url_ctx_fmt=infofi/fmt:kev:mtx:ctx&amp;ctx_enc=info:ofi/enc:UTF-8&amp;ctx_ver=Z39.88-2004&amp;rfr_id=info:sid/sfxit.com:azlist&amp;sfx.ignore_date_threshold=1&amp;rft.object_id=1000000000425938
+" onclick="javascript:OpenWindow('/poly_nyu?url_ver=Z39.88-2004&amp;url_ctx_fmt=infofi/fmt:kev:mtx:ctx&amp;ctx_enc=info:ofi/enc:UTF-8&amp;ctx_ver=Z39.88-2004&amp;rfr_id=info:sid/sfxit.com:azlist&amp;sfx.ignore_date_threshold=1&amp;rft.object_id=1000000000425938'); return false;"><img src="/poly_nyu/img/azlist_ver3/sfx.gif" title="SFX" alt="SFX" border="0"></a></td>
+          
+          
+		  
+        </tr>
+      </table>
+    </td>
+  </tr>
+  <tr><td>&nbsp;</td></tr>
+<!-- end info, SFX buttons, and blank line -->
+
+
+
+    </table>
+
+<!-- end detail view -->
+
+
+
+<!-- table view -->
+
+<!-- end table view -->
+
+<table class="table_563"  cellspacing="0">
+  <tr><td>&nbsp;</td></tr>
+<!-- more than one page found -->
+
+  <tr class="Block">
+    <td>
+	  <table width="100%">
+		<tr>
+			<td>Title Starts with:</td>
+			<td align="right" class="LabelBold">Showing page 1 of 45 pages.</td>
+		</tr>
+	  </table>
+      <table width="100%">
+        <tr>
+        <td><A NAME="Top"></A></td>
+          <td class="LabelBold">
+				
+					<span style="white-space: nowrap">
+					
+						<span class="Pagination Current">Ver - VA </span>
+					
+					*
+					</span>
+				
+					<span style="white-space: nowrap">
+					
+						<span class="Pagination Link"><a class="ABC" 
+							href="?&amp;param_sid_save=e28ee74d8366f04861b48206788dfded&amp;param_chinese_checkbox_type_save=Pinyin&amp;param_lang_save=eng&amp;param_letter_group_save=V&amp;param_perform_save=searchTitle&amp;param_letter_group_script_save=Latin&amp;param_chinese_checkbox_save=0&amp;param_services2filter_save=getFullTxt&amp;param_current_view_save=detail&amp;param_pattern_save=&amp;param_jumpToPage_save=&amp;param_type_save=browseLetterGroup&amp;param_textSearchType_save=contains&amp;param_ui_control_scripts_save=&amp;&amp;param_jumpToPage_value=2">VA  - Vad</a></span>
+					
+					*
+					</span>
+				
+					<span style="white-space: nowrap">
+					
+						<span class="Pagination Link"><a class="ABC" 
+							href="?&amp;param_sid_save=e28ee74d8366f04861b48206788dfded&amp;param_chinese_checkbox_type_save=Pinyin&amp;param_lang_save=eng&amp;param_letter_group_save=V&amp;param_perform_save=searchTitle&amp;param_letter_group_script_save=Latin&amp;param_chinese_checkbox_save=0&amp;param_services2filter_save=getFullTxt&amp;param_current_view_save=detail&amp;param_pattern_save=&amp;param_jumpToPage_save=&amp;param_type_save=browseLetterGroup&amp;param_textSearchType_save=contains&amp;param_ui_control_scripts_save=&amp;&amp;param_jumpToPage_value=3">Väe - Val</a></span>
+					
+					*
+					</span>
+				
+					<span style="white-space: nowrap">
+					
+						<span class="Pagination Link"><a class="ABC" 
+							href="?&amp;param_sid_save=e28ee74d8366f04861b48206788dfded&amp;param_chinese_checkbox_type_save=Pinyin&amp;param_lang_save=eng&amp;param_letter_group_save=V&amp;param_perform_save=searchTitle&amp;param_letter_group_script_save=Latin&amp;param_chinese_checkbox_save=0&amp;param_services2filter_save=getFullTxt&amp;param_current_view_save=detail&amp;param_pattern_save=&amp;param_jumpToPage_save=&amp;param_type_save=browseLetterGroup&amp;param_textSearchType_save=contains&amp;param_ui_control_scripts_save=&amp;&amp;param_jumpToPage_value=4">Val - Van</a></span>
+					
+					*
+					</span>
+				
+					<span style="white-space: nowrap">
+					
+						<span class="Pagination Link"><a class="ABC" 
+							href="?&amp;param_sid_save=e28ee74d8366f04861b48206788dfded&amp;param_chinese_checkbox_type_save=Pinyin&amp;param_lang_save=eng&amp;param_letter_group_save=V&amp;param_perform_save=searchTitle&amp;param_letter_group_script_save=Latin&amp;param_chinese_checkbox_save=0&amp;param_services2filter_save=getFullTxt&amp;param_current_view_save=detail&amp;param_pattern_save=&amp;param_jumpToPage_save=&amp;param_type_save=browseLetterGroup&amp;param_textSearchType_save=contains&amp;param_ui_control_scripts_save=&amp;&amp;param_jumpToPage_value=5">Van - Vár</a></span>
+					
+					*
+					</span>
+				
+					<span style="white-space: nowrap">
+					
+						<span class="Pagination Link"><a class="ABC" 
+							href="?&amp;param_sid_save=e28ee74d8366f04861b48206788dfded&amp;param_chinese_checkbox_type_save=Pinyin&amp;param_lang_save=eng&amp;param_letter_group_save=V&amp;param_perform_save=searchTitle&amp;param_letter_group_script_save=Latin&amp;param_chinese_checkbox_save=0&amp;param_services2filter_save=getFullTxt&amp;param_current_view_save=detail&amp;param_pattern_save=&amp;param_jumpToPage_save=&amp;param_type_save=browseLetterGroup&amp;param_textSearchType_save=contains&amp;param_ui_control_scripts_save=&amp;&amp;param_jumpToPage_value=6">Next set of titles &gt;&gt;</a></span>
+					
+					
+					</span>
+				
+			</td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+
+<!-- end more than one page found -->
+</table>
+
+<p class="LabelBold"><A HREF="#Top"><u>Back to top</u></A></p>
+
+<!-- end record list -->
+  <!-- /form COMMENT !-->
+
+<!-- end if result is present -->
+
+</div>
+</div>
+
+		
+<div class="tip" id="PinyinTip" >Check this option to search in Pinyin.<br>Leave it unchecked for Latin search.<br>Use spaces to separate between words.</div>
+<div class="tip" id="ChineseTip" >Check this option to limit search to Chinese.</div>
+<iframe title="Hidden Non Functinal Frame" id="DivShim" src="javascript:false;" scrolling="no" frameborder="0"   style="position:absolute; top:0px; left:0px; display:none;"></iframe>
+
+<div id="footer" class="clearfix">
+		<div id="footer-left" class="col col-4 col-first">
+		<address>
+<strong>Bern Dibner Library of Science and Technology</strong><br />
+
+Five MetroTech Center, Brooklyn, NY 11201-9818
+</address>		<ul id="footer-links" class="clearfix">
+<li><a href="/about/contact" title="Contact Us" class="contact-dir">Contact Directory</a></li>
+<li><a href="mailto:blibrary@poly.edu" title="Email Bern Dibner Library" class="contact-email">blibrary@poly.edu</a></li>
+<li><a href="tel:718-260-3530" title="Call Bern Dibner Library" class="contact-phone">718.260.3530</a></li>
+</ul><p id="copyrights">&copy; 2010 Polytechnic Institute of New York University.<br />
+<!-- ex libris copyright -->
+Powered by SFX
+<!-- end ex libris copyright -->
+</p>		</div>
+		<div id="footer-inside-left" class="col col-2">
+		<h6>External Links</h6><ul id="footer-external-links" class="clearfix"><li><a href="http://my.poly.edu" title="Go to MyPoly">MyPoly</a></li><li><a href="http://library.nyu.edu" rel="nofollow" title="Go to Bobst Library">Bobst Library</a></li></ul>		</div>
+
+		<ul id="footer-parent-links" class="clearfix"><li><a href="http://www.poly.edu" title="Go to NYU:Poly" class="poly">NYU-Poly</a></li><li><a href="http://www.nyu.edu" rel="nofollow" title="Go to New York University" class="nyu">New York University</a></li></ul>	</div><!-- / #footer -->
+
+
+</div>
+</div>
+<!-- /#container -->		
+</body>
+</html>
+

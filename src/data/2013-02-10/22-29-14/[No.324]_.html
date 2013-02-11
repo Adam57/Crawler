@@ -1,0 +1,733 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+	<head>
+		<meta http-equiv="Content-type" content="text/html;charset=UTF-8" />
+				<meta http-equiv="X-UA-Compatible" content="IE=8">
+				<link rel="stylesheet" type="text/css" media="screen, projection" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/smoothness/jquery-ui.css" />
+		<link rel="stylesheet" type="text/css" media="screen, projection" href="/css02/lcv1.css" />
+		
+		<title>Reserve a Group Study Room - Events Calendar - NYU-Poly - Bern Dibner Library</title>
+		
+		<style type="text/css">
+			#container { background: url('http://lcimages.s3.amazonaws.com/bg_page_white.gif') repeat-x;  background-color:#fff; }
+			.dijitButtonText { font-weight: bold; }	
+			/* jquery tools tooltip */
+			.tooltip { background-color:#dddddd; border:1px solid #aaaaaa; padding:10px 15px; width:200px; display:none; color:#222222; text-align:left; font-size:12px; z-index: 1005; margin-bottom: 15px; -moz-box-shadow:0 0 10px #dddddd; -webkit-box-shadow:0 0 10px #dddddd; }			
+			.ttwide { width:400px!important;  }
+			.room_desc, .room_img { padding: 0px 5px 5px 0px; }
+			.nick_cont { width: 95px; overflow:hidden; }
+			.ui-datepicker { width: 177px; border-radius: 0px; border: 6px solid #EAEAEA; }
+			.ui-datepicker .ui-datepicker-header { background:none!important; background-color: #EBEBEB!important; border-radius: 0px; border: 1px solid #D8D8D8!important; }
+			.fbutton { font-weight: bold; font-size: 12px; }
+		</style>
+		
+		<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
+		<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script>
+		<script type="text/javascript" src="/js02/lc.js"></script>
+		<style>
+body {
+    background: #f2f2f2;
+    font-family: Helvetica, Arial, sans-serif;
+	color: #363636;
+}
+
+#header-wrapper {
+	margin: 0 auto;
+	padding: 0 5px;
+	width: 977px;
+}
+
+#header-wrapper img {border: 0;}
+
+#header-wrapper ul {
+    list-style: none;
+    list-style-image: none;
+}
+
+/*************
+ new clearfix
+ *************/
+.clearfix:after {
+	visibility: hidden;
+	display: block;
+	font-size: 0;
+	content: " ";
+	clear: both;
+	height: 0;
+	}
+* html .clearfix             { zoom: 1; } /* IE6 */
+*:first-child+html .clearfix { zoom: 1; } /* IE7 */
+/* end new clearfix */
+
+/*************
+ header
+ *************/
+#header {}
+
+#header h1.logo {
+	margin: 0 0 27px 18px;
+	padding: 24px 0 0 0;
+	float: left;
+}
+
+#header h1.logo a,
+#header h1.logo img {display: block;}
+#header h1.logo a:hover {opacity: 0.8;}
+
+#header h1.logo a {float: left;}
+
+#header h1.logo a#nyu-poly-logo {
+	margin-top: 8px;
+	margin-left: 20px;
+	padding-left: 20px;
+	width: 90px;
+	border-left: 1px solid #aaa;
+	text-indent: -9999em;
+	background: url("http://library.poly.edu/sites/default/files/image/2010/05/main_sprite.png") no-repeat -760px -98px;
+}
+
+
+div#header-links-right {
+	position: relative;
+	float: right;
+}
+
+ul#header-links {
+	font-size: 11px;
+	padding-top: 28px;
+	padding-right: 15px;
+}
+
+ul#header-links li {display: inline;}
+
+ul#header-links li a {
+	margin-left: 20px;
+	color: #444;
+	font-weight: bold;
+	text-decoration: none;
+}
+
+ul#header-links li a:hover {text-decoration: underline;}
+
+ul#header-links a.ask-librarian {
+	padding-right: 22px;
+	padding-bottom: 1px;
+	color: #0a6f87;
+	font-size: 1.2em;
+	background: url("http://library.poly.edu/sites/default/files/image/2010/05/main_sprite.png") no-repeat right -61px;
+}
+/* end header */
+
+/************
+ main-nav
+ ************/
+#main-nav {
+	background: #333 url("http://library.poly.edu/sites/default/files/image/2010/05/main_sprite.png") no-repeat top left;
+	position: relative;
+	height: 41px;
+}
+
+#bdl-primary-menu {
+	margin: 0;
+	padding-left: 5px;
+	float: left;
+}
+
+#bdl-primary-menu li.parent {
+	padding: 5px 5px 0 5px;
+	float: left;
+	position: relative;
+	border-right: 1px solid #222;
+}
+
+
+#bdl-primary-menu li.parent a.main-link {
+	padding: 3px 10px 10px 10px;
+	display: block;
+	font-size: 20px;
+	color: #e2d9b0;
+	text-decoration: none;
+	
+	-webkit-border-top-left-radius: 2px;
+	-webkit-border-top-right-radius: 2px;
+	-moz-border-radius-topleft: 2px;
+	-moz-border-radius-topright: 2px;
+	border-top-left-radius: 2px;
+	border-top-right-radius: 2px;
+}
+
+#bdl-primary-menu li.parent a.active {
+	background: #fff;
+	color: #333;
+}
+
+#bdl-primary-menu li:hover a.main-link {
+	background: #e9e6de;
+	color: #333;
+}
+
+#bdl-primary-menu li:hover a.main-link:hover {
+	color: #000;
+	text-decoration: underline;
+}
+
+#bdl-primary-menu li.home-link {padding-right: 3px;}
+#bdl-primary-menu li.home-link a.main-link {
+	background: url("http://library.poly.edu/sites/default/files/image/2010/05/main_sprite.png") no-repeat -274px -173px;
+	text-indent: -9999em;
+	width: 20px;
+}
+#bdl-primary-menu li.home-link a:hover {background-position: -274px -212px;}
+
+#bdl-primary-menu li.expanded a.main-link,
+#bdl-primary-menu li.expanded a.main-link:hover {
+	background: #e9e6de;
+	color: #333;
+}
+
+/************* 
+ search box 
+ *************/
+form#search-theme-form {
+	margin: 0;
+	padding: 5px 35px 0 0;
+	float: right;
+	background: none;
+}
+
+form#search-theme-form #search {position: relative;}
+
+form#search-theme-form #edit-search-theme-form-1-wrapper {
+	margin: 0;
+	padding-top: 2px;
+	float: left;
+	display: block;
+}
+
+form#search-theme-form input#edit-search-theme-form-1 {
+	margin: 0;
+	padding-top: 4px;
+	display: block;
+	color: #999;
+	background: #222;
+	border: 1px solid #555;
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	border-radius: 2px;
+}
+
+form#search-theme-form input#edit-search-theme-form-1:hover {border-color: #777;}
+
+form#search-theme-form input#edit-search-theme-form-1:focus {
+	background: #fff;
+	color: #333;
+}
+
+form#search-theme-form span.submit-btn {
+	margin: 0 10px 0 5px;
+	padding: 1px 0 0 0;
+	background: none;
+}
+
+form#search-theme-form input.form-submit {
+	margin: 0;
+	padding: 0;
+	width: 25px;
+	height: 26px;
+	
+	float: left;
+	margin-right: -40px;
+	
+	text-indent: -9999em;
+	font-size: 0px;
+	color: #b7d855;
+	display: block;
+	text-shadow: 0 1px 1px #000;
+	border: none;
+	background: url("http://library.poly.edu/sites/default/files/image/2010/05/main_sprite.png") no-repeat left -72px;
+}
+
+form#search-theme-form input.form-submit:hover {background-position: left -123px;}
+
+.guidetags {
+  display:none; 
+}
+
+.guideattr {
+  display:none; 
+}
+
+.guideshare {
+  display:none; 
+}
+
+
+.lastupdate {
+  display:none; 
+}
+
+.guideurl {
+  display:none; 
+}
+
+
+
+h1
+{
+
+font-size: 22px;
+
+color: #e64d13;
+
+display: block;
+
+padding-top: 3px;
+
+}
+#tabsI a{background:transparent url("http://library.poly.edu/sites/default/files/image/2010/05/tableft-grey.gif") no-repeat left top; color: #fefefe;
+}
+#tabsI a span{color:#2e2e2e; background:transparent url("http://library.poly.edu/sites/default/files/image/2010/05/tabright-grey.gif") no-repeat right top; color:#24618E;
+}
+#tabsI #current a span, #tabsI .current a span {color: #fff; font-weight:bold}
+
+.dropmenudiv a:hover {color: #fefefe; background-color:#3f4945;
+}
+
+</style>	</head>
+	
+<body class="public_page" id="rooms_php">
+	<div style="position:absolute;top:-1000px;" title="Information for Screenreader Users">
+		<a href="#content" title="Skip to Content">Skip to Content</a>
+	</div>
+		
+	<div id="wrapper">
+		<div id="container">
+			<div><html>
+<head>
+    <title>Library header</title>
+    <!-- Don't forget to add this css file to your site and add the resources folder -->
+    <link href="resources/library_header.css" type="text/css" rel="stylesheet" media="all" />
+<link rel="shortcut icon" href="http://poly.libguides.com/data/icons/40/nyu-poly_circle_icon.gif" type="image/x-icon" />
+
+<style>
+
+
+
+
+input[type=text] { font-size: 100%; }</style>
+
+
+</head>
+<body>
+
+
+
+<!-- Start coping from here -->
+
+<div id="header-wrapper">
+
+<div id="header" class="clearfix">
+	<h1 class="logo"><a href="http://library.poly.edu/" title="Bern Dibner Library | Home" id="library-logo"><img src="http://library.poly.edu/sites/all/themes/bd_library/logo.png" alt="Bern Dibner Library" width="247" height="46"/></a><a href="http://www.poly.edu" id="nyu-poly-logo" title="Go to NYU-Poly website">poly.edu</a></h1>
+    <div id="header-links-right">
+		<ul id="header-links"><li><a href="http://poly.kohalibrary.com/cgi-bin/koha/opac-user.pl" rel="nofollow" class="btn1"><span>My Library Account</span></a></li><li><a href="http://library.poly.edu/about/contact" class="btn1"><span>Contact Us</span></a></li><li><a href="http://library.poly.edu/research/ask" title="" class="ask-librarian">Ask a librarian</a></li></ul>
+	</div>
+</div><!-- / #header -->
+<div id="main-nav" class="clearfix">
+<ul id="bdl-primary-menu" class="clearfix">
+<li class="parent home-link"><a href="http://library.poly.edu/" class="main-link active" title="Go to homepage">Home</a></li>
+
+<li class="parent"><a href="http://library.poly.edu/find" class="main-link">Find It</a></li>
+<li class="parent"><a href="http://library.poly.edu/research" class="main-link">Research Help</a></li>
+<li class="parent"><a href="http://library.poly.edu/services" class="main-link">Services</a></li>
+<li class="parent"><a href="http://library.poly.edu/about" class="main-link">About the Library</a></li>
+</ul>	
+<form action="http://library.poly.edu/search/apachesolr_multisitesearch/"  accept-charset="UTF-8" method="post" id="search-theme-form">
+
+<div><div id="search" class="container-inline">
+
+<div class="form-item" id="edit-search-theme-form-1-wrapper">
+
+
+<input type="text" maxlength="128" name="search_theme_form" id="edit-search-theme-form-1" size="22" value="Search library site" title="Search library site" class="form-text" />
+
+</div>
+
+<span class="submit-btn">
+
+<input type="submit" name="op" id="edit-submit" value="Search"  class="form-submit" />
+
+</span>
+
+ 
+
+<input type="hidden" name="form_id" id="edit-search-theme-form" value="search_theme_form"  />
+
+</div></div>
+
+</form>
+
+</div><!-- / #main-nav -->
+</div><!-- / #header-wrapper -->
+
+<!-- stop here -->
+
+
+
+</body></div>			<div class="topnav"><span style="float:right;" class="breadcrumbsr"><span id="bc_si"><a style="font-size:10px;" id="sign_in" href="https://libcal.com/login.php?iid=324" title="Sign into the system">Admin Sign In</a></span>&nbsp;</span><div class="breadcrumbs">
+				<span id="bc_library_home">
+					<a href="http://library.poly.edu/">Dibner Library</a>
+					<span class="breadcrumb_spacer">&raquo;</span>
+				</span>
+				<span id="bc_libcal_home">
+					<a href="http://poly.libcal.com/">Events Calendar</a>
+				</span></div>
+			  </div>
+			<h1 id="roomh1">Reserve a Group Study Room				<div id="groupsel">
+				View: 
+						<select name="gid" id="gid" style="width: 300px;" class="dropdownform" onchange="changeGID(this.value);"><option value="0">Select...</option><option value="/booking/studyroom" selected="selected">Reserve a Group Study Room</option>
+</select>				</div>
+			</h1>
+	
+
+			<div id="maincontent">
+				
+				<div id="group_desc">
+				<p><span style="font-size: medium;">Reserve Room 339 or 340 for group study&nbsp;up to one month ahead of time.&nbsp;You may reserve up to three one-hour time slots per day.<br /></span></p>
+<p><span style="font-size: small;">This service is reserved for the NYU community.<br /></span></p>				</div>
+				<noscript><div id="noscript">Your browser has javascript disabled. Without javascript some functions will not work.</div></noscript>
+				<div id="rm_r">
+					<div id="main_box"></div>
+					<div id="animate" style="height: 4px; margin-top: -4px;"></div>
+					<div id="tc_box" style="display: none;"><div>
+<div><strong>Study Room Reservation Rules:</strong></div>
+<ul>
+<li>Bring your email reservation confirmation form with you to the room.</li>
+<li>Group study room users without reservations must leave when requested by a group with proof of valid reservation.</li>
+<li>Rooms may not be reserved for one person only.&nbsp;<span style="text-indent: -24px;">&nbsp;If you are studying alone, you may be asked to leave.</span><span style="text-indent: -24px;">&nbsp;</span></li>
+<li>If your group (2 or more people) is 15 minutes late from the beginning of your time slot, the reservation is invalid and the room may be given to another group.</li>
+<li>Rooms cannot be reserved or held by placing personal belongings in them. Unattended items will be removed.</li>
+</ul>
+*If the library suspects misuse of the reservation system we have the right to cancel your reservation.</div><div id="rm_tc_buts"><button class="fbutton" name="Continue" onclick="return conttc();" value="Continue" id="rm_tc_cont">Continue</button> 
+								   <span id="rm_tc_s"></span><button class="fbutton" name="Cancel" onclick="return canceltc();" value="Cancel" id="rm_tc_can">Cancel</button></div></div>					<div id="form_box" style="display: none; clear: left;">
+						 <form name="roombookingform" id="roombookingform" encType="multipart/form-data" action="" method="">
+							<input name="sid" id="sid" value="" type="hidden" />
+							<input name="tc" id="tc" value="yes" type="hidden" />
+							<input name="gid" id="gid" value="503" type="hidden" />
+							<fieldset>
+								<legend class="font14">Booking Details</legend>
+								<div id="rm_datetime">&nbsp;</div>
+								<span id="rm_daily_limit">Note: A Daily maximum of 3 hours can be booked.</span>								<span id="rm_requiredtext">* Required</span>
+								
+								<div class="reg_question"><span class="reg_quest_text">Full Name:</span><span class="reg_required">*</span><br/>
+									<input type="text" class="reg_input" name="name" id="name" value="" />
+								</div>
+								
+								<div class="reg_question"><span class="reg_quest_text">Email:</span><span class="reg_required">*</span><br/>
+									<input type="text" class="reg_input" name="email" id="email" value="" />
+									<div id="rm_email_restrict">Enter poly.edu, nyu.edu addresses only</div>								</div>	
+										
+									<div class="reg_question"><span class="reg_quest_text">Reservation Name (will appear on this website):</span><span class="reg_required">*</span><br/>
+											  <input type="text" class="reg_input" name="nick" id="nick" value="" /></div><input type="hidden" name="qcount" value="0" />
+										  <input type="hidden" name="fid" value="0" />								</fieldset>
+
+								<div class="rm_buttons">
+									<button class="fbutton" type="button" name="Submit" value="Submit" id="rm_sub" onclick="return do_booking();">Submit my Booking</button> &nbsp;&nbsp;
+								</div>
+								
+							</form>
+							
+							<div id="rm_success">
+								<fieldset>
+								<p><strong>Important:</strong><br/>
+								<span id="rec_email">You will receive a confirmation email shortly.</span></p>
+								<span id="confirm_by"></span>								</fieldset>
+							</div>
+							
+					</div><!-- end form_box //-->
+					
+				</div><!-- end rm_right //-->
+				
+				</div>
+				<div id="rm_l">
+					<div id="rm_cal_cont">
+						<div id="rmcal"></div>
+					</div>	
+					<br style="clear:left;" />
+					<div id="nick_box"></div>
+				</div>
+
+				 <div class="clear"></div>
+
+			
+<!-- start footer -->
+<div id="footer">
+	Powered by <a href="http://www.springshare.com">Springshare</a>; All rights reserved. 
+    <span id="footer_support_link"><a href="http://poly.libcal.com/support.php">Report a tech support issue.</a></span>
+	<br/>
+	    <span id="mobile_link"><a href="/mobile.php?action=8&amp;tid=503&amp;d=2013-02-10">View the mobile version of this page</a>.</span>
+    	</div>
+
+<div id="customFooter"><center><b>Questions, Comments or Problems? <a href="http://library.poly.edu/about/contact" title="Contact the Library" >Contact the Library</a></b></center></div>                                  	
+		</div>
+	</div>
+		<script type="text/javascript">
+	
+		<!--		
+		var ids = [], roomnames = [], dur =[];
+		var multi = true;
+		var daily = 180;
+		var tot=0;
+		var ts_limit = 3;
+		var ts_count = 0;
+		
+		function day(){
+		
+			if(jQuery("#rm_success").css('display') != "block"){ jQuery("#form_box").hide(); }
+			
+			canceltc();
+			//reset form selections
+			ids = []; roomnames = []; dur = [];
+			
+			jQuery('#main_box').hide().html("<img src='/images/loading_lg.gif' style='margin: 40px 0px 40px 360px' alt='Loading...'>").fadeIn('fast');
+			jQuery('#nick_box').html("<img src='/images/loading_lg.gif' style='margin: 0px 0px 0px 80px' alt='Loading...'>");
+			var cdate = jQuery('#rmcal').val();
+			var nocache = new Date().getTime();
+			
+			jQuery.post(
+				'/process_roombookings.php?m=calscroll&gid=503&date='+cdate+'&nocache='+nocache,
+				function (data) {
+					jQuery('#main_box').hide().html(data).fadeIn('fast', function() {
+					//22
+						var px = 530;
+						if(cdate=='2013-02-10'){
+							jQuery("#time_grid_scroll").animate({scrollLeft: 1400}, 'fast');
+						}else{
+							jQuery("#time_grid_scroll").animate({scrollLeft: px}, 'fast');
+						}
+						
+					}); //end fadeIn
+					var runttip = setTimeout(function(){ 
+						jQuery(".ttip").tooltip({ offset: [-5, 0] }); 
+						//iPad fix to close  
+						document.addEventListener("touchmove", function(e) {
+							jQuery(".tooltip").hide();
+						}, false);
+					},1000);
+				}
+			);
+			
+					jQuery.post(
+						'/process_roombookings.php?m=showNick&gid=503&d='+cdate,
+						function (data) {
+							jQuery('#nick_box').hide().html(data).fadeIn('fast');
+						}
+					);			
+			return false;
+		}
+		
+		function changeGID(gid){
+			if(gid !="0"){
+				window.location.href=gid;
+			}
+			return false;
+		}		
+		
+		function showBookingForm(id,rname,date,slot_dur){
+			
+			title = rname +" "+ date;
+			
+			if(jQuery("#rm_success").css('display')=="block"){ 
+				jQuery("#name").val("");
+				jQuery("#email").val("");
+				jQuery("#roombookingform").fadeIn('fast');
+				jQuery("#rm_success").hide(); 
+			}
+			//Deselect if already chosen
+			jQuery('#'+id).hasClass('lc_rm_t')
+			if(jQuery('#'+id).hasClass('lc_rm_t')){
+				removeTime(id,title,id+"##"+slot_dur);
+				return false;
+			}
+			if(multi===false){
+				for(var i = 0; i < ids.length; i++){
+					jQuery('#'+ids[i]).removeClass('lc_rm_t');
+				};
+				ids = []; roomnames = []; dur = [];
+			}			
+			
+			ids.push(id);
+			roomnames.push(title);
+			dur.push(id+"##"+slot_dur);
+			
+			var display ="";
+			for(var i = 0; i < ids.length; i++){
+				display = display + roomnames[i] + " " + "<a href='#' title='Remove: "+roomnames[i]+"' onclick='return removeTime(\""+ ids[i] +"\",\""+roomnames[i]+"\",\""+dur[i]+"\");'><span class='icon_del'>&nbsp;&nbsp;&nbsp;&nbsp;</span></a><br/>";
+			};
+			
+			//warn if over daily limit
+			if(parseInt(daily) > 0){
+				tot = 0;
+				tot = calcDaily();
+				if(tot > daily){ 
+					removeTime(id,title,id+"##"+slot_dur);
+					errorAlert('Sorry, but you have exceeded the Daily maximum of 3 hours!');
+					return false;
+				}
+			}	
+			//warn if over timeslot limit
+			if(ts_limit > 0){
+				if(ids.length > ts_limit){ 
+					removeTime(id,title,id+"##"+slot_dur);
+					errorAlert('Sorry, a maximum of '+ts_limit+' time slots can be booked at one time!');
+					return false;
+				}
+			}
+			jQuery('#'+id).addClass('lc_rm_t');
+
+			jQuery('#rm_datetime').html(display);
+			jQuery("#sid").val(ids.join("|"));
+			
+			if(jQuery("#tc").val() == "yes"){ 
+				try { jQuery("#tc_box").show(); }catch(err){ }
+				jQuery("#form_box").hide();
+			}else{
+				jQuery("#form_box").show();
+			}
+			//do the animation
+			jQuery('#'+id).animate_from_to('#animate', {
+				pixels_per_second: 500,
+				initial_css: {'background': '#39e639'}
+			});
+			return false;
+		}
+		
+		function calcDaily(){
+			var total=0;
+			for(var i = 0; i < dur.length; i++){
+				var v = dur[i].split("##");
+				total = parseInt(total) + parseInt(v[1]);
+			};
+			return total;
+		}
+		
+		function removeTime(id,room,slot_dur){
+			remElement(ids,id);
+			remElement(roomnames,room);
+			remElement(dur,slot_dur);
+			var display ="";
+			for(var i = 0; i < ids.length; i++){
+				display = display + roomnames[i] + " " + "<a href='#' title='Remove: "+roomnames[i]+"' onclick='return removeTime(\""+ ids[i] +"\",\""+roomnames[i]+"\",\""+dur[i]+"\");'><span class='icon_del'>&nbsp;&nbsp;&nbsp;&nbsp;</span></a><br/>";
+			};
+			jQuery('#rm_datetime').html(display);
+			jQuery("#sid").val(ids.join("|"));
+			jQuery('#'+id).removeClass("lc_rm_t")
+			if(ids.length < 1){
+				jQuery("#form_box").hide();
+				try { jQuery("#tc_box").hide(); }catch(err){ }
+			}
+			return false;
+		}	
+		
+		function remElement(arrayName,arrayElement){
+			for(var i=0; i<arrayName.length;i++ ){ 
+				if(arrayName[i]==arrayElement)
+				arrayName.splice(i,1); 
+			} 
+		}
+		function canceltc(){
+			try { jQuery("#tc_box").hide(); }catch(err){ }
+			return false;
+		}
+		function conttc(){
+			try { jQuery("#tc_box").hide(); }catch(err){ }
+			jQuery("#tc").val("done");
+			jQuery("#form_box").show();
+		}		
+		function clearVals(){
+			try { 
+			jQuery('#q1,#q2,#q3,#q4,#q5,#q6,#q7,#q8').val('');
+			}catch(err){ }
+		}
+
+		function do_booking(){
+		
+				
+				var name = jQuery('#name');
+				if (jQuery.trim(name.val())=="") { errorAlert("You must provide a name!"); enableButton('rm_sub', 'Submit my Booking'); return false; }
+				name.val(name.val().toLowerCase().replace(/\b[a-z]/g, function(letter) { return letter.toUpperCase(); }));
+							
+				var email = jQuery.trim( jQuery('#email').val() );
+				jQuery('#email').val(email);
+				var em_msg = 'Your email address must end in: poly.edu OR nyu.edu'; if((email.search(/poly.edu/i)=="-1") && (email.search(/nyu.edu/i)=="-1")){ errorAlert(em_msg); return false; }				
+				var reg = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+				if(reg.test(email) == false) { errorAlert("You must provide a valid email address!"); enableButton('rm_sub', 'Submit my Booking'); return false; }
+			
+				if(jQuery("#sid").val()==""){ errorAlert("Please select a time!"); enableButton("rm_sub", "Submit my Booking"); return false;	 }
+				if(jQuery.trim(jQuery("#nick").val())==""){ errorAlert("Please enter Reservation Name (will appear on this website)!"); enableButton("rm_sub", "Submit my Booking"); return false;	 }				disableButton("rm_sub", "Working...");
+				jQuery.post(
+					'/process_roombookings.php?m=booking_full',
+					jQuery('#roombookingform').serialize(),
+					function (data) {
+						enableButton("rm_sub", "Submit my Booking");
+						var darray=data.split("#$#");
+								
+						if (data == "banned_email") {
+							errorAlert('This email address is banned from using this system. \nThe request has not been processed.');
+							var t=setTimeout(function(){ window.location.reload(); },3000);
+						}else if(parseInt(data) == 0){
+							jQuery("#roombookingform").hide();
+							jQuery("#rm_success").show();	
+							ids = []; roomnames = []; dur = [];	
+							day();
+							clearVals();
+						}else if(data=="email"){
+							errorAlert("Sorry, your email address is invalid or does not contain the correct domain name!");
+						}else if(data=="filled"){
+							errorAlert("Sorry, the time slot has become unavailable. Please try another time slot(s).");
+							var t=setTimeout(function(){ window.location.reload(); },3000);
+						}else if(data=="mediation"){
+							jQuery("#roombookingform").hide();
+							jQuery("#rm_success").show();
+							jQuery("#confirm_by").html('');
+							ids = []; roomnames = []; dur = [];
+							day();	
+							clearVals();
+						}else if(darray[0]=="already_booked"){
+							jQuery("#roombookingform").hide();
+							jQuery("#confirm_by").html(darray[1]);
+							jQuery("#rec_email").hide(); 
+							jQuery("#rm_success").show();
+							ids = []; roomnames = []; dur = [];
+							errorAlert("You cannot book more than one room at the same time!\n");
+							var t=setTimeout(function(){ window.location.reload(); },3000);								
+						}else{
+							jQuery("#roombookingform").hide();
+							jQuery("#confirm_by").html(data);
+							var found = data.indexOf("rm_book_confirmed")
+							if(found < 0){ jQuery("#rec_email").hide(); }
+							jQuery("#rm_success").show();
+							ids = []; roomnames = []; dur = [];
+							day();	
+							clearVals();
+						}			
+						
+					}
+				);		
+			return false;
+			
+		}
+			
+		jQuery(function() {
+			jQuery( "#rmcal" ).datepicker( { dateFormat: "yy-mm-dd", minDate: 0, maxDate: +28, onSelect: function(date) { day(); } } );
+			day();
+		});
+		
+		
+		hit('503','room','r');
+		
+		//Animate plugin
+		(function(b){b.fn.animate_from_to=function(d,c){return this.each(function(){a(this,d,c)})};b.extend({animate_from_to:a});function a(d,i,l){var c=b(d).eq(0),h=b(i).eq(0);var f={pixels_per_second:1000,initial_css:{background:"#dddddd",opacity:0.8,position:"absolute",top:c.offset().top,left:c.offset().left,height:c.height(),width:c.width(),"z-index":100000},callback:function(){return}};if(l&&l.initial_css){l.initial_css=b.extend({},f.initial_css,l.initial_css)}l=b.extend({},f,l);var k=c.offset().top+c.width()/2-h.offset().top,m=c.offset().left+c.height()/2-h.offset().left,g=Math.floor(Math.sqrt(Math.pow(m,2)+Math.pow(k,2))),e=(g/l.pixels_per_second)*1000,j=b("<div></div>").css(l.initial_css).appendTo("body").animate({top:h.offset().top,left:h.offset().left,height:h.innerHeight(),width:h.innerWidth()},{duration:e}).animate({opacity:0},{duration:100,complete:function(){j.remove();return l.callback()}})}})(jQuery);
+		</script>	
+
+</body>
+</html>
