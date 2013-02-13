@@ -84,5 +84,3 @@ class Parser(object):
             return False
 
         return True
-
-        
