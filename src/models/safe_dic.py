@@ -24,9 +24,9 @@ class SafeDictionary( object ):
     def pop_left(self):
         self._lock.acquire()
         try:
-            if ( len(self._data_queue) == 0 ):
+            if ( len(self._data_dic) == 0 ):
                 return None
-            return self._data_queue.popleft()
+            return self._data_dic.popleft()
         finally:
             self._lock.release()
             
@@ -38,13 +38,21 @@ class SafeDictionary( object ):
             self._lock.release()
             
     def has_key(self, key):
-        if self._data_dic.has_key(key):
-            return True
-        else:
-            return False
+        self._lock.acquire()
+        try:
+            if self._data_dic.has_key(key):
+                return True
+            else:
+                return False
+        finally:
+            self._lock.release()
             
     def valueofkey(self,key):
-        if not self.has_key(key):
-            return None
-        else:
-            return self._data_dic[key]
+        self._lock.acquire()
+        try:
+            if not self._data_dic.has_key(key):
+                return None
+            else:
+                return self._data_dic[key]
+        finally:
+            self._lock.release()

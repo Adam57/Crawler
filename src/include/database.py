@@ -1,33 +1,34 @@
+"""
+Created on Feb 12, 2013
+
+@author: derrick
+
+"""
 import MySQLdb
 from include.log import Log
-from include.setting import Setting
+from models.configuration import Configuration
 
-class Databse(object):
-	def __init__(self, setting):
-		self._host 		= setting.get_param("Mysql","host")
-		self._user  	= setting.get_param("Mysql","user")
-		self._passwd  	= setting.get_param("Mysql","passwd")
-		self._db 		= setting.get_param("Mysql","db")
+class Database(object):
+	
+  def __init__(self, config ):
+		self._config 		= config
 
-
-  	def execute(self, sql):
-  		try: 
-			conn = MySQLdb.connect(host=self._host,	# your host, usually localhost
-                 user=self._user , # your username
-                  passwd=self._passwd , # your password
-                  db=self._db) # name of the data base
-			conn.autocommit(True)
-			cur = conn.cursor()
-			#sql="select * from `status`" 
-			#print sql
-  			cur.execute(sql)
-			for row in cur.fetchall() :
-   				 print row[1]
-  		except (Exception) as e: 
+  def execute(self,sql):
+    try: 
+      conn = MySQLdb.connect(host=self._config._host,	user=self._config._user, passwd=self._config._passwd, db=self._config._db) 
+      conn.autocommit(True)
+      cur = conn.cursor()
+  			#sql="select * from `status`" 
+  			#print sql
+      cur.execute(sql)
+  			#for row in cur.fetchall() :
+     		#		 print row[1]
+      return cur.fetchall()
+    except (Exception) as e: 
   			Log().debug(e)
-  			return False
-  		finally:    
-			if conn:    
-				conn.close()
-  		return True
+  			return None
+    finally:
+      if conn:
+        conn.close()
+
 
