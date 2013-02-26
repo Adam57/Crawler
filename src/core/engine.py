@@ -190,7 +190,8 @@ class Engine(object):
 
 	def start(self):
 		try:
-			self.wait_for_start()
+			#for web page interface
+			#self.wait_for_start()
 
 			self._istart = True
 			
