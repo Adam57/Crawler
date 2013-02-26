@@ -65,8 +65,9 @@ class Parser(object):
             links = htmlparser.get_links()
         except (Exception) as e:
             #print(html_task._data)
-            print(html_task._url)
-            Log().debug(e)
+            #print(html_task._url)
+            #Log().debug(e)
+            return
         #finally:
         #    del html_task
 
@@ -76,6 +77,7 @@ class Parser(object):
             
             html_task_child = Html(link)
             
+            self._status._parse_times+=1
 
             """load all strategies to determine if this link can be download"""
             if(self._schemehandler.SchemeChecker(html_task_child)==False):
@@ -102,12 +104,14 @@ class Parser(object):
             
             if(html_task_child._scheme == "" and html_task_child._hostname==None):
                 self._urlextender.ExtendURL(html_task_child, html_task)
-            
-            html_task_child.Do_MD5()                        
+                                   
             #if self.parse_link( html_task_child ) == True:
-            self._status._parse_times+=1
+           
             html_task_child._depth = self._parsing_depth+1
             html_task_child._parent = self._parsing_id
+
+            #for test
+            html_task_child._parent_url = html_task._url
             callback(html_task_child)
 
         del html_task

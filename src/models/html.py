@@ -7,6 +7,7 @@ Created on Feb 4, 2013
 import hashlib
 from urlparse import urlparse
 
+
 """ URL model :http://www.webreference.com/html/tutorial2/2.html
 http://WebReference.com:80/html/tutorial2/2.html?query
 |--|   |--------------||-||--------------------||----|
@@ -35,6 +36,8 @@ class Html(object):
 		self._depth			= 0 #increase at parser parse_page
 		self._parent		= -1 #increase at parser parse_page
 
+		self._parent_url	= "" # for test
+
 
 		""" analyse url """
 		self.parse_url()
@@ -46,6 +49,9 @@ class Html(object):
 		self._crawled_time	= 0		#html download time
 		
 
+	def update_url(self,url):
+		self._url 			= url
+		self.parse_url()
 
 	def parse_url(self):
 		
@@ -55,11 +61,9 @@ class Html(object):
 		self._hostname		= parse_result.hostname
 		self._homesiteurl	= str(parse_result.scheme) + "://" + str(parse_result.hostname)
 		#self._hostname_hash	= hashlib.sha256( parse_result.hostname )
-		self._port			= parse_result.port
+		#self._port			= parse_result.port
 		self._path			= parse_result.path
 		self._query_string	= parse_result.query
-		
-	def Do_MD5(self):
 		md5 = hashlib.md5()
 		md5.update(self._url)
 		self._md5 = md5.hexdigest()	
