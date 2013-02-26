@@ -8,7 +8,6 @@ Xu Deng, Qi Wang
 
 1.cd to the root folder of source code 
 2.excute python crawler.py
-3.Go to the http://dengxu.me/crawling/ input the keywords and threads numbers, click search
 
 
 [Filelist:]

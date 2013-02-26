@@ -87,7 +87,7 @@ class Engine(object):
 		self._keywords_links= []
 
 		""" ---Mysql Manager--- """
-		self.sqlex      = DatabseManager(self._config)
+		#self.sqlex      = DatabseManager(self._config)
 
 		#self.f= open("data.txt", 'w')
 
@@ -178,20 +178,10 @@ class Engine(object):
 
 		#raw_input("press any key to start crawling, press second key to stop")
 	
-	def wait_for_start(self):
-		print "ready for start....."
-		print "go to http://dengxu.me/crawling/ to input some key words & see the result "
-
-		while( self.sqlex.read_if_start(self._config)!= True):
-			sleep(1)
-		print "\n------------------------------------------------------------------------\n"
-		print "starting crawling engine...."
 
 
 	def start(self):
 		try:
-			#for web page interface
-			#self.wait_for_start()
 
 			self._istart = True
 			
@@ -214,7 +204,7 @@ class Engine(object):
 
 
 			"""notify mysql, i am started"""
-			self.sqlex.write_if_start()
+			#self.sqlex.write_if_start()
 			
 		except (Exception) as e:
 			Log().debug("start failed")
@@ -320,8 +310,6 @@ class Engine(object):
 
 
 
-
-	#~~~see result at http://dengxu.me/crawling/
 	def status_update(self):
 
 		while (self._istart == True):
@@ -344,10 +332,10 @@ class Engine(object):
 			
 
 			"""update status tp mysql"""
-			self.sqlex.write_status(self._status)
+			#self.sqlex.write_status(self._status)
 			
 			"""update recent download url"""
-			self.sqlex.write_recent_download(self._status)
+			#self.sqlex.write_recent_download(self._status)
 			
 			sleep(1)
 

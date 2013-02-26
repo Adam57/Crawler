@@ -53,10 +53,10 @@ class Configuration(object):
 			self._result_num 	= int(self._setting.get_param("seed","result_num"))
 
 			#[Mysql]
-			self._host 		= self._setting.get_param("Mysql","host")
-			self._user  	= self._setting.get_param("Mysql","user")
-			self._passwd  	= self._setting.get_param("Mysql","passwd")
-			self._db 		= self._setting.get_param("Mysql","db")
+			#self._host 		= self._setting.get_param("Mysql","host")
+			#self._user  	= self._setting.get_param("Mysql","user")
+			#self._passwd  	= self._setting.get_param("Mysql","passwd")
+			#self._db 		= self._setting.get_param("Mysql","db")
 
 
 		except (Exception) as e:
