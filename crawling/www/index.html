@@ -34,14 +34,6 @@
     		width: 95%;
 
     	}
-      .my_content2{
-        float: left;
-        padding-left:30px;
-        margin-top: 30px;
-        margin-bottom: 60px;
-        width: 60%;
-
-      }
       .search{
         float: left;
         padding-left:25%;
@@ -53,32 +45,7 @@
       }
 	</style>
 	<script>
-		var myVar=setInterval(function(){myTimer()},1000);
-		myTimer();
-		function myTimer()
-		{
-
-		  
-		if (window.XMLHttpRequest)
-		  {// code for IE7+, Firefox, Chrome, Opera, Safari
-		  xmlhttp=new XMLHttpRequest();
-		  }
-		else
-		  {// code for IE6, IE5
-		  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
-		  }
-		xmlhttp.onreadystatechange=function()
-		{
-
-		    if (xmlhttp.readyState==4 && xmlhttp.status==200)
-		    {
-		    document.getElementById("content").innerHTML=xmlhttp.responseText;
-		    }
-		}
-		xmlhttp.open("GET","realtime_data.php",true);
-		xmlhttp.send();
-		}
-
+	
 	</script>
 
 </head>
@@ -99,14 +66,14 @@
           <div class="nav-collapse collapse">
             <ul class="nav">
   
-              <li class="">
+              <li class="active">
                 <a href="./index.html">Start</a>
               </li>
-              <li class="active">
+              <li class="">
                 <a href="./realtime.html">Realtime Statistics</a>
               </li>
               <li class="">
-                <a href="https://github.com/derrick0714/web_search_engin/blob/master/crawling/Readme.md">Code Architecture</a>
+                <a href="https://github.com/derrick0714/web_search_engin/">Code Architecture</a>
               </li>
               <li class="">
                 <a href="./about.html">About</a>
@@ -119,7 +86,74 @@
     <div margin:10px></div>
 <div class="wrapper">
 	<div id="content">
+      <div id="breadcrumb">
+      <ul>
+          
+    <li>Start</li>
 
+      </ul>
+      </div>
+    <div class="my_span"></div>
+    <div class="search">
+      <form class="form-search" action="commit.php">
+            <input type="text" class="input-xxlarge search-query" placeholder="input key words" name="key_words">
+            <div class="my_span3"></div>
+            <button class="btn" type="submit">Search</button>
+    </div>
+    <div id="my">
+    </div>
+    
+  <div class="my_content">
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th olspan="2"><b>Seed:</b></th>
+        </tr>
+      </thead>
+      <tbody>
+
+        <tr>
+          <td width="200"><b>  result num : </b></td>
+          <td> <input type="text" name="result_count" value="10"></td>
+        </tr>
+    </div>
+     <div class="my_span"></div>
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th olspan="2"><b>Downloader:</b></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td width="200"><b>  thread num: </b></td>
+          <td>  <input type="text" name="down_thread" value="1"></td>
+
+        </tr>
+        <tr>
+          <td>download folder:</td>
+          <td>./data</td>
+
+        </tr>
+      </tbody>
+    </table>  
+  </div>
+  <div class="my_span"></div>
+  <div class="my_content">
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th olspan="2"><b>Parser:</b></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td width="200"><b>  thread num: </b></td>
+          <td> <input type="text" name="parse_thread" value="1"></td>
+        </tr>
+    </table>  
+  </div>
+</form>
 	</div><!-- content end -->
 </div><!-- wrapper end -->
 

@@ -89,6 +89,8 @@ class Engine(object):
 		""" ---Mysql Manager--- """
 		self.sqlex      = DatabseManager(self._config)
 
+		#self.f= open("data.txt", 'w')
+
 	def load_seeds(self):
 		#load seed info from config file	
 		#print "load_seeds 1"
@@ -172,15 +174,19 @@ class Engine(object):
 			if i < self._config._result_num:
 				print ("[{0}]".format(i)+url)
 			i+=1
-		
+		print "\n------------------------------------------------------------------------\n"
 
 		#raw_input("press any key to start crawling, press second key to stop")
 	
 	def wait_for_start(self):
 		print "ready for start....."
+		print "go to http://dengxu.me/crawling/ to input some key words & see the result "
+
 		while( self.sqlex.read_if_start(self._config)!= True):
 			sleep(1)
+		print "\n------------------------------------------------------------------------\n"
 		print "starting crawling engine...."
+
 
 	def start(self):
 		try:
@@ -236,11 +242,17 @@ class Engine(object):
 
 	def finish_download(self, html_task):
 			
-		"""
-		print("Downloaded:[No.{0}] time:{1:0.1f} page:depth_parent {2}_{3} http-status: {4} data-size: {5}byes url:{6}"\
+		
+		
+		
+		sentence = "Downloaded:[No.{0}] time:{1:0.1f} page:depth_parent {2}_{3} http-code: {4} data-size: {5}byes url: {6}"\
 			.format(self._status._download_times,time()-self._status._sys_start,html_task._depth,\
-		html_task._parent,html_task._return_code, html_task._data_size, html_task._url))
-		"""
+		html_task._parent,html_task._return_code, html_task._data_size, html_task._url )
+
+		#if self._status._download_times <= 500 :
+		#	self.f.write(sentence+"\n")
+			
+
 
 		"""caculate the path for saving files"""
 		full_path = self._path+"[No.{0}]_".format(self._status._download_times)+".html"
@@ -286,6 +298,7 @@ class Engine(object):
 			"""If there is no task remain in the download pool, put the thread into sleep"""
 			"""else pop the new task, and download it"""
 			"""for the engine to get the result to put into the parse pool, we need to pass the function finish_download down as a callback"""
+			
 			if (new_download_task == None):
 				#print("No task remaining in download_pool")
 				sleep(0.1)
@@ -315,13 +328,20 @@ class Engine(object):
 			self._status._download_queue = self._downloader.len()
 			self._status._parse_queue = self._parser.len()
 			
-			print "[time: {0:0.1f}],queue:{8}, down: {1}, total: {2:0.1f}MB | queue:{9}, parsed: {3},scheme:{10}, cig: {4}, bookmark: {11} type {12} visited: {5}, robot: {6},nestlv: {7} | error: 404: {13} , timeout: {14}"\
+			
+			sentence = "[time: {0:0.1f}],queue:{8}, down: {1}, total: {2:0.1f}MB | queue:{9}, parsed: {3},scheme:{10}, cig: {4}, bookmark: {11} type {12} visited: {5}, robot: {6},nestlv: {7} | error: 404: {13} , timeout: {14}"\
 			.format( time()-self._status._sys_start,\
 		 	self._status._download_times, float(self._status._download_size)/1024/1024, self._status._parse_times\
 		 	,self._status._cgi, self._status._early_visit, self._status._robot, self._status._nestlv\
 		 	,self._downloader.len(), self._parser.len(),self._status._scheme_type, self._status._bookmark, self._status._file_type\
 		 	,self._status._404,self._status._socket_timeout)
 			
+			print sentence
+
+			#if( self._status._download_times > 500):
+			#	self.f.write( sentence+"\n")
+			
+
 			"""update status tp mysql"""
 			self.sqlex.write_status(self._status)
 			
@@ -329,35 +349,7 @@ class Engine(object):
 			self.sqlex.write_recent_download(self._status)
 			
 			sleep(1)
-	"""	
-		sql = "UPDATE  `configuation` SET  `downloader_thread` =  {0} ,`downloader_folder`= '{1}', `parser_thread`= {2}, `seed_keywords`='{3}', `seed_resultnum`={4} WHERE  `configuation`.`id` =1".\
-				format(self._setting.get_param("Downloader","Threadnum"), self._path, self._setting.get_param("Parser","Threadnum"),self._keywords,self._result_num)
-		
-		self._database.execute(sql)
-		
-		#update result url
-		sql = "DELETE FROM `key_words`"
-		self._database.execute(sql)
-		for links in self._keywords_links:
-			sql = "INSERT INTO `web_search_engine`.`key_words` (`id`, `url`) VALUES (NULL, '{0}')".format(links)
-			self._database.execute(sql)
 
-		while (self._istart == True):
-			sql = "UPDATE  `status` SET  `crawled_url_count` =  '{0}'  WHERE  `status`.`id` =1".format(self.download_times)
-			self._database.execute(sql)
-
-
-			for i in range(10):
-				html_task = self._last_log.get(i)
-				if html_task._url != "#":
-					sql = "INSERT INTO `web_search_engine`.`log` (`url`, `download_time`, `data_size`, `code`, `parent`, `depth`)\
-						VALUES ('{0}', now(), '{2}', '{3}', '{4}', '{5}')".format\
-						(html_task._url, html_task._crawled_time, html_task._data_size, html_task._return_code, html_task._parent, html_task._depth)
-					
-					self._database.execute(sql)
-
-			sleep(1)
-	"""
 
 		
    

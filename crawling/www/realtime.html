@@ -4,7 +4,7 @@
 <!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
 <head>
-	<title>Crawling Project - About</title>
+	<title>Crawling Project - Start</title>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<link rel="icon" type="image/png" href="media/images/favicon.png" />
@@ -20,25 +20,66 @@
     	.my_span{
     		float: left;
     		height:30px;
+    		width: 100%;
     	}
     	.my_span2{
     		float: left;
     		height:10px;
-    		width:100%;
+    		width: 100%;
+
     	}
     	.my_content{
     		float: left;
-    		height:330px;
-    		width:80%;
+    		padding-left:20px;
+    		width: 95%;
+
     	}
-    	.mytable
-		{ 
-			margin-top:60px;
-			margin-left: auto;
-			margin-right: auto;
-			
-		}
+      .my_content2{
+        float: left;
+        padding-left:30px;
+        margin-top: 30px;
+        margin-bottom: 60px;
+        width: 60%;
+
+      }
+      .search{
+        float: left;
+        padding-left:25%;
+        width: 90%;
+      }
+      .my_span3{
+        float: left;
+        margin-left-left:20px;
+      }
 	</style>
+	<script>
+		var myVar=setInterval(function(){myTimer()},1000);
+		myTimer();
+		function myTimer()
+		{
+
+		  
+		if (window.XMLHttpRequest)
+		  {// code for IE7+, Firefox, Chrome, Opera, Safari
+		  xmlhttp=new XMLHttpRequest();
+		  }
+		else
+		  {// code for IE6, IE5
+		  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+		  }
+		xmlhttp.onreadystatechange=function()
+		{
+
+		    if (xmlhttp.readyState==4 && xmlhttp.status==200)
+		    {
+		    document.getElementById("content").innerHTML=xmlhttp.responseText;
+		    }
+		}
+		xmlhttp.open("GET","realtime_data.php",true);
+		xmlhttp.send();
+		}
+
+	</script>
 
 </head>
 
@@ -57,17 +98,19 @@
           <a class="brand" href="#">Crawler</a>
           <div class="nav-collapse collapse">
             <ul class="nav">
-                <li class="">
+  
+              <li class="">
                 <a href="./index.html">Start</a>
               </li>
-              <li class="">
+              <li class="active">
                 <a href="./realtime.html">Realtime Statistics</a>
               </li>
               <li class="">
-                <a href="https://github.com/derrick0714/web_search_engin/blob/master/crawling/Readme.md">Code Architecture</a>
+                <a href="https://github.com/derrick0714/web_search_engin/">Code Architecture</a>
               </li>
-              <li class="active">
+              <li class="">
                 <a href="./about.html">About</a>
+              </li>
             </ul>
           </div>
         </div>
@@ -76,33 +119,9 @@
     <div margin:10px></div>
 <div class="wrapper">
 	<div id="content">
-	
-	<div id="breadcrumb">
-    <ul>
-        
-<li>About</li>
 
-    </ul>
-    </div>
-	<div class="my_span"></div>
-	<div class="my_content">
-		<table class="mytable">
-			<tr>
-				<td width="90"><img src="http://www.gravatar.com/avatar/10e27469092e15c490d9ba67333eaf05.png"></img></td>
-				<td width="90" width="60px"></td>
-				<td width="90"><img src="https://secure.gravatar.com/avatar/8615e04c87537ca40574fae37204ade3?s=400&d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png"></img></td>
-			</tr>
-			<tr>
-				<td width="90" >&nbsp&nbsp <a href = "https://github.com/derrick0714" target="blank">@deng xu</a> </td>
-				<td width="90" width="60px"></td>
-				<td width="90" >&nbsp&nbsp <a href = "https://github.com/Adam57" target="blank">@wang qi</a></td>
-			</tr>
-		</table>
-	</div>
-
-	
- </div>
-</div><!-- content end -->
+	</div><!-- content end -->
+</div><!-- wrapper end -->
 
 <footer class="footer">
   <div class="container">
@@ -112,8 +131,6 @@
 
   </div>
 </footer>
-
-</div><!-- wrapper end -->
 	<script type="text/javascript" src='media/js/jquery-1.7.2.min.js'></script>
 	<script type="text/javascript" src='media/js/date.format.min.js'></script>
 	<script type="text/javascript" src='media/js/jquery.relative-date.js'></script>
